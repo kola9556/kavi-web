@@ -2,7 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
   
-@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700;800;900&display=swap');
 
   
   *, *::before, *::after {
@@ -17,9 +17,10 @@ const GlobalStyle = createGlobalStyle`
   }
   
   body {
+    margin:0;
     padding-top: 90px;
     font-size: 1.6rem;
-    font-family: 'Montserrat', sans-serif;
+    font-family: 'Nunito Sans', sans-serif;
   }
 `;
 
