@@ -1,7 +1,9 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
-  @import url('https://fonts.googleapis.com/css?family=Montserrat:300,600');
+  
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&display=swap');
+
   
   *, *::before, *::after {
     box-sizing: border-box;
@@ -17,7 +19,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     padding-top: 90px;
     font-size: 1.6rem;
-    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Montserrat', sans-serif;
   }
 `;
 
