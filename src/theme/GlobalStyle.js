@@ -2,8 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
   
-  @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700;800;900&display=swap');
-
+  @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap');
   
   *, *::before, *::after {
     box-sizing: border-box;
@@ -14,13 +13,14 @@ const GlobalStyle = createGlobalStyle`
   html {
     margin:0px;
     font-size: 62.5%; 
+    font-family: 'Mulish', sans-serif;
   }
   
   body {
     margin:0;
     padding-top: 90px;
     font-size: 1.6rem;
-    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Mulish', sans-serif;
   }
 `;
 

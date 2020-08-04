@@ -1,5 +1,5 @@
 import React from 'react';
-import WazneJakLink from 'components/atoms/WazneJakLink/WazneJakLink';
+import WazneJakLink from 'components/atoms/BlogLink/BlogLink';
 
 export default {
   title: 'Wazne Jak Link',

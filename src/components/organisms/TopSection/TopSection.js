@@ -4,9 +4,8 @@ import ImageBox from 'components/atoms/ImageBox/ImageBox';
 
 const TopWrapper = styled.div`
   width: 100%;
-  height: 100vh;
+  height: 80vh;
   position: relative;
-  top: -90px;
   padding: 30px 320px;
   display: flex;
   flex-direction: row;
@@ -22,10 +21,9 @@ const TopTextWrapper = styled.div`
 
 const TopHeader = styled.h1`
   color: ${({ theme }) => theme.redText};
-  font-family: 'Nunito Sans', sans-serif;
   font-size: 60px;
   margin: 0;
-  text-shadow: 2px 2px 2px #c1c1c1;
+  text-shadow: 1px 1px 1px #c1c1c1;
 `;
 
 const TopParagraph = styled.p`

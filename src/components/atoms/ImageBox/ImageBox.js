@@ -8,6 +8,7 @@ const ImageBox = styled.div`
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: 100%;
+  z-index: 5;
 `;
 
 export default ImageBox;

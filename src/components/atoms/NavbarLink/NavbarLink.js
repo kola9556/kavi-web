@@ -2,21 +2,24 @@ import styled, { css } from 'styled-components';
 import { NavLink } from 'react-router-dom';
 
 const NavbarLink = styled(NavLink)`
-  @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@200;300;400;600;700;800;900&display=swap');
-  font-family: 'Nunito Sans';
-  color: ${({ theme }) => theme.navbarGrey};
-  font-size: 16px;
-  font-weight: 500;
+  @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap');
+  color: ${({ theme }) => theme.navyblueText};
+  font-family: 'Mulish', sans-serif;
+  font-size: 18px;
+  font-weight: normal;
   min-width: 100px;
   text-decoration: none;
   margin: 0px;
-  padding: 0 0px;
   text-align: center;
-  text-transform: uppercase;
   
+  white-space: nowrap;
+
+  @media only screen and (min-width:1200px) {
+    padding: 0 30px;
+  }
   
   &.active {
-    font-weight: 600;
+    font-weight: 700px;
   }
 
   ${({ secondary }) =>
@@ -36,10 +39,10 @@ const NavbarLink = styled(NavLink)`
     ${({ quaternary }) =>
       quaternary &&
       css`
-        min-width: 0;
         position: relative;
-        top: 5px;
-        padding-right: 20px;
+        top: 3px;
+        padding: 0;
+        margin-right: 0;
 
         &.active {
           display: none;
