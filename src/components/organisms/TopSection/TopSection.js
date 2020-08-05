@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Paragraph from 'components/atoms/Paragraph/Paragraph';
 import KaviBlue from 'assets/images/KaviBlue.jpg';
 import ImageBox from 'components/atoms/ImageBox/ImageBox';
 import BackgroundShape from 'components/atoms/BackgroundShape/BackgroundShape';
@@ -31,10 +32,9 @@ const TopHeader = styled.h1`
   text-shadow: 1px 1px 1px #c1c1c1;
 `;
 
-const TopParagraph = styled.p`
-  color: ${({ theme }) => theme.navyblueText};
-  font-size: 30px;
+const TopParagraph = styled(Paragraph)`
   padding-left: 50px;
+  font-size: 30px;
 `;
 
 // Created to colored and weight a part of the text
@@ -71,8 +71,7 @@ const BlueShapeWrapper = styled.div`
 
 /* Text with visibility property of hidden. This text exist only to create the same conditions
 to keep the width of the backgroun the same as NavLinksWrapper (blue) */
-const InvisibleText = styled.p`
-  color: ${({ theme }) => theme.navyblueText};
+const InvisibleText = styled(Paragraph)`
   font-family: 'Mulish', sans-serif;
   font-size: 18px;
   font-weight: normal;
