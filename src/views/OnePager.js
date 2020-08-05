@@ -8,6 +8,7 @@ const OnePager = () => (
     <Navigationbar />
     <TopSection />
     <HomeSection />
+    <p>trolololo</p>
   </>
 );
 
