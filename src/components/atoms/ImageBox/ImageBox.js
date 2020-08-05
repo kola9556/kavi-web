@@ -2,12 +2,12 @@ import styled from 'styled-components';
 import KaviBlack from 'assets/images/KaviBlack.jpg';
 
 const ImageBox = styled.div`
-  width: 357px;
-  height: 364px;
+  width: 428px;
+  height: 434px;
   background-image: url(${KaviBlack});
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  background-size: 100%;
+  background-size: cover;
   z-index: 5;
 `;
 

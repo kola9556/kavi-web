@@ -18,7 +18,7 @@ const GlobalStyle = createGlobalStyle`
   
   body {
     margin:0;
-    padding-top: 90px;
+    padding-top: 46px;
     font-size: 1.6rem;
     font-family: 'Mulish', sans-serif;
   }

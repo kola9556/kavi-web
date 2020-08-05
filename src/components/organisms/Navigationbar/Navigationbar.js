@@ -1,7 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import LogoKavi from 'components/atoms/LogoKavi/LogoKavi';
-import BackgroundShape from 'components/atoms/BackgroundShape/BackgroundShape';
 import NavbarLink from 'components/atoms/NavbarLink/NavbarLink';
 import BlogLink from '../../atoms/BlogLink/BlogLink';
 

@@ -2,12 +2,13 @@ import styled from 'styled-components';
 
 const BackgroundShape = styled.div`
   margin: 0;
-  position: relative;
-  top: 76px;
-  height: 1400px;
+  height: 600px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
   background-color: ${({ theme }) => theme.elemBlue};
-  border-radius: 0 0 0 100px;
-  z-index: 3;
+  border-radius: 0 0 0 130px;
 `;
 
 export default BackgroundShape;
