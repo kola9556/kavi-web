@@ -6,15 +6,16 @@ import KaviOrange from 'assets/images/KaviOrange.jpg';
 import { SHeaderBold, MParagraph, BoldSpan } from 'components/atoms/Headers/Headers';
 import { TextWrapper, GraphicsWrapper, MainWrapper } from 'components/atoms/Wrappers/Wrappers';
 import SectionBreak from '../../molecules/SectionBreak/SectionBreak';
+import DotsAndButton from '../../molecules/DotsAndButton/DotsAndButton';
 
 const AboutWrapper = styled(MainWrapper)`
   flex-direction: column;
   align-items: center;
-  padding: 100px 30px 100px 50px;
+  padding: 100px 30px 100px 0px;
 `;
 
 const ContentWrapper = styled.div`
-  padding: 80px 0 80px 0;
+  padding: 50px 50px 50px 0px;
   display: flex;
   flex-direction: row;
   align-content: center;
@@ -37,7 +38,13 @@ const AboutMParagraphDown = styled(MParagraph)`
   text-align: center;
   position: relative;
   left: 390px;
-  top: 50px;
+  top: 55px;
+`;
+
+const DotsAndButtonWrapper = styled.div`
+  position: relative;
+  top: 0px;
+  left: 250px;
 `;
 
 const AboutGraphicsWrapper = styled(GraphicsWrapper)`
@@ -93,6 +100,9 @@ const AboutSection = () => {
             <BlueBackground />
           </AboutGraphicsWrapper>
         </ContentWrapper>
+        <DotsAndButtonWrapper>
+          <DotsAndButton activeColor="blue" path="/aboutme" />
+        </DotsAndButtonWrapper>
       </AboutWrapper>
     </>
   );

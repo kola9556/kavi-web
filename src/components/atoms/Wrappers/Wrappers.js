@@ -11,6 +11,7 @@ const MainWrapper = styled.div`
 // Wrapper for embracing text in About and Home Sections
 const TextWrapper = styled.div`
   display: flex;
+  position: relative;
   flex-direction: column;
   align-items: flex-start;
 `;
