@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import KaviBlack from 'assets/images/KaviBlack.jpg';
 
-const ImageBox = styled.div`
+const SquareImgBox = styled.div`
   width: 428px;
   height: 434px;
   background-image: url(${KaviBlack});
@@ -11,4 +11,4 @@ const ImageBox = styled.div`
   z-index: 5;
 `;
 
-export default ImageBox;
+export default SquareImgBox;

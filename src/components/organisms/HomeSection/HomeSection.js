@@ -1,84 +1,71 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import ImagesBackground from 'components/atoms/ImagesBackground/ImagesBackground';
+import RectaImgBox from 'components/atoms/RectaImgBox/RectaImgBox';
+import { TextWrapper, GraphicsWrapper, MainWrapper } from 'components/atoms/Wrappers/Wrappers';
+import { BoldSpan } from 'components/atoms/Headers/Headers';
 import Paragraph from 'components/atoms/Paragraph/Paragraph';
-import Book from 'assets/images/book.jpg';
-import ImageBox from 'components/atoms/ImageBox/ImageBox';
 
-const HomeWrapper = styled.div`
-  width: 100%;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  padding: 100px 0px 100px 150px;
+const HomeWrapper = styled(MainWrapper)`
+  padding-left: 250px;
 `;
 
-const GraphicsWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-`;
-
-const RedBackground = styled.div`
-  width: 220px;
-  height: 350px;
-  border-radius: 0 100px 0 100px;
+const RedBackground = styled(ImagesBackground)`
   background-color: ${({ theme }) => theme.elemRed};
 `;
 
-const HomeImageBox = styled(ImageBox)`
-  width: 180px;
-  height: 280px;
-  background-image: url(${Book});
+const HomeRectaImgBox = styled(RectaImgBox)`
   position: relative;
   right: 110px;
 `;
-
-const TextWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
+// Right side Wrapper which contains all text in this section
+const HomeTextWrapper = styled(TextWrapper)`
   position: relative;
   top: 75px;
   right: 160px;
 `;
 
-const FirstParaWrapper = styled.div`
-  display: flex;
-  padding-right: 120px;
-  padding-bottom: 20px;
-`;
-
-const FirstParagraph = styled(Paragraph)`
-  margin: 0;
-  font-size: 26px;
-  font-weight: 600;
-  text-transform: uppercase;
-`;
-
-const BoldSpan = styled.span`
-  font-weight: 800;
-`;
-
-const SecondParaWrapper = styled.div`
+// Wrapper which contains one section of the text (one box)
+const ParaWrapper = styled.div`
   display: flex;
   padding-bottom: 20px;
+
+  ${({ first }) =>
+    first &&
+    css`
+      padding-left: 100px;
+    `}
+
+  ${({ second }) =>
+    second &&
+    css`
+      padding-left: 160px;
+    `}
 `;
 
-const SecondParagraph = styled(Paragraph)`
-  margin: 0;
-  font-size: 18px;
-  font-weight: 500;
-`;
+const HomeParagraph = styled(Paragraph)`
+margin: 0;
 
-const ThirdParaWrapper = styled.div`
-  display: flex;
-  padding-right: 260px;
-  padding-bottom: 20px;
-`;
+${({ first }) =>
+  first &&
+  css`
+    font-size: 26px;
+    font-weight: 600;
+    text-transform: uppercase;
+  `}
 
-const ThirdParagraph = styled(Paragraph)`
-  margin: 0;
-  font-size: 16px;
+${({ second }) =>
+  second &&
+  css`
+    font-size: 18px;
+    font-weight: 500;
+  `}
+
+${({ third }) =>
+  third &&
+  css`
+    font-size: 16px;
+  `}
 `;
 
 const HomeSection = () => {
@@ -87,20 +74,20 @@ const HomeSection = () => {
       <HomeWrapper>
         <GraphicsWrapper>
           <RedBackground />
-          <HomeImageBox />
+          <HomeRectaImgBox />
         </GraphicsWrapper>
-        <TextWrapper>
-          <FirstParaWrapper>
-            <FirstParagraph>
+        <HomeTextWrapper>
+          <ParaWrapper first>
+            <HomeParagraph first>
               Czy chcesz iść przez
               <br />
               życie <BoldSpan>pewnym krokiem?</BoldSpan>
               <br /> Czy pragniesz poczucia <br />
               <BoldSpan>sukcesu i spełnienia?</BoldSpan>
-            </FirstParagraph>
-          </FirstParaWrapper>
-          <SecondParaWrapper>
-            <SecondParagraph>
+            </HomeParagraph>
+          </ParaWrapper>
+          <ParaWrapper second>
+            <HomeParagraph second>
               Żyć z <BoldSpan>lekkością i radością?</BoldSpan>
               <br />
               Czy wiesz, co składa się na <BoldSpan>jakość</BoldSpan> twojego życia? <br />
@@ -112,10 +99,10 @@ const HomeSection = () => {
               <br />
               Poznaj tajniki nastawienia do życia, <br />
               które pozwalają włączyć <BoldSpan>Autopilot Szczęścia</BoldSpan>...
-            </SecondParagraph>
-          </SecondParaWrapper>
-          <ThirdParaWrapper>
-            <ThirdParagraph>
+            </HomeParagraph>
+          </ParaWrapper>
+          <ParaWrapper>
+            <HomeParagraph third>
               <BoldSpan>„Autopilot Szczęścia”</BoldSpan>
               <br />
               Książka wprowadza czytelnika w system
@@ -129,9 +116,9 @@ const HomeSection = () => {
               do trwałego poczucia szczęścia. <br />
               Autopilot jest szczegółową receptą na <br />
               Szczęśliwy Styl Życia.
-            </ThirdParagraph>
-          </ThirdParaWrapper>
-        </TextWrapper>
+            </HomeParagraph>
+          </ParaWrapper>
+        </HomeTextWrapper>
       </HomeWrapper>
     </>
   );

@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 import ArrowIcon from 'components/atoms/ArrowIcon/ArrowIcon';
-import { FHeaderBold, BlueHeader } from 'components/atoms/Headers/Headers';
+import { XlHeaderBold, BlueHeader } from 'components/atoms/Headers/Headers';
 
 const SecBrWrapper = styled.div`
   display: flex;
@@ -25,7 +25,7 @@ const SectionBreak = ({ firstTitle, secondTitle }) => {
     <>
       <SecBrWrapper>
         <ArrowIcon />
-        <FHeaderBold>{firstTitle}</FHeaderBold>
+        <XlHeaderBold>{firstTitle}</XlHeaderBold>
         <Line />
         <BlueHeader>{secondTitle}</BlueHeader>
       </SecBrWrapper>

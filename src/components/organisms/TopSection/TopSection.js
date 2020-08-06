@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Paragraph from 'components/atoms/Paragraph/Paragraph';
 import KaviBlue from 'assets/images/KaviBlue.jpg';
-import ImageBox from 'components/atoms/ImageBox/ImageBox';
+import SquareImgBox from 'components/atoms/SquareImgBox/SquareImgBox';
 import BackgroundShape from 'components/atoms/BackgroundShape/BackgroundShape';
 
 // Flex Wrapper for all TopSection elements. Main children: TopTextWrapper, TopImageBox and BlueShapeWrapper
@@ -49,7 +49,7 @@ const LogoRed = styled.span`
   font-weight: 700;
 `;
 
-const TopImageBox = styled(ImageBox)`
+const TopSquareImgBox = styled(SquareImgBox)`
   background-image: url(${KaviBlue});
 `;
 
@@ -114,7 +114,7 @@ const TopSection = () => (
           <br /> przeżyjesz swoje życie.
         </TopParagraph>
       </TopTextWrapper>
-      <TopImageBox />
+      <TopSquareImgBox />
     </TopWrapper>
   </>
 );
