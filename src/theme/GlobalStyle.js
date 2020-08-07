@@ -18,9 +18,10 @@ const GlobalStyle = createGlobalStyle`
   
   body {
     margin:0;
-    padding-top: 46px;
+    padding-top: 4.6rem;
     font-size: 1.6rem;
     font-family: 'Mulish', sans-serif;
+    
   }
 `;
 

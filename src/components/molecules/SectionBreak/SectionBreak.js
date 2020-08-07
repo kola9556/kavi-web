@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import LogoW from 'assets/images/logoW.jpg';
 import PropTypes from 'prop-types';
 import ArrowIcon from 'components/atoms/ArrowIcon/ArrowIcon';
 import { XlHeaderBold, BlueHeader } from 'components/atoms/Headers/Headers';
@@ -11,6 +12,15 @@ const SecBrWrapper = styled.div`
   align-items: center;
 `;
 
+const Icon = styled.div`
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 219px;
+  height: 66px;
+  background-image: url(${LogoW});
+`;
+
 const Line = styled.div`
   min-width: 50px;
   margin: 0 15px;
@@ -20,12 +30,12 @@ const Line = styled.div`
   flex-grow: 1;
 `;
 
-const SectionBreak = ({ firstTitle, secondTitle }) => {
+const SectionBreak = ({ firstTitle, secondTitle, icon }) => {
   return (
     <>
       <SecBrWrapper>
         <ArrowIcon />
-        <XlHeaderBold>{firstTitle}</XlHeaderBold>
+        {icon ? <Icon /> : <XlHeaderBold>{firstTitle}</XlHeaderBold>}
         <Line />
         <BlueHeader>{secondTitle}</BlueHeader>
       </SecBrWrapper>
@@ -36,6 +46,11 @@ const SectionBreak = ({ firstTitle, secondTitle }) => {
 SectionBreak.propTypes = {
   firstTitle: PropTypes.string.isRequired,
   secondTitle: PropTypes.string.isRequired,
+  icon: PropTypes.bool,
+};
+
+SectionBreak.defaultProps = {
+  icon: false,
 };
 
 export default SectionBreak;

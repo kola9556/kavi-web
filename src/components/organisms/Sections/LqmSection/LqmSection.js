@@ -1,10 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
-import IconSection from 'components/organisms/IconSection/IconSection';
+import IconBox from 'components/molecules/IconBox/IconBox';
 import { MParagraph, BoldSpan } from 'components/atoms/Headers/Headers';
-import { MainWrapper, ColumnWrapper } from 'components/atoms/Wrappers/Wrappers';
-import SectionBreak from '../../molecules/SectionBreak/SectionBreak';
-import DotsAndButton from '../../molecules/DotsAndButton/DotsAndButton';
+import { MainWrapper, ColumnWrapper, RowWrapper } from 'components/atoms/Wrappers/Wrappers';
+import SectionBreak from '../../../molecules/SectionBreak/SectionBreak';
+import DotsAndButton from '../../../molecules/DotsAndButton/DotsAndButton';
+
+const SectionWrapper = styled(RowWrapper)`
+  position: relative;
+  left: 30px;
+  justify-content: space-between;
+  width: 65vw;
+  padding-bottom: 80px;
+  align-items: baseline;
+`;
 
 const LqmWrapper = styled(MainWrapper)`
   padding: 20px 0px 100px 0px;
@@ -46,7 +55,20 @@ const LqmSection = () => {
               prowadząc Cię przez zmianę.
             </MParagraph>
           </TextWrapper>
-          <IconSection />
+          <SectionWrapper>
+            <IconBox number="1" icon="mind">
+              Pozytywny Umysł
+            </IconBox>
+            <IconBox number="2" icon="health">
+              Zdrowy Lifestyle
+            </IconBox>
+            <IconBox number="3" icon="change">
+              Zmiana Nawyków
+            </IconBox>
+            <IconBox number="4" icon="logoW">
+              Blog
+            </IconBox>
+          </SectionWrapper>
           <DotsAndButton activeColor="red" path="/lifeqm" side="right" dots="no" />
         </ContentWrapper>
       </LqmWrapper>

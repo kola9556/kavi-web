@@ -5,8 +5,8 @@ import ImagesBackground from 'components/atoms/ImagesBackground/ImagesBackground
 import KaviOrange from 'assets/images/KaviOrange.jpg';
 import { SHeaderBold, MParagraph, BoldSpan } from 'components/atoms/Headers/Headers';
 import { ColumnWrapper, RowWrapper, MainWrapper } from 'components/atoms/Wrappers/Wrappers';
-import SectionBreak from '../../molecules/SectionBreak/SectionBreak';
-import DotsAndButton from '../../molecules/DotsAndButton/DotsAndButton';
+import SectionBreak from '../../../molecules/SectionBreak/SectionBreak';
+import DotsAndButton from '../../../molecules/DotsAndButton/DotsAndButton';
 
 const AboutWrapper = styled(MainWrapper)`
   padding: 80px 30px 80px 0px;

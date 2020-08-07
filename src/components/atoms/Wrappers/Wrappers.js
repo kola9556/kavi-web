@@ -7,7 +7,7 @@ const MainWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 100px 50px 100px 50px;
+  padding: 10rem 5rem 10rem 5rem;
 `;
 
 const ColumnWrapper = styled.div`

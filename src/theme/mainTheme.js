@@ -12,4 +12,5 @@ export const theme = {
   buttonRed: 'rgba(231, 89, 89, 1)',
   borderRed: 'rgba(255, 87, 87, 0.9)',
   buttonTextRed: 'rgba(122, 9, 9, 1)',
+  logoBorderBlue: 'rgba(136, 189, 231, 1)',
 };

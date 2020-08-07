@@ -38,8 +38,21 @@ const MParagraph = styled.p`
   color: ${({ theme }) => theme.navyblueText};
 `;
 
+const MParagraphBold = styled(MParagraph)`
+  font-weight: 800;
+`;
+
 const BoldSpan = styled.span`
   font-weight: 800;
 `;
 
-export { XlHeader, XlHeaderBold, BlueHeader, SHeader, SHeaderBold, MParagraph, BoldSpan };
+export {
+  XlHeader,
+  XlHeaderBold,
+  BlueHeader,
+  SHeader,
+  SHeaderBold,
+  MParagraph,
+  MParagraphBold,
+  BoldSpan,
+};

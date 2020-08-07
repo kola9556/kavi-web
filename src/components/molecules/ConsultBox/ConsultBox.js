@@ -41,6 +41,7 @@ const List = styled.ul`
 `;
 
 const Item = styled.li`
+  padding-left: 10px;
   font-size: 18px;
   font-weight: 600;
   color: ${({ theme }) => theme.navyblueText};
