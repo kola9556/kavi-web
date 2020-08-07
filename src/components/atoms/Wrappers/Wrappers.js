@@ -4,23 +4,23 @@ import styled from 'styled-components';
 const MainWrapper = styled.div`
   width: 100%;
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   padding: 100px 50px 100px 50px;
 `;
 
-// Wrapper for embracing text in About and Home Sections
-const TextWrapper = styled.div`
+const ColumnWrapper = styled.div`
   display: flex;
   position: relative;
   flex-direction: column;
   align-items: flex-start;
 `;
 
-// Wrapper for embracing graphic elements in About and Home Sections
-const GraphicsWrapper = styled.div`
+const RowWrapper = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
 `;
 
-export { TextWrapper, GraphicsWrapper, MainWrapper };
+export { ColumnWrapper, RowWrapper, MainWrapper };

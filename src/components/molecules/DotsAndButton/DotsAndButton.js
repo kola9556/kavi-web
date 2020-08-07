@@ -1,17 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { GraphicsWrapper } from 'components/atoms/Wrappers/Wrappers';
+import { RowWrapper } from 'components/atoms/Wrappers/Wrappers';
 import Button from 'components/atoms/Button/Button';
 import styled, { css } from 'styled-components';
 
-const ThisGraphicsWrapper = styled(GraphicsWrapper)`
+const ThisGraphicsWrapper = styled(RowWrapper)`
   align-items: flex-end;
   position: relative;
 `;
 
-const DotsWrapper = styled(GraphicsWrapper)`
-  position: relative;
-  right: 20px;
+const DotsWrapper = styled(RowWrapper)`
+  padding: 0 10px;
+
+  ${({ nodots }) =>
+    nodots === 'no' &&
+    css`
+      display: none;
+    `}
 `;
 
 const Dot = styled.span`
@@ -29,18 +34,34 @@ const Dot = styled.span`
     `}
 `;
 
-const DotsAndButton = ({ activeColor, path }) => {
+// Side props is for displaying dots on lef or on the right side depending on the need
+const DotsAndButton = ({ activeColor, path, side, dots }) => {
   return (
     <>
-      <ThisGraphicsWrapper>
-        <DotsWrapper>
-          <Dot activeColor={activeColor} />
-          <Dot activeColor={activeColor} />
-          <Dot activeColor={activeColor} />
-        </DotsWrapper>
-        <Button path={path} activeColor={activeColor}>
-          Więcej
-        </Button>
+      <ThisGraphicsWrapper side={side}>
+        {side === 'left' ? (
+          <>
+            <DotsWrapper nodots={dots}>
+              <Dot activeColor={activeColor} />
+              <Dot activeColor={activeColor} />
+              <Dot activeColor={activeColor} />
+            </DotsWrapper>
+            <Button path={path} activeColor={activeColor}>
+              Więcej
+            </Button>
+          </>
+        ) : (
+          <>
+            <Button path={path} activeColor={activeColor}>
+              Więcej
+            </Button>
+            <DotsWrapper nodots={dots}>
+              <Dot activeColor={activeColor} />
+              <Dot activeColor={activeColor} />
+              <Dot activeColor={activeColor} />
+            </DotsWrapper>
+          </>
+        )}
       </ThisGraphicsWrapper>
     </>
   );
@@ -57,10 +78,14 @@ DotsAndButton.propTypes = {
     '/shop',
     '/contact',
   ]),
+  side: PropTypes.oneOf(['left', 'right']),
+  dots: PropTypes.oneOf(['yes', 'no']),
 };
 
 DotsAndButton.defaultProps = {
   activeColor: 'blue',
   path: '/',
+  side: 'left',
+  dots: 'yes',
 };
 export default DotsAndButton;

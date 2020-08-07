@@ -4,14 +4,12 @@ import SquareImgBox from 'components/atoms/SquareImgBox/SquareImgBox';
 import ImagesBackground from 'components/atoms/ImagesBackground/ImagesBackground';
 import KaviOrange from 'assets/images/KaviOrange.jpg';
 import { SHeaderBold, MParagraph, BoldSpan } from 'components/atoms/Headers/Headers';
-import { TextWrapper, GraphicsWrapper, MainWrapper } from 'components/atoms/Wrappers/Wrappers';
+import { ColumnWrapper, RowWrapper, MainWrapper } from 'components/atoms/Wrappers/Wrappers';
 import SectionBreak from '../../molecules/SectionBreak/SectionBreak';
 import DotsAndButton from '../../molecules/DotsAndButton/DotsAndButton';
 
 const AboutWrapper = styled(MainWrapper)`
-  flex-direction: column;
-  align-items: center;
-  padding: 100px 30px 100px 0px;
+  padding: 80px 30px 80px 0px;
 `;
 
 const ContentWrapper = styled.div`
@@ -47,7 +45,7 @@ const DotsAndButtonWrapper = styled.div`
   left: 250px;
 `;
 
-const AboutGraphicsWrapper = styled(GraphicsWrapper)`
+const AboutGraphicsWrapper = styled(RowWrapper)`
   position: relative;
   top: 20px;
 `;
@@ -70,7 +68,7 @@ const AboutSection = () => {
       <AboutWrapper>
         <SectionBreak firstTitle="Kavi Kozłowska" secondTitle="O mnie" />
         <ContentWrapper>
-          <TextWrapper>
+          <ColumnWrapper>
             <AboutSHeader>
               Zawodowo zajmuję się <BoldSpan>LIFE Quality Managementem (LifeQM)</BoldSpan>, <br />
               gdzie <BoldSpan>JAKOŚĆ</BoldSpan> życia jest <BoldSpan>WAŻNA</BoldSpan>. Jestem
@@ -94,14 +92,14 @@ const AboutSection = () => {
               Jednak w moim życiu nastąpił moment olśnienia. <br />
               Postanowiłam dokonać ZMIANY..
             </AboutMParagraphDown>
-          </TextWrapper>
+          </ColumnWrapper>
           <AboutGraphicsWrapper>
             <AboutSquareImgBox />
             <BlueBackground />
           </AboutGraphicsWrapper>
         </ContentWrapper>
         <DotsAndButtonWrapper>
-          <DotsAndButton activeColor="blue" path="/aboutme" />
+          <DotsAndButton activeColor="blue" path="/aboutme" side="left" />
         </DotsAndButtonWrapper>
       </AboutWrapper>
     </>

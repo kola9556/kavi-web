@@ -2,11 +2,12 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import ImagesBackground from 'components/atoms/ImagesBackground/ImagesBackground';
 import RectaImgBox from 'components/atoms/RectaImgBox/RectaImgBox';
-import { TextWrapper, GraphicsWrapper, MainWrapper } from 'components/atoms/Wrappers/Wrappers';
+import { ColumnWrapper, RowWrapper, MainWrapper } from 'components/atoms/Wrappers/Wrappers';
 import { BoldSpan } from 'components/atoms/Headers/Headers';
 import Paragraph from 'components/atoms/Paragraph/Paragraph';
 
 const HomeWrapper = styled(MainWrapper)`
+  flex-direction: row;
   padding-left: 250px;
 `;
 
@@ -19,7 +20,7 @@ const HomeRectaImgBox = styled(RectaImgBox)`
   right: 110px;
 `;
 // Right side Wrapper which contains all text in this section
-const HomeTextWrapper = styled(TextWrapper)`
+const HomeTextWrapper = styled(ColumnWrapper)`
   position: relative;
   top: 75px;
   right: 160px;
@@ -72,10 +73,10 @@ const HomeSection = () => {
   return (
     <>
       <HomeWrapper>
-        <GraphicsWrapper>
+        <RowWrapper>
           <RedBackground />
           <HomeRectaImgBox />
-        </GraphicsWrapper>
+        </RowWrapper>
         <HomeTextWrapper>
           <ParaWrapper first>
             <HomeParagraph first>
