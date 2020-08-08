@@ -7,7 +7,7 @@ import SectionBreak from 'components/molecules/SectionBreak/SectionBreak';
 import LogoButton from 'components/atoms/LogoButton/LogoButton';
 
 const BlogWrapper = styled(MainWrapper)`
-  padding: 6rem 5rem 10rem 5rem;
+  padding: 6rem 5rem 6rem 5rem;
 `;
 
 const RedText = styled(SHeader)`

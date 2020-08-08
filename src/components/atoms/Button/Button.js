@@ -19,8 +19,7 @@ const StyledButton = styled.button`
   align-items: center;
 
   :hover {
-    width: 177px;
-    height: 53px;
+    background-color: ${({ theme }) => theme.buttonBlueHover};
   }
 
   :active {
@@ -33,6 +32,10 @@ const StyledButton = styled.button`
       color: ${({ theme }) => theme.buttonTextRed};
       background-color: ${({ theme }) => theme.buttonRed};
       border: 1px solid ${({ theme }) => theme.borderRed};
+
+      :hover {
+        background-color: ${({ theme }) => theme.buttonRedHover};
+      }
     `}
 `;
 

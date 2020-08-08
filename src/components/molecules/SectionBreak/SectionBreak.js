@@ -16,15 +16,15 @@ const Icon = styled.div`
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
-  width: 219px;
-  height: 66px;
+  width: 21.9rem;
+  height: 6.6rem;
   background-image: url(${LogoW});
 `;
 
 const Line = styled.div`
-  min-width: 50px;
-  margin: 0 15px;
-  height: 1px;
+  min-width: 5rem;
+  margin: 0 1.5rem;
+  height: 0.1rem;
   border-top: 1px solid ${({ theme }) => theme.navbarGrey};
   display: flex;
   flex-grow: 1;

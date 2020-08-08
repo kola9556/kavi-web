@@ -14,6 +14,7 @@ const GlobalStyle = createGlobalStyle`
     margin:0px;
     font-size: 62.5%; 
     font-family: 'Mulish', sans-serif;
+
   }
   
   body {

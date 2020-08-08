@@ -6,6 +6,7 @@ import HomeSection from '../components/organisms/Sections/HomeSection/HomeSectio
 import Navigationbar from '../components/organisms/Navigationbar/Navigationbar';
 import ConsultSection from '../components/organisms/Sections/ConsultSection/ConsultSection';
 import BlogSection from '../components/organisms/Sections/BlogSection/BlogSection';
+import ShopSection from '../components/organisms/Sections/ShopSection/ShopSection';
 
 const OnePager = () => (
   <>
@@ -16,6 +17,7 @@ const OnePager = () => (
     <LqmSection />
     <ConsultSection />
     <BlogSection />
+    <ShopSection />
   </>
 );
 
