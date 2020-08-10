@@ -5,9 +5,7 @@ import LogoK from 'assets/logos/logoKSmall.jpg';
 import { MParagraph } from 'components/atoms/Headers/Headers';
 import { RowWrapper, ColumnWrapper } from 'components/atoms/Wrappers/Wrappers';
 
-const InfoWrapper = styled(RowWrapper)`
-  padding-right: 7rem;
-`;
+const InfoWrapper = styled(RowWrapper)``;
 
 const SectionWrapper = styled(ColumnWrapper)`
   padding-right: 8rem;

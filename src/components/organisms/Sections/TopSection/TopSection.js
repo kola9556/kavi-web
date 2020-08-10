@@ -50,7 +50,8 @@ const LogoRed = styled.span`
 `;
 
 const TopSquareImgBox = styled(SquareImgBox)`
-  background-image: url(${KaviBlue});
+  opacity: 1;
+  transition: opacity 2s;
 `;
 
 /* I've made a Wrapper which has the same properties as NvigationWrapper
@@ -73,9 +74,9 @@ const BlueShapeWrapper = styled.div`
 to keep the width of the backgroun the same as NavLinksWrapper (blue) */
 const InvisibleText = styled(Paragraph)`
   font-family: 'Mulish', sans-serif;
-  font-size: 18px;
+  font-size: 1.6rem;
   font-weight: normal;
-  min-width: 100px;
+  min-width: 10rem;
   text-decoration: none;
   margin: 0px;
   text-align: center;
@@ -91,32 +92,34 @@ const InvisibleText = styled(Paragraph)`
   }
 `;
 
-const TopSection = () => (
-  <>
-    <TopWrapper>
-      <BlueShapeWrapper>
-        <BackgroundShape>
-          {/* This part won't be visible at all. It's only for keeping the same width as NavLinksWrapper (blue) */}
-          <InvisibleText>Konsultacje i Szkolenia</InvisibleText>
-          <InvisibleText>Sklep</InvisibleText>
-          <InvisibleText>Kontakt</InvisibleText>
-        </BackgroundShape>
-      </BlueShapeWrapper>
-      <TopTextWrapper>
-        <TopHeader>
-          Szczęśliwy <br />
-          Styl Życia
-        </TopHeader>
-        <TopParagraph>
-          Jakość jest ważna,
-          <br /> bo to <LogoBlack>WAŻNE,</LogoBlack>
-          <LogoRed> JAK</LogoRed>
-          <br /> przeżyjesz swoje życie.
-        </TopParagraph>
-      </TopTextWrapper>
-      <TopSquareImgBox />
-    </TopWrapper>
-  </>
-);
+const TopSection = () => {
+  return (
+    <>
+      <TopWrapper>
+        <BlueShapeWrapper>
+          <BackgroundShape>
+            {/* This part won't be visible at all. It's only for keeping the same width as NavLinksWrapper (blue) */}
+            <InvisibleText>Konsultacje i Szkolenia</InvisibleText>
+            <InvisibleText>Sklep</InvisibleText>
+            <InvisibleText>Kontakt</InvisibleText>
+          </BackgroundShape>
+        </BlueShapeWrapper>
+        <TopTextWrapper>
+          <TopHeader>
+            Szczęśliwy <br />
+            Styl Życia
+          </TopHeader>
+          <TopParagraph>
+            Jakość jest ważna,
+            <br /> bo to <LogoBlack>WAŻNE,</LogoBlack>
+            <LogoRed> JAK</LogoRed>
+            <br /> przeżyjesz swoje życie.
+          </TopParagraph>
+        </TopTextWrapper>
+        <TopSquareImgBox src={KaviBlue} />
+      </TopWrapper>
+    </>
+  );
+};
 
 export default TopSection;
