@@ -49,6 +49,13 @@ const SParagraph = styled.p`
   color: ${({ theme }) => theme.navyblueText};
 `;
 
+const XsParagraph = styled.p`
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: ${({ theme }) => theme.navyblueText};
+`;
+
 const BoldSpan = styled.span`
   font-weight: 800;
 `;
@@ -62,5 +69,6 @@ export {
   MParagraph,
   MParagraphBold,
   SParagraph,
+  XsParagraph,
   BoldSpan,
 };

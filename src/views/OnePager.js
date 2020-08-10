@@ -7,6 +7,7 @@ import Navigationbar from '../components/organisms/Navigationbar/Navigationbar';
 import ConsultSection from '../components/organisms/Sections/ConsultSection/ConsultSection';
 import BlogSection from '../components/organisms/Sections/BlogSection/BlogSection';
 import ShopSection from '../components/organisms/Sections/ShopSection/ShopSection';
+import Footer from '../components/organisms/Footer/Footer';
 
 const OnePager = () => (
   <>
@@ -18,6 +19,7 @@ const OnePager = () => (
     <ConsultSection />
     <BlogSection />
     <ShopSection />
+    <Footer />
   </>
 );
 
