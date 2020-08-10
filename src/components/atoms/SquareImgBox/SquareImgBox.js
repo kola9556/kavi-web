@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import KaviBlack from 'assets/images/KaviBlack.jpg';
 
 const SquareImgBox = styled.img`
   width: 428px;
