@@ -59,7 +59,6 @@ const BlueBackground = styled(ImagesBackground)`
 const AboutSquareImgBox = styled(SquareImgBox)`
   width: 265px;
   height: 270px;
-  background-image: url(${KaviOrange});
 `;
 
 const AboutSection = () => {
@@ -94,7 +93,7 @@ const AboutSection = () => {
             </AboutMParagraphDown>
           </ColumnWrapper>
           <AboutGraphicsWrapper>
-            <AboutSquareImgBox />
+            <AboutSquareImgBox src={KaviOrange} />
             <BlueBackground />
           </AboutGraphicsWrapper>
         </ContentWrapper>
