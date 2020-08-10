@@ -3,26 +3,20 @@ import styled from 'styled-components';
 import Bead from 'assets/images/bead.svg';
 import MediaIcon from 'components/atoms/MediaIcon/MediaIcon';
 import InfoBox from 'components/molecules/InfoBox/InfoBox';
-import { RowWrapper, ColumnWrapper } from 'components/atoms/Wrappers/Wrappers';
+import { MainWrapper, RowWrapper, ColumnWrapper } from 'components/atoms/Wrappers/Wrappers';
 
-const FooterWrapper = styled.div`
-  margin: 0;
-  padding: 6rem;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: flex-start;
+const FooterWrapper = styled(MainWrapper)`
+  padding: 3rem 5rem 0 5rem;
   background-color: ${({ theme }) => theme.footerBackground};
 `;
 
 const ContentWrapper = styled(RowWrapper)`
-  padding-left: 20rem;
+  justify-content: flex-start;
 `;
 
 const BottomWrapper = styled(ColumnWrapper)`
-  padding-left: 20rem;
-  width: 80vw;
+  margin-left: 6rem;
+  width: 70vw;
 `;
 
 const BeadIcon = styled.div`
@@ -32,9 +26,6 @@ const BeadIcon = styled.div`
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
-  position: relative;
-  top: 3rem;
-  padding-left: 10rem;
 `;
 
 const Line = styled.div`
@@ -48,7 +39,15 @@ const Line = styled.div`
 
 const MediaWrapper = styled(RowWrapper)`
   position: relative;
+
   bottom: 4rem;
+`;
+
+const Copyrights = styled.p`
+  color: ${({ theme }) => theme.footerText};
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding-top: 2rem;
 `;
 
 const Footer = () => {
@@ -70,6 +69,7 @@ const Footer = () => {
             />
           </MediaWrapper>
         </BottomWrapper>
+        <Copyrights>&copy; 2020 Aleksandra Kurdej. All rights reserved.</Copyrights>
       </FooterWrapper>
     </>
   );

@@ -9,7 +9,7 @@ const MainWrapper = styled.div`
   top: 0;
   right: 0;
   margin: 0;
-  height: 46px;
+  height: 4.6rem;
   width: 100%;
   display: flex;
   -webkit-box-pack: justify;
@@ -24,7 +24,7 @@ const Logo = styled(LogoKavi)``;
 
 const NavigationWrapper = styled.div`
   position: relative;
-  width: 1246px;
+  width: 124.6rem;
   height: 100%;
   display: flex;
   flex-direction: row;

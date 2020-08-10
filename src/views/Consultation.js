@@ -1,10 +1,10 @@
 import React from 'react';
 import Navigationbar from 'components/organisms/Navigationbar/Navigationbar';
 
-const AboutMe = () => (
+const Consultation = () => (
   <>
     <Navigationbar />
-    <h1>O mnie</h1>
+    <h1>Consultation</h1>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sit amet cursus elit. Quisque
       euismod lectus eu mauris consectetur tempor. In eget suscipit nisl, quis rhoncus turpis. Donec
@@ -92,4 +92,5 @@ const AboutMe = () => (
     </p>
   </>
 );
-export default AboutMe;
+
+export default Consultation;

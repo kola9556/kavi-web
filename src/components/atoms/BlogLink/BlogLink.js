@@ -11,6 +11,11 @@ const BlogLogo = styled(NavLink)`
   background-repeat: no-repeat;
   background-size: 100%;
   background-position: 50% 50%;
+
+  &.active {
+    width: 110px;
+    height: 37px;
+  }
 `;
 
 const BlogLink = () => (

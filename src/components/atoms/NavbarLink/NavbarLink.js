@@ -5,9 +5,9 @@ const NavbarLink = styled(NavLink)`
   @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap');
   color: ${({ theme }) => theme.navyblueText};
   font-family: 'Mulish', sans-serif;
-  font-size: 18px;
+  font-size: 1.6rem;
   font-weight: normal;
-  min-width: 100px;
+  min-width: 10rem;
   text-decoration: none;
   margin: 0px;
   text-align: center;
@@ -19,7 +19,8 @@ const NavbarLink = styled(NavLink)`
   }
   
   &.active {
-    font-weight: 700px;
+    font-weight: 700;
+    padding:0 26.5px
   }
 
   ${({ secondary }) =>
@@ -34,6 +35,10 @@ const NavbarLink = styled(NavLink)`
       display: flex;
       flex-direction: row;
       align-content: center;
+
+      &.active {
+        padding: 0 25px;
+      }
     `}
 
     ${({ quaternary }) =>
