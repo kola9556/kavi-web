@@ -2,8 +2,8 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import ImagesBackground from 'components/atoms/ImagesBackground/ImagesBackground';
 import RectaImgBox from 'components/atoms/RectaImgBox/RectaImgBox';
-import { ColumnWrapper, RowWrapper, MainWrapper } from 'components/atoms/Wrappers/Wrappers';
-import { BoldSpan } from 'components/atoms/Headers/Headers';
+import { ColumnWrapper, RowWrapper, MainWrapper } from 'utils/Wrappers/Wrappers';
+import { BoldSpan } from 'utils/Headers/Headers';
 import Paragraph from 'components/atoms/Paragraph/Paragraph';
 
 const HomeWrapper = styled(MainWrapper)`

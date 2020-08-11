@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
-import { ColumnWrapper } from 'components/atoms/Wrappers/Wrappers';
-import { SHeader, SHeaderBold, SParagraph, BoldSpan } from 'components/atoms/Headers/Headers';
+import { ColumnWrapper } from 'utils/Wrappers/Wrappers';
+import { SHeader, SHeaderBold, SParagraph, BoldSpan } from 'utils/Headers/Headers';
 
 const LabelWrapper = styled(ColumnWrapper)`
   width: 38.4rem;

@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import ConsultBox from 'components/molecules/ConsultBox/ConsultBox';
-import { MainWrapper, RowWrapper } from 'components/atoms/Wrappers/Wrappers';
-import SectionBreak from '../../../molecules/SectionBreak/SectionBreak';
+import { MainWrapper, RowWrapper } from 'utils/Wrappers/Wrappers';
+import SectionBreak from '../../../../components/molecules/SectionBreak/SectionBreak';
 
 const ConsultWrapper = styled(MainWrapper)`
   padding: 0px 50px 0px 50px;

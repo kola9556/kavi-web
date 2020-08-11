@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import { MainWrapper, RowWrapper } from 'components/atoms/Wrappers/Wrappers';
+import { MainWrapper, RowWrapper } from 'utils/Wrappers/Wrappers';
 import Cover from 'assets/images/book.jpg';
 import SectionBreak from 'components/molecules/SectionBreak/SectionBreak';
-import DotsAndButton from '../../../molecules/DotsAndButton/DotsAndButton';
-import ShopBox from '../../ShopBox/ShopBox';
+import DotsAndButton from '../../../../components/molecules/DotsAndButton/DotsAndButton';
+import ShopBox from '../../../../components/organisms/ShopBox/ShopBox';
 
 const ShopWrapper = styled(MainWrapper)`
   padding: 0rem 0 30rem 20rem;

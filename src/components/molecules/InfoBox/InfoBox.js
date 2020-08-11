@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import LogoK from 'assets/logos/logoKSmall.jpg';
-import { MParagraph } from 'components/atoms/Headers/Headers';
-import { RowWrapper, ColumnWrapper } from 'components/atoms/Wrappers/Wrappers';
+import { MParagraph } from 'utils/Headers/Headers';
+import { RowWrapper, ColumnWrapper } from 'utils/Wrappers/Wrappers';
 
 const InfoWrapper = styled(RowWrapper)``;
 

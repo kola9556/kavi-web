@@ -5,8 +5,8 @@ import DotsAndButton from 'components/molecules/DotsAndButton/DotsAndButton';
 import Individual from 'assets/images/individual.jpg';
 import Firm from 'assets/images/firm.jpg';
 import Arrows from 'assets/images/smallerArrows.jpg';
-import { ColumnWrapper } from 'components/atoms/Wrappers/Wrappers';
-import { XlHeader } from 'components/atoms/Headers/Headers';
+import { ColumnWrapper } from 'utils/Wrappers/Wrappers';
+import { XlHeader } from 'utils/Headers/Headers';
 
 const BoxWrapper = styled(ColumnWrapper)`
   align-items: center;
@@ -81,7 +81,7 @@ const ConsultBox = ({ type }) => {
               ))}
             </List>
             <ButtonWrapper>
-              <DotsAndButton activeColor="blue" path="/consultations" side="right" dots="yes" />
+              <DotsAndButton activeColor="blue" path="/consultation" side="right" dots="yes" />
             </ButtonWrapper>
           </>
         ) : (
@@ -94,7 +94,7 @@ const ConsultBox = ({ type }) => {
               ))}
             </List>
             <ButtonWrapper firm>
-              <DotsAndButton activeColor="blue" path="/consultations" side="right" dots="yes" />
+              <DotsAndButton activeColor="blue" path="/consultation" side="right" dots="yes" />
             </ButtonWrapper>
           </>
         )}

@@ -51,7 +51,17 @@ const LogoRed = styled.span`
 
 const TopSquareImgBox = styled(SquareImgBox)`
   opacity: 1;
-  transition: opacity 2s;
+  animation-name: example;
+  animation-duration: 6s;
+
+  @keyframes example {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 `;
 
 /* I've made a Wrapper which has the same properties as NvigationWrapper

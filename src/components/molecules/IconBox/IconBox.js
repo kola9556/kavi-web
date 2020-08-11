@@ -5,8 +5,8 @@ import Change from 'assets/images/change.jpg';
 import Health from 'assets/images/health.jpg';
 import Mind from 'assets/images/mind.jpg';
 import PropTypes from 'prop-types';
-import { MParagraph } from 'components/atoms/Headers/Headers';
-import { ColumnWrapper, RowWrapper } from 'components/atoms/Wrappers/Wrappers';
+import { MParagraph } from 'utils/Headers/Headers';
+import { ColumnWrapper, RowWrapper } from 'utils/Wrappers/Wrappers';
 
 const MainWrapper = ColumnWrapper;
 

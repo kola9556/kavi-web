@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { RowWrapper } from 'components/atoms/Wrappers/Wrappers';
+import { RowWrapper } from 'utils/Wrappers/Wrappers';
 import Button from 'components/atoms/Button/Button';
 import styled, { css } from 'styled-components';
 

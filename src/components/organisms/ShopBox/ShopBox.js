@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Button from 'components/atoms/Button/Button';
-import { ColumnWrapper, RowWrapper } from 'components/atoms/Wrappers/Wrappers';
+import { ColumnWrapper, RowWrapper } from 'utils/Wrappers/Wrappers';
 import BookLabel from '../../molecules/BookLabel/BookLabel';
 
 const ShopWrapper = styled(ColumnWrapper)`

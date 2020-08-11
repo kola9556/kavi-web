@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Bead from 'assets/images/bead.svg';
 import MediaIcon from 'components/atoms/MediaIcon/MediaIcon';
 import InfoBox from 'components/molecules/InfoBox/InfoBox';
-import { MainWrapper, RowWrapper, ColumnWrapper } from 'components/atoms/Wrappers/Wrappers';
+import { MainWrapper, RowWrapper, ColumnWrapper } from 'utils/Wrappers/Wrappers';
 
 const FooterWrapper = styled(MainWrapper)`
   padding: 3rem 5rem 0 5rem;

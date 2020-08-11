@@ -1,13 +1,13 @@
 import React from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import Contact from 'views/Contact';
-import Shop from 'views/Shop';
-import Consultation from 'views/Consultation';
-import Collaboration from 'views/Collaboration';
-import OnePager from 'views/OnePager';
-import LifeQm from 'views/LifeQm';
-import AboutMe from 'views/AboutMe';
-import Blog from 'views/Blog';
+import Contact from 'pages/Contact';
+import Shop from 'pages/Shop';
+import Consultation from 'pages/Consultation';
+import Collaboration from 'pages/Collaboration';
+import OnePager from 'pages/OnePager/OnePager';
+import LifeQm from 'pages/LifeQm';
+import AboutMe from 'pages/AboutMe';
+import Blog from 'pages/Blog';
 import MainTemplate from '../templates/MainTemplate';
 
 const Root = () => (

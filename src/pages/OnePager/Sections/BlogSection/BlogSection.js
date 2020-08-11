@@ -1,8 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 import Arrows from 'assets/images/smallerArrows.jpg';
-import { MainWrapper, RowWrapper, ColumnWrapper } from 'components/atoms/Wrappers/Wrappers';
-import { SHeader, MParagraphBold } from 'components/atoms/Headers/Headers';
+import { MainWrapper, RowWrapper, ColumnWrapper } from 'utils/Wrappers/Wrappers';
+import { SHeader, MParagraphBold } from 'utils/Headers/Headers';
 import SectionBreak from 'components/molecules/SectionBreak/SectionBreak';
 import LogoButton from 'components/atoms/LogoButton/LogoButton';
 

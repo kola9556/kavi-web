@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import IconBox from 'components/molecules/IconBox/IconBox';
-import { MParagraph, BoldSpan } from 'components/atoms/Headers/Headers';
-import { MainWrapper, ColumnWrapper, RowWrapper } from 'components/atoms/Wrappers/Wrappers';
-import SectionBreak from '../../../molecules/SectionBreak/SectionBreak';
-import DotsAndButton from '../../../molecules/DotsAndButton/DotsAndButton';
+import { MParagraph, BoldSpan } from 'utils/Headers/Headers';
+import { MainWrapper, ColumnWrapper, RowWrapper } from 'utils/Wrappers/Wrappers';
+import SectionBreak from '../../../../components/molecules/SectionBreak/SectionBreak';
+import DotsAndButton from '../../../../components/molecules/DotsAndButton/DotsAndButton';
 
 const SectionWrapper = styled(RowWrapper)`
   position: relative;

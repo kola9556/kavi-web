@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import LogoW from 'assets/images/logoW.jpg';
 import PropTypes from 'prop-types';
 import ArrowIcon from 'components/atoms/ArrowIcon/ArrowIcon';
-import { XlHeaderBold, BlueHeader } from 'components/atoms/Headers/Headers';
+import { XlHeaderBold, BlueHeader } from 'utils/Headers/Headers';
 
 const SecBrWrapper = styled.div`
   display: flex;
