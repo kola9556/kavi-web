@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import { NavLink } from 'react-router-dom';
+import { PropTypes } from 'prop-types';
 import LogoKavi from 'assets/logos/logoK.jpg';
 import NavbarLink from 'components/atoms/NavbarLink/NavbarLink';
 import BlogLink from '../../atoms/BlogLink/BlogLink';
@@ -52,14 +53,20 @@ const NavlinksWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
 
-  ${({ blue }) =>
-    blue &&
+  ${({ color }) =>
+    color === 'blue' &&
     css`
       background-color: ${({ theme }) => theme.elemBlue};
     `}
+
+  ${({ color }) =>
+    color === 'about' &&
+    css`
+      background-color: rgb(199, 230, 247);
+    `}
 `;
 
-const Navigationbar = () => (
+const Navigationbar = ({ color }) => (
   <MainWrapper>
     <Logo to="/" />
     <NavigationWrapper>
@@ -68,7 +75,7 @@ const Navigationbar = () => (
         <NavbarLink to="/lifeqm">Life QM</NavbarLink>
         <BlogLink to="/blog" />
       </NavlinksWrapper>
-      <NavlinksWrapper blue>
+      <NavlinksWrapper color={color}>
         <NavbarLink secondary to="/consultation">
           Konsultacje i Szkolenia
         </NavbarLink>
@@ -83,4 +90,11 @@ const Navigationbar = () => (
   </MainWrapper>
 );
 
+Navigationbar.propTypes = {
+  color: PropTypes.oneOf(['blue', 'about']),
+};
+
+Navigationbar.defaultProps = {
+  color: 'blue',
+};
 export default Navigationbar;

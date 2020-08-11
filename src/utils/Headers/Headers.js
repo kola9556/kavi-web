@@ -2,6 +2,13 @@
 
 import styled from 'styled-components';
 
+const XxlHeading = styled.h1`
+  margin: 0;
+  font-size: 5.6rem;
+  font-weight: 700;
+  color: ${({ theme }) => theme.navyblueText};
+`;
+
 const XlHeader = styled.h2`
   margin: 0;
   font-size: 2.6rem;
@@ -23,6 +30,13 @@ const BlueHeader = styled.h2`
 const SHeader = styled.h3`
   margin: 0;
   font-size: 2rem;
+  font-weight: 600;
+  color: ${({ theme }) => theme.navyblueText};
+`;
+
+const XsHeader = styled.h3`
+  margin: 0;
+  font-size: 1.8rem;
   font-weight: 600;
   color: ${({ theme }) => theme.navyblueText};
 `;
@@ -61,11 +75,13 @@ const BoldSpan = styled.span`
 `;
 
 export {
+  XxlHeading,
   XlHeader,
   XlHeaderBold,
   BlueHeader,
   SHeader,
   SHeaderBold,
+  XsHeader,
   MParagraph,
   MParagraphBold,
   SParagraph,

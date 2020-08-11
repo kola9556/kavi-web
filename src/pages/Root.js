@@ -6,7 +6,7 @@ import Consultation from 'pages/Consultation';
 import Collaboration from 'pages/Collaboration';
 import OnePager from 'pages/OnePager/OnePager';
 import LifeQm from 'pages/LifeQm';
-import AboutMe from 'pages/AboutMe';
+import AboutMe from 'pages/AboutMe/AboutMe';
 import Blog from 'pages/Blog';
 import MainTemplate from '../templates/MainTemplate';
 

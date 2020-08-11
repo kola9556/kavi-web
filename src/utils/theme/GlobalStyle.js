@@ -19,7 +19,7 @@ const GlobalStyle = createGlobalStyle`
   
   body {
     margin:0;
-    padding-top: 4.6rem;
+    padding-top: 5rem;
     font-size: 1.6rem;
     font-family: 'Mulish', sans-serif;
     
