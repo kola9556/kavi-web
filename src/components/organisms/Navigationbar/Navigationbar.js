@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import LogoKavi from 'components/atoms/LogoKavi/LogoKavi';
+import { NavLink } from 'react-router-dom';
+import LogoKavi from 'assets/logos/logoK.jpg';
 import NavbarLink from 'components/atoms/NavbarLink/NavbarLink';
 import BlogLink from '../../atoms/BlogLink/BlogLink';
 
@@ -9,18 +10,30 @@ const MainWrapper = styled.div`
   top: 0;
   right: 0;
   margin: 0;
-  height: 4.6rem;
+  height: 5rem;
   width: 100%;
   display: flex;
-  -webkit-box-pack: justify;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
   background-color: white;
   z-index: 200;
+  -webkit-box-shadow: -1px 1px 29px 0px rgba(199, 221, 227, 0.47);
+  -moz-box-shadow: -1px 1px 29px 0px rgba(199, 221, 227, 0.47);
+  box-shadow: -1px 1px 29px 0px rgba(199, 221, 227, 0.47);
 `;
 
-const Logo = styled(LogoKavi)``;
+const Logo = styled(NavLink)`
+  margin: 0;
+  min-width: 29rem;
+  height: 5rem;
+  background-image: url(${LogoKavi});
+  display: block;
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 60%;
+  border: none;
+`;
 
 const NavigationWrapper = styled.div`
   position: relative;

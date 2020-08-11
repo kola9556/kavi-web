@@ -52,7 +52,7 @@ const LogoRed = styled.span`
 const TopSquareImgBox = styled(SquareImgBox)`
   opacity: 1;
   animation-name: example;
-  animation-duration: 6s;
+  animation-duration: 4s;
 
   @keyframes example {
     from {
