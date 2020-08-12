@@ -88,13 +88,12 @@ const Icon = styled.a`
     insta &&
     css`
       background-image: url(${Insta});
-      animation: change 0.5s;
 
       :hover {
         background-image: url(${InstaRev});
-        animation: change 0.5s;
+        animation: changeInsta 0.5s;
 
-        @keyframes change {
+        @keyframes changeInsta {
           from {
             background-image: url(${Insta});
           }
@@ -109,16 +108,12 @@ const Icon = styled.a`
     facebook &&
     css`
       background-image: url(${Facebook});
-      animation: change 0.5s;
-
-      :onclick {
-      }
 
       :hover {
         background-image: url(${FacebookRev});
-        animation: change 0.5s;
+        animation: changeface 0.5s;
 
-        @keyframes change {
+        @keyframes changeface {
           from {
             background-image: url(${Facebook});
           }
