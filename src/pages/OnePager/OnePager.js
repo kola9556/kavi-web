@@ -11,7 +11,7 @@ import Footer from '../../components/organisms/Footer/Footer';
 
 const OnePager = () => (
   <>
-    <Navigationbar />
+    <Navigationbar pageType="onePager" />
     <TopSection />
     <HomeSection />
     <AboutSection />

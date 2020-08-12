@@ -1,8 +1,12 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import AboutImg from 'assets/images/about.jpg';
 import Navigationbar from 'components/organisms/Navigationbar/Navigationbar';
 import Greet from 'pages/AboutMe/components/Greet';
+import Insta from 'assets/images/instagramIcon.svg';
+import Facebook from 'assets/images/facebookIcon.svg';
+import InstaRev from 'assets/images/instagramIconRevers.svg';
+import FacebookRev from 'assets/images/facebookIconRevers.svg';
 
 const AboutMeWrapper = styled.div`
   margin: 0;
@@ -16,7 +20,7 @@ const AboutMeWrapper = styled.div`
 
 const GreetWrapper = styled.div`
   width: 100%;
-  height: 70.4rem;
+  height: 75vh;
   margin: 0;
   padding: 0;
   display: flex;
@@ -35,12 +39,13 @@ const GreetWrapper = styled.div`
       opacity: 1;
     }
   }
-  // Fake background make to give the opacity only for background
+  // Fake background made to give the opacity only for background
   :after {
     content: '';
     background-image: url(${AboutImg});
     background-position: 50% 50%;
     background-size: cover;
+    background-attachment: fixed;
     opacity: 0.3;
     top: 0;
     left: 0;
@@ -51,15 +56,102 @@ const GreetWrapper = styled.div`
   }
 `;
 
+const Medias = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  position: absolute;
+  bottom: -3.8rem;
+  animation: drop 2.5s;
+
+  @keyframes drop {
+    from {
+      bottom: 3rem;
+    }
+    to {
+      bottom: -3.8rem;
+    }
+  }
+`;
+
+const Icon = styled.a`
+  margin: 1rem;
+  width: 6rem;
+  height: 6rem;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: 80%;
+  cursor: pointer;
+
+  ${({ insta }) =>
+    insta &&
+    css`
+      background-image: url(${Insta});
+      animation: change 0.5s;
+
+      :hover {
+        background-image: url(${InstaRev});
+        animation: change 0.5s;
+
+        @keyframes change {
+          from {
+            background-image: url(${Insta});
+          }
+          to {
+            background-image: url(${InstaRev});
+          }
+        }
+      }
+    `}
+
+  ${({ facebook }) =>
+    facebook &&
+    css`
+      background-image: url(${Facebook});
+      animation: change 0.5s;
+
+      :onclick {
+      }
+
+      :hover {
+        background-image: url(${FacebookRev});
+        animation: change 0.5s;
+
+        @keyframes change {
+          from {
+            background-image: url(${Facebook});
+          }
+          to {
+            background-image: url(${FacebookRev});
+          }
+        }
+      }
+    `}
+`;
+
 const AboutMe = () => {
   return (
     <>
-      <Navigationbar color="about" />
+      <Navigationbar pageType="about" />
       <AboutMeWrapper>
         <GreetWrapper>
           <Greet />
+          <Medias>
+            <Icon
+              facebook
+              href="https://www.facebook.com/pg/Wa%C5%BCne-JAK-104715450959726/about/?ref=page_internal"
+              target="_blank"
+            />
+            <Icon insta href="https://www.instagram.com/kavi_foodies/" target="_blank" />
+          </Medias>
         </GreetWrapper>
-        <h1>O mnie</h1>
+        <h1>
+          <br />
+          <br />
+          <br />
+          <br />O mnie
+        </h1>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sit amet cursus elit.
           Quisque euismod lectus eu mauris consectetur tempor. In eget suscipit nisl, quis rhoncus

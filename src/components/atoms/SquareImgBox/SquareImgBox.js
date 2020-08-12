@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 const SquareImgBox = styled.img`
-  width: 428px;
-  height: 434px;
+  width: 42.8rem;
+  height: 43.4rem;
   object-fit: cover;
   z-index: 5;
 `;

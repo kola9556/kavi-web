@@ -17,6 +17,14 @@ const NavbarLink = styled(NavLink)`
   @media only screen and (min-width:1200px) {
     padding: 0 30px;
   }
+
+  @media only screen and (min-width: 1900px) {
+    padding: 0 40.8px;
+  }
+
+  @media only screen and (min-width: 2300px) {
+    padding: 0 45.7px;
+  }
   
   &.active {
     font-weight: 700;

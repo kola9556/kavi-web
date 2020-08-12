@@ -8,7 +8,7 @@ import Paragraph from 'components/atoms/Paragraph/Paragraph';
 
 const HomeWrapper = styled(MainWrapper)`
   flex-direction: row;
-  padding-left: 250px;
+  padding-left: 25rem;
 `;
 
 const RedBackground = styled(ImagesBackground)`
@@ -17,30 +17,30 @@ const RedBackground = styled(ImagesBackground)`
 
 const HomeRectaImgBox = styled(RectaImgBox)`
   position: relative;
-  right: 110px;
+  right: 11rem;
 `;
 // Right side Wrapper which contains all text in this section
 const HomeTextWrapper = styled(ColumnWrapper)`
   position: relative;
-  top: 75px;
-  right: 160px;
+  top: 7.5rem;
+  right: 16rem;
 `;
 
 // Wrapper which contains one section of the text (one box)
 const ParaWrapper = styled.div`
   display: flex;
-  padding-bottom: 20px;
+  padding-bottom: 2rem;
 
   ${({ first }) =>
     first &&
     css`
-      padding-left: 100px;
+      padding-left: 10rem;
     `}
 
   ${({ second }) =>
     second &&
     css`
-      padding-left: 160px;
+      padding-left: 16rem;
     `}
 `;
 
@@ -50,7 +50,7 @@ margin: 0;
 ${({ first }) =>
   first &&
   css`
-    font-size: 26px;
+    font-size: 2.6rem;
     font-weight: 600;
     text-transform: uppercase;
   `}
@@ -58,14 +58,14 @@ ${({ first }) =>
 ${({ second }) =>
   second &&
   css`
-    font-size: 18px;
+    font-size: 1.8rem;
     font-weight: 500;
   `}
 
 ${({ third }) =>
   third &&
   css`
-    font-size: 16px;
+    font-size: 1.6rem;
   `}
 `;
 

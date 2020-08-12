@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const BackgroundShape = styled.div`
   margin: 0;
-  height: 600px;
+  height: 85vh;
   display: flex;
   flex-direction: row;
   align-items: center;

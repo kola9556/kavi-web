@@ -53,20 +53,20 @@ const NavlinksWrapper = styled.div`
   align-items: center;
   justify-content: space-between;
 
-  ${({ color }) =>
-    color === 'blue' &&
+  ${({ pageType }) =>
+    pageType === 'onePager' &&
     css`
       background-color: ${({ theme }) => theme.elemBlue};
     `}
 
-  ${({ color }) =>
-    color === 'about' &&
+  ${({ pageType }) =>
+    pageType === 'about' &&
     css`
       background-color: rgb(199, 230, 247);
     `}
 `;
 
-const Navigationbar = ({ color }) => (
+const Navigationbar = ({ pageType }) => (
   <MainWrapper>
     <Logo to="/" />
     <NavigationWrapper>
@@ -75,7 +75,7 @@ const Navigationbar = ({ color }) => (
         <NavbarLink to="/lifeqm">Life QM</NavbarLink>
         <BlogLink to="/blog" />
       </NavlinksWrapper>
-      <NavlinksWrapper color={color}>
+      <NavlinksWrapper pageType={pageType}>
         <NavbarLink secondary to="/consultation">
           Konsultacje i Szkolenia
         </NavbarLink>
@@ -91,10 +91,10 @@ const Navigationbar = ({ color }) => (
 );
 
 Navigationbar.propTypes = {
-  color: PropTypes.oneOf(['blue', 'about']),
+  pageType: PropTypes.oneOf(['onePager', 'about']),
 };
 
 Navigationbar.defaultProps = {
-  color: 'blue',
+  pageType: 'onePager',
 };
 export default Navigationbar;

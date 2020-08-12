@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const XxlHeading = styled.h1`
   margin: 0;
-  font-size: 5.6rem;
+  font-size: 6.3rem;
   font-weight: 700;
   color: ${({ theme }) => theme.navyblueText};
 `;

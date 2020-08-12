@@ -30,6 +30,7 @@ const GrSecHeading = styled(XsHeader)`
   word-spacing: 0.3rem;
   letter-spacing: 0.2rem;
   text-transform: uppercase;
+  font-size: 2rem;
 `;
 
 const GrButton = styled(NavLink)`

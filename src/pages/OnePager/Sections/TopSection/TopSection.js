@@ -10,11 +10,11 @@ const TopWrapper = styled.div`
   width: 100%;
   height: 80vh;
   position: relative;
-  padding: 30px 150px 30px 300px;
+  padding: 3rem 15rem 3rem 22rem;
   display: flex;
   flex-direction: row;
   -webkit-box-pack: center;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
 `;
 
@@ -22,19 +22,23 @@ const TopWrapper = styled.div`
 const TopTextWrapper = styled.div`
   display: flex;
   flex-direction: column;
-  padding: 50px 50px 0 0;
+  margin: 5rem 10rem 0 0;
+
+  @media only screen and (min-width: 1500px) and (max-width: 1800px) {
+    margin: 5rem 20rem 0 0;
+  }
 `;
 
 const TopHeader = styled.h1`
   color: ${({ theme }) => theme.redText};
-  font-size: 60px;
+  font-size: 6rem;
   margin: 0;
   text-shadow: 1px 1px 1px #c1c1c1;
 `;
 
 const TopParagraph = styled(Paragraph)`
-  padding-left: 50px;
-  font-size: 30px;
+  padding-left: 5rem;
+  font-size: 3rem;
 `;
 
 // Created to colored and weight a part of the text
@@ -53,6 +57,7 @@ const TopSquareImgBox = styled(SquareImgBox)`
   opacity: 1;
   animation-name: example;
   animation-duration: 4s;
+  border-radius: 60px;
 
   @keyframes example {
     from {
@@ -72,8 +77,8 @@ const BlueShapeWrapper = styled.div`
   position: absolute;
   right: 0;
   top: 0px;
-  width: 1246px;
-  height: 800px;
+  width: 124.6rem;
+  height: 80vh;
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
@@ -94,11 +99,11 @@ const InvisibleText = styled(Paragraph)`
   visibility: hidden;
 
   @media only screen and (min-width: 1200px) {
-    padding: 0 30px;
+    padding: 0 3rem;
   }
 
   &.active {
-    font-weight: 700px;
+    font-weight: 700;
   }
 `;
 
@@ -120,10 +125,11 @@ const TopSection = () => {
             Styl Życia
           </TopHeader>
           <TopParagraph>
-            Jakość jest ważna,
-            <br /> bo to <LogoBlack>WAŻNE,</LogoBlack>
-            <LogoRed> JAK</LogoRed>
-            <br /> przeżyjesz swoje życie.
+            Jakość jest ważna.
+            <br /> <LogoBlack>WAŻNE,</LogoBlack>
+            <LogoRed> JAK </LogoRed>
+            przeżyjesz <br />
+            swoje życie.
           </TopParagraph>
         </TopTextWrapper>
         <TopSquareImgBox src={KaviBlue} />
