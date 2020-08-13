@@ -3,10 +3,14 @@ import styled, { css } from 'styled-components';
 import AboutImg from 'assets/images/about.jpg';
 import Navigationbar from 'components/organisms/Navigationbar/Navigationbar';
 import Greet from 'pages/AboutMe/components/Greet';
+import MainButton from 'components/atoms/MainButton/MainButton';
 import Insta from 'assets/images/instagramIcon.svg';
 import Facebook from 'assets/images/facebookIcon.svg';
 import InstaRev from 'assets/images/instagramIconRevers.svg';
 import FacebookRev from 'assets/images/facebookIconRevers.svg';
+import { XxlHeading, MParagraph, SParagraph, BoldSpanS, BoldSpan } from 'utils/Headers/Headers';
+import KaviCanion from 'assets/images/kaviCanion.jpg';
+import KaviHats from 'assets/images/kaviHats.jpg';
 
 const AboutMeWrapper = styled.div`
   margin: 0;
@@ -125,6 +129,46 @@ const Icon = styled.a`
     `}
 `;
 
+const AbContentWrapper = styled.div`
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+`;
+
+const AbMainContent = styled.div`
+  margin: 15rem 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+`;
+
+const AbContentHeading = styled(XxlHeading)`
+  margin: 4rem 0;
+`;
+
+const AbGridItems = styled.div`
+  display: grid;
+  grid-template-columns: 42rem 42rem;
+  align-items: center;
+  justify-items: center;
+  grid-gap: 2rem 3rem;
+`;
+
+const AbParagraph = styled(MParagraph)`
+  width: 42rem;
+`;
+
+const AbImage = styled.img`
+  max-width: 80%;
+  height: auto;
+`;
+
 const AboutMe = () => {
   return (
     <>
@@ -141,101 +185,69 @@ const AboutMe = () => {
             <Icon insta href="https://www.instagram.com/kavi_foodies/" target="_blank" />
           </Medias>
         </GreetWrapper>
-        <h1>
-          <br />
-          <br />
-          <br />
-          <br />O mnie
-        </h1>
+        <AbContentWrapper>
+          <AbMainContent>
+            <AbContentHeading>O mnie</AbContentHeading>
+            <AbGridItems>
+              <AbParagraph>
+                Kiedyś żyłam w rzeczywistości czarnych scenariuszy, negatywnych myśłi i ciągłego
+                narzekania. Nie radziłam sobie dobrze z wyzwaniami tego świata. Każda porażka
+                urastała do rangi życiowej katastrofy. Widziałam świat jako wrogie miejsce, bez
+                potencjału, bez możliwości rozwoju dla mnie. Nie wierzyłam w swoje siły. Zagubiłam
+                gdzieś poczucie własnej wartości.
+                <br />
+                <br />
+                Jednak w moim życiu nastąpił moment olśnienia. Postanowiłam dokonać{' '}
+                <BoldSpanS>ZMIANY</BoldSpanS>. <br />
+                Tak, aby wreszcie móc oddychać swobodnie i rozwinąć skrzydła. <br />
+                Tak, by wreszcie przestać ograniczać swój rozwój. <br />
+                Tak, by w końcu poczuć się wystarczająco dobra, kompetentna, skuteczna. <br />
+                Tak, by zrozumieć naturę szczęścia.
+              </AbParagraph>
+              <AbImage src={KaviHats} />
+              <AbImage src={KaviCanion} />
+              <AbParagraph>
+                Weszłam na drogę poszukiwań, jak dokonać <BoldSpanS>SKUTECZNEJ ZMIANY</BoldSpanS>.
+                Odszukałam sposoby i tricki, by to zrobić. Długoletnie poszukiwania i badania
+                zaowocowały osobistą zmianą oraz książką Autopilot Szczęścia. W końcu stalam się
+                ekspertem ds. Świadomego Optymizmu. <br />
+                Mam udział w <BoldSpanS> PODNOSZENIU JAKOŚCI ŻYCIA</BoldSpanS> moich klientów.
+                Przeprowadzam ich skutecznie przez <BoldSpanS>PROCES ZMIANY</BoldSpanS> do
+                <BoldSpanS> ZDROWEGO I AKTYWNEGO</BoldSpanS> trybu życia a przede wszystkim do
+                <BoldSpanS> POZYTYWNEGO WYSYCENIA EMOCJONALNEGO UMYSŁU</BoldSpanS>. <br />W tym
+                procesie dbamy o umiejętność skutecznego radzenia sobie w świecie ciągłych zmian,
+                pozytywne i PROAKTYWNE podejście do życia, rozumienie emocji oraz silne i zdrowe
+                ciało. Celem jest spełnienie i trwałe poczucie szczęścia. Dlatego mówimy tu o
+                dążeniu do <BoldSpanS>SZCZĘŚLIWEGO TRYBU ŻYCIA</BoldSpanS>.
+              </AbParagraph>
+              <AbParagraph>
+                Pracuję w przekonaniu, że <BoldSpanS>ŚWIADOMY OPTYMIZM</BoldSpanS> to skuteczne
+                narzędzie dla każdego, w konfrontacji z wyzwaniami dynamicznie zmieniającego się
+                świata. Towarzyszę osobiście lub wirtualnie moim klientom:{' '}
+                <BoldSpanS> INSPIRUJĘ, MODERUJĘ</BoldSpanS>i <BoldSpanS>PODTRZYMUJĘ</BoldSpanS> ich{' '}
+                <BoldSpanS>PROCES ZMIAN</BoldSpanS>, aż <BoldSpanS>DO OSIĄGNIĘCIA</BoldSpanS>{' '}
+                zamierzonych CELÓW. <br />
+                <br />
+                <SParagraph>
+                  Zapraszam do kontaktu,
+                  <br /> <BoldSpanS>Kavi Kozłowska.</BoldSpanS>
+                </SParagraph>
+              </AbParagraph>
+            </AbGridItems>
+            <MainButton to="/consultation">Konsultacje i Szkolenia</MainButton>
+          </AbMainContent>
+        </AbContentWrapper>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sit amet cursus elit.
-          Quisque euismod lectus eu mauris consectetur tempor. In eget suscipit nisl, quis rhoncus
-          turpis. Donec ut dui finibus, vehicula elit nec, placerat nulla. Duis porta nibh a varius
-          venenatis. Sed eros augue, imperdiet id semper quis, ultricies ac nisi. Quisque et
-          ultrices lacus, et lacinia neque. Nam gravida magna nec porta egestas. Curabitur sit amet
-          magna felis. Proin est quam, elementum vel sodales eget, porta in sapien. Cras tempor
-          tortor eget varius mattis. Sed posuere ligula eu bibendum tincidunt. Orci varius natoque
-          penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque porta eros ac
-          dolor finibus, et accumsan urna pulvinar. Aliquam scelerisque pretium tellus, sit amet
-          consequat dolor pretium ut. Fusce tincidunt, risus quis gravida sagittis, nulla enim
-          ullamcorper nibh, mattis tempus metus velit eget leo. Curabitur varius dictum interdum. In
-          sit amet volutpat metus. Ut a egestas arcu. Nam luctus nulla sit amet sem dignissim
-          gravida. Quisque cursus nec ante ac suscipit. Donec vestibulum purus vitae augue aliquam
-          tempus quis nec nunc. Aenean non metus id libero posuere aliquet vel porttitor est. Sed
-          eros justo, feugiat ut finibus nec, bibendum rutrum libero. Nulla volutpat condimentum
-          libero vel finibus. Curabitur tincidunt felis id laoreet ullamcorper. Duis gravida, metus
-          et imperdiet facilisis, urna odio rhoncus nisl, sed tincidunt nunc augue vitae dui.
-          Curabitur interdum ex neque, sit amet scelerisque velit hendrerit nec. Pellentesque sem
-          turpis, mollis at metus at, semper mattis lectus. Phasellus sed metus risus. Aenean
-          elementum dignissim nisi, nec elementum quam. Donec id mauris neque. Proin velit nisl,
-          condimentum in pulvinar a, consequat et leo. Nullam congue nulla turpis, ut mollis orci
-          venenatis tempor. Vestibulum a pretium nunc. Vestibulum tincidunt erat laoreet
-          pellentesque imperdiet. Morbi imperdiet euismod lacus eleifend commodo. Fusce malesuada
-          luctus porta. Aenean consectetur massa sit amet enim sollicitudin, ut semper urna
-          sagittis. Curabitur rhoncus egestas sapien porta aliquam. Nunc sodales augue vitae
-          faucibus euismod. Nunc tempus lacus vitae urna semper scelerisque. Phasellus condimentum
-          bibendum posuere. Phasellus sit amet odio justo. Etiam quis ornare metus. Vivamus suscipit
-          at lacus nec commodo. Fusce suscipit orci eu neque vestibulum, eu euismod lacus hendrerit.
-          Morbi varius, nisl ut vehicula ultrices, dolor nibh maximus sapien, vitae sagittis purus
-          purus necLorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sit amet cursus
-          elit. Quisque euismod lectus eu mauris consectetur tempor. In eget suscipit nisl, quis
-          rhoncus turpis. Donec ut dui finibus, vehicula elit nec, placerat nulla. Duis porta nibh a
-          varius venenatis. Sed eros augue, imperdiet id semper quis, ultricies ac nisi. Quisque et
-          ultrices lacus, et lacinia neque. Nam gravida magna nec porta egestas. Curabitur sit amet
-          magna felis. Proin est quam, elementum vel sodales eget, porta in sapien. Cras tempor
-          tortor eget varius mattis. Sed posuere ligula eu bibendum tincidunt. Orci varius natoque
-          penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque porta eros ac
-          dolor finibus, et accumsan urna pulvinar. Aliquam scelerisque pretium tellus, sit amet
-          consequat dolor pretium ut. Fusce tincidunt, risus quis gravida sagittis, nulla enim
-          ullamcorper nibh, mattis tempus metus velit eget leo. Curabitur varius dictum interdum. In
-          sit amet volutpat metus. Ut a egestas arcu. Nam luctus nulla sit amet sem dignissim
-          gravida. Quisque cursus nec ante ac suscipit. Donec vestibulum purus vitae augue aliquam
-          tempus quis nec nunc. Aenean non metus id libero posuere aliquet vel porttitor est. Sed
-          eros justo, feugiat ut finibus nec, bibendum rutrum libero. Nulla volutpat condimentum
-          libero vel finibus. Curabitur tincidunt felis id laoreet ullamcorper. Duis gravida, metus
-          et imperdiet facilisis, urna odio rhoncus nisl, sed tincidunt nunc augue vitae dui.
-          Curabitur interdum ex neque, sit amet scelerisque velit hendrerit nec. Pellentesque sem
-          turpis, mollis at metus at, semper mattis lectus. Phasellus sed metus risus. Aenean
-          elementum dignissim nisi, nec elementum quam. Donec id mauris neque. Proin velit nisl,
-          condimentum in pulvinar a, consequat et leo. Nullam congue nulla turpis, ut mollis orci
-          venenatis tempor. Vestibulum a pretium nunc. Vestibulum tincidunt erat laoreet
-          pellentesque imperdiet. Morbi imperdiet euismod lacus eleifend commodo. Fusce malesuada
-          luctus porta. Aenean consectetur massa sit amet enim sollicitudin, ut semper urna
-          sagittis. Curabitur rhoncus egestas sapien porta aliquam. Nunc sodales augue vitae
-          faucibus euismod. Nunc tempus lacus vitae urna semper scelerisque. Phasellus condimentum
-          bibendum posuere. Phasellus sit amet odio justo. Etiam quis ornare metus. Vivamus suscipit
-          at lacus nec commodo. Fusce suscipit orci eu neque vestibulum, eu euismod lacus hendrerit.
-          Morbi varius, nisl ut vehicula ultrices, dolor nibh maximus sapien, vitae sagittis purus
-          purus necLorem ipsum dolor sit amet, consectetur adipiscing elit. Duis sit amet cursus
-          elit. Quisque euismod lectus eu mauris consectetur tempor. In eget suscipit nisl, quis
-          rhoncus turpis. Donec ut dui finibus, vehicula elit nec, placerat nulla. Duis porta nibh a
-          varius venenatis. Sed eros augue, imperdiet id semper quis, ultricies ac nisi. Quisque et
-          ultrices lacus, et lacinia neque. Nam gravida magna nec porta egestas. Curabitur sit amet
-          magna felis. Proin est quam, elementum vel sodales eget, porta in sapien. Cras tempor
-          tortor eget varius mattis. Sed posuere ligula eu bibendum tincidunt. Orci varius natoque
-          penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque porta eros ac
-          dolor finibus, et accumsan urna pulvinar. Aliquam scelerisque pretium tellus, sit amet
-          consequat dolor pretium ut. Fusce tincidunt, risus quis gravida sagittis, nulla enim
-          ullamcorper nibh, mattis tempus metus velit eget leo. Curabitur varius dictum interdum. In
-          sit amet volutpat metus. Ut a egestas arcu. Nam luctus nulla sit amet sem dignissim
-          gravida. Quisque cursus nec ante ac suscipit. Donec vestibulum purus vitae augue aliquam
-          tempus quis nec nunc. Aenean non metus id libero posuere aliquet vel porttitor est. Sed
-          eros justo, feugiat ut finibus nec, bibendum rutrum libero. Nulla volutpat condimentum
-          libero vel finibus. Curabitur tincidunt felis id laoreet ullamcorper. Duis gravida, metus
-          et imperdiet facilisis, urna odio rhoncus nisl, sed tincidunt nunc augue vitae dui.
-          Curabitur interdum ex neque, sit amet scelerisque velit hendrerit nec. Pellentesque sem
-          turpis, mollis at metus at, semper mattis lectus. Phasellus sed metus risus. Aenean
-          elementum dignissim nisi, nec elementum quam. Donec id mauris neque. Proin velit nisl,
-          condimentum in pulvinar a, consequat et leo. Nullam congue nulla turpis, ut mollis orci
-          venenatis tempor. Vestibulum a pretium nunc. Vestibulum tincidunt erat laoreet
-          pellentesque imperdiet. Morbi imperdiet euismod lacus eleifend commodo. Fusce malesuada
-          luctus porta. Aenean consectetur massa sit amet enim sollicitudin, ut semper urna
-          sagittis. Curabitur rhoncus egestas sapien porta aliquam. Nunc sodales augue vitae
-          faucibus euismod. Nunc tempus lacus vitae urna semper scelerisque. Phasellus condimentum
-          bibendum posuere. Phasellus sit amet odio justo. Etiam quis ornare metus. Vivamus suscipit
-          at lacus nec commodo. Fusce suscipit orci eu neque vestibulum, eu euismod lacus hendrerit.
-          Morbi varius, nisl ut vehicula ultrices, dolor nibh maximus sapien, vitae sagittis purus
-          purus nec
+          Weszłam na drogę poszukiwań, jak dokonać SKUTECZNEJ ZMIANY. Odszukałam sposoby i tricki,
+          by to zrobić. Długoletnie poszukiwania i badania zaowocowały osobistą zmianą oraz książką
+          Autopilot Szczęścia. W końcu stalam się ekspertem ds. Świadomego Optymizmu. Mam udział w
+          PODNOSZENIU JAKOŚCI ŻYCIA moich klientów. Przeprowadzam ich skutecznie przez PROCES ZMIANY
+          do ZDROWEGO I AKTYWNEGO trybu życia a przede wszystkim do POZYTYWNEGO WYSYCENIA
+          EMOCJONALNEGO UMYSŁU. W tym procesie dbamy o umiejętność skutecznego radzenia sobie w
+          świecie ciągłych zmian, pozytywne i PROAKTYWNE podejście do życia, rozumienie emocji oraz
+          silne i zdrowe ciało. Celem jest spełnienie i trwałe poczucie szczęścia. Dlatego mówimy tu
+          o dążeniu do SZCZĘŚLIWEGO TRYBU ŻYCIA. Pracuję w przekonaniu, że ŚWIADOMY OPTYMIZM to
+          skuteczne narzędzie dla każdego, w konfrontacji z wyzwaniami dynamicznie
         </p>
       </AboutMeWrapper>
     </>

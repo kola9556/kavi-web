@@ -2,9 +2,16 @@
 
 import styled from 'styled-components';
 
-const XxlHeading = styled.h1`
+const XxxlHeading = styled.h1`
   margin: 0;
   font-size: 6.3rem;
+  font-weight: 700;
+  color: ${({ theme }) => theme.navyblueText};
+`;
+
+const XxlHeading = styled.h1`
+  margin: 0;
+  font-size: 4.3rem;
   font-weight: 700;
   color: ${({ theme }) => theme.navyblueText};
 `;
@@ -74,7 +81,12 @@ const BoldSpan = styled.span`
   font-weight: 800;
 `;
 
+const BoldSpanS = styled.span`
+  font-weight: 700;
+`;
+
 export {
+  XxxlHeading,
   XxlHeading,
   XlHeader,
   XlHeaderBold,
@@ -87,4 +99,5 @@ export {
   SParagraph,
   XsParagraph,
   BoldSpan,
+  BoldSpanS,
 };

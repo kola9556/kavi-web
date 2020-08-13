@@ -1,8 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
+import MainButton from 'components/atoms/MainButton/MainButton';
 import KaviProfile from 'assets/images/kaviProfile.jpg';
-import { XxlHeading, XsHeader, SParagraph } from 'utils/Headers/Headers';
+import { XxxlHeading, XsHeader, SParagraph } from 'utils/Headers/Headers';
 
 const GrWrapper = styled.div`
   display: flex;
@@ -23,7 +24,7 @@ const GrImg = styled.div`
   opacity: 0.98;
 `;
 
-const GrHeading = styled(XxlHeading)`
+const GrHeading = styled(XxxlHeading)`
   margin-bottom: 0.5rem;
 `;
 const GrSecHeading = styled(XsHeader)`
@@ -33,42 +34,6 @@ const GrSecHeading = styled(XsHeader)`
   font-size: 2rem;
 `;
 
-const GrButton = styled(NavLink)`
-  margin: 3rem 0;
-  border-radius: 2rem;
-  background-color: ${({ theme }) => theme.lightBlueText};
-  text-decoration: none;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-`;
-
-const ButtonParagraph = styled(SParagraph)`
-  padding: 1rem 2rem;
-  border-radius: 2rem;
-  color: white;
-  text-transform: uppercase;
-  font-weight: 700;
-
-  :hover {
-    animation: changecolor 1.5s;
-    background-color: white;
-    color: ${({ theme }) => theme.lightBlueText};
-
-    @keyframes changecolor {
-      from {
-        background-color: ${({ theme }) => theme.lightBlueText};
-        color: ${({ theme }) => theme.lightBlueText};
-      }
-      to {
-        background-color: white;
-        color: ${({ theme }) => theme.lightBlueText};
-      }
-    }
-  }
-`;
-
 const Greet = () => {
   return (
     <>
@@ -76,9 +41,7 @@ const Greet = () => {
         <GrImg />
         <GrHeading>Cześć! Jestem Kavi,</GrHeading>
         <GrSecHeading>trener skutecznej zmiany i bloger</GrSecHeading>
-        <GrButton to="/shop">
-          <ButtonParagraph>Autorka „Autopilot Szczęścia”</ButtonParagraph>
-        </GrButton>
+        <MainButton>Autorka „Autopilot Szczęścia”</MainButton>
       </GrWrapper>
     </>
   );
