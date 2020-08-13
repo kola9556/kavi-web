@@ -1,14 +1,16 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
+import AboutBottom from 'assets/images/aboutBottom.jpg';
 import AboutImg from 'assets/images/about.jpg';
 import Navigationbar from 'components/organisms/Navigationbar/Navigationbar';
 import Greet from 'pages/AboutMe/components/Greet';
+import Footer from 'components/organisms/Footer/Footer';
 import MainButton from 'components/atoms/MainButton/MainButton';
 import Insta from 'assets/images/instagramIcon.svg';
 import Facebook from 'assets/images/facebookIcon.svg';
 import InstaRev from 'assets/images/instagramIconRevers.svg';
 import FacebookRev from 'assets/images/facebookIconRevers.svg';
-import { XxlHeading, MParagraph, SParagraph, BoldSpanS, BoldSpan } from 'utils/Headers/Headers';
+import { XxlHeading, MParagraph, SParagraph, BoldSpanS } from 'utils/Headers/Headers';
 import KaviCanion from 'assets/images/kaviCanion.jpg';
 import KaviHats from 'assets/images/kaviHats.jpg';
 import Carousel from 'components/organisms/Carousel/Carousel';
@@ -141,7 +143,7 @@ const AbContentWrapper = styled.div`
 `;
 
 const AbMainContent = styled.div`
-  margin: 15rem 0;
+  margin: 15rem 0 20rem 0;
   padding: 0;
   display: flex;
   flex-direction: column;
@@ -168,6 +170,43 @@ const AbParagraph = styled(MParagraph)`
 const AbImage = styled.img`
   max-width: 80%;
   height: auto;
+`;
+
+const LastPostsWrapper = styled.div`
+  margin: 0;
+  margin-bottom: 30rem;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+`;
+
+const LastPostsHeading = styled(AbContentHeading)`
+  margin: 1rem 0;
+`;
+
+const LastPostsParagraph = styled(SParagraph)`
+  width: 40%;
+  margin-bottom: 8rem;
+  text-align: center;
+`;
+
+const ToBlogButton = MainButton;
+
+const BottomBackground = styled.div`
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 80vh;
+  background-image: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0) 52%),
+    url(${AboutBottom});
+  background-position: 100% 30%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  opacity: 0.6;
 `;
 
 const AboutMe = () => {
@@ -237,20 +276,18 @@ const AboutMe = () => {
             </AbGridItems>
             <MainButton to="/consultation">Konsultacje i Szkolenia</MainButton>
           </AbMainContent>
-          <Carousel />
+          <LastPostsWrapper>
+            <LastPostsHeading>Ostatnie posty</LastPostsHeading>
+            <LastPostsParagraph>
+              „Ważne JAK!” to dawka konkretnej wiedzy o sile osobistego wpływu na jakość życia oraz
+              o skutecznym przeprowadzaniu życiowych zmian.
+            </LastPostsParagraph>
+            <Carousel />
+            <ToBlogButton to="/blog">Wszystkie wpisy</ToBlogButton>
+          </LastPostsWrapper>
+          <BottomBackground />
         </AbContentWrapper>
-        <p>
-          Weszłam na drogę poszukiwań, jak dokonać SKUTECZNEJ ZMIANY. Odszukałam sposoby i tricki,
-          by to zrobić. Długoletnie poszukiwania i badania zaowocowały osobistą zmianą oraz książką
-          Autopilot Szczęścia. W końcu stalam się ekspertem ds. Świadomego Optymizmu. Mam udział w
-          PODNOSZENIU JAKOŚCI ŻYCIA moich klientów. Przeprowadzam ich skutecznie przez PROCES ZMIANY
-          do ZDROWEGO I AKTYWNEGO trybu życia a przede wszystkim do POZYTYWNEGO WYSYCENIA
-          EMOCJONALNEGO UMYSŁU. W tym procesie dbamy o umiejętność skutecznego radzenia sobie w
-          świecie ciągłych zmian, pozytywne i PROAKTYWNE podejście do życia, rozumienie emocji oraz
-          silne i zdrowe ciało. Celem jest spełnienie i trwałe poczucie szczęścia. Dlatego mówimy tu
-          o dążeniu do SZCZĘŚLIWEGO TRYBU ŻYCIA. Pracuję w przekonaniu, że ŚWIADOMY OPTYMIZM to
-          skuteczne narzędzie dla każdego, w konfrontacji z wyzwaniami dynamicznie
-        </p>
+        <Footer about="true" />
       </AboutMeWrapper>
     </>
   );

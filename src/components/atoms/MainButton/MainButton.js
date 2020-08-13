@@ -5,7 +5,7 @@ import { SParagraph } from 'utils/Headers/Headers';
 import { NavLink } from 'react-router-dom';
 
 const Button = styled(NavLink)`
-  margin: 3rem 0;
+  margin: 5rem 0;
   border-radius: 2rem;
   background-color: ${({ theme }) => theme.lightBlueText};
   text-decoration: none;

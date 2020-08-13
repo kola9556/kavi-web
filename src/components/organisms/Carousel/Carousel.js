@@ -7,6 +7,7 @@ import Lentils from 'assets/images/lentils.jpg';
 import Provisions from 'assets/images/provisions.jpg';
 
 const CaWrapper = styled.div`
+  margin-bottom: 2rem;
   background-color: white;
   display: flex;
   justify-content: center;
@@ -76,6 +77,7 @@ const Text = styled(SParagraph)`
   width: 28rem;
   margin: 0.5rem 0 2rem 2rem;
   font-weight: 500;
+  color: rgba(91, 111, 126, 1);
 `;
 
 const Posts = [

@@ -1,9 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
 import MainButton from 'components/atoms/MainButton/MainButton';
 import KaviProfile from 'assets/images/kaviProfile.jpg';
-import { XxxlHeading, XsHeader, SParagraph } from 'utils/Headers/Headers';
+import { XxxlHeading, XsHeader } from 'utils/Headers/Headers';
 
 const GrWrapper = styled.div`
   display: flex;

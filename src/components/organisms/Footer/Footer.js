@@ -1,5 +1,6 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
+import PropTypes from 'prop-types';
 import Bead from 'assets/images/bead.svg';
 import MediaIcon from 'components/atoms/MediaIcon/MediaIcon';
 import InfoBox from 'components/molecules/InfoBox/InfoBox';
@@ -8,6 +9,13 @@ import { MainWrapper, RowWrapper, ColumnWrapper } from 'utils/Wrappers/Wrappers'
 const FooterWrapper = styled(MainWrapper)`
   padding: 3rem 5rem 0 5rem;
   background-color: ${({ theme }) => theme.footerBackground};
+
+  ${({ about }) =>
+    about &&
+    css`
+      background: rgb(233, 231, 231);
+      background: linear-gradient(0deg, rgba(233, 231, 231, 1) 17%, rgba(250, 253, 254, 1) 100%);
+    `}
 `;
 
 const ContentWrapper = styled(RowWrapper)`
@@ -50,10 +58,10 @@ const Copyrights = styled.p`
   padding-top: 2rem;
 `;
 
-const Footer = () => {
+const Footer = ({ about }) => {
   return (
     <>
-      <FooterWrapper>
+      <FooterWrapper about={about}>
         <ContentWrapper>
           <InfoBox />
           <BeadIcon />
@@ -73,6 +81,14 @@ const Footer = () => {
       </FooterWrapper>
     </>
   );
+};
+
+Footer.propTypes = {
+  about: PropTypes.bool,
+};
+
+Footer.defaultProps = {
+  about: 'false',
 };
 
 export default Footer;
