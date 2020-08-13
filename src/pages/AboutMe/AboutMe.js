@@ -11,6 +11,7 @@ import FacebookRev from 'assets/images/facebookIconRevers.svg';
 import { XxlHeading, MParagraph, SParagraph, BoldSpanS, BoldSpan } from 'utils/Headers/Headers';
 import KaviCanion from 'assets/images/kaviCanion.jpg';
 import KaviHats from 'assets/images/kaviHats.jpg';
+import Carousel from 'components/organisms/Carousel/Carousel';
 
 const AboutMeWrapper = styled.div`
   margin: 0;
@@ -236,6 +237,7 @@ const AboutMe = () => {
             </AbGridItems>
             <MainButton to="/consultation">Konsultacje i Szkolenia</MainButton>
           </AbMainContent>
+          <Carousel />
         </AbContentWrapper>
         <p>
           Weszłam na drogę poszukiwań, jak dokonać SKUTECZNEJ ZMIANY. Odszukałam sposoby i tricki,
