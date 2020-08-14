@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
-import logoBlog from 'assets/logos/WazneJak.jpg';
+import logoBlog from 'assets/logos/wazneJak.jpg';
 import NavbarLink from '../NavbarLink/NavbarLink';
 
 const BlogLogo = styled(NavLink)`

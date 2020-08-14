@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Paragraph from 'components/atoms/Paragraph/Paragraph';
-import KaviBlue from 'assets/images/KaviBlue.jpg';
+import KaviBlue from 'assets/images/kaviBlue.jpg';
 import SquareImgBox from 'components/atoms/SquareImgBox/SquareImgBox';
 import BackgroundShape from 'components/atoms/BackgroundShape/BackgroundShape';
 

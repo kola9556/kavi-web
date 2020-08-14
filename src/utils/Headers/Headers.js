@@ -81,6 +81,10 @@ const BoldSpan = styled.span`
   font-weight: 800;
 `;
 
+const BlueSpan = styled(BoldSpan)`
+  color: ${({ theme }) => theme.expressiveBlue};
+`;
+
 const BoldSpanS = styled.span`
   font-weight: 700;
 `;
@@ -100,4 +104,5 @@ export {
   XsParagraph,
   BoldSpan,
   BoldSpanS,
+  BlueSpan,
 };

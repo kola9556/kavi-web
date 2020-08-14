@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import SquareImgBox from 'components/atoms/SquareImgBox/SquareImgBox';
 import ImagesBackground from 'components/atoms/ImagesBackground/ImagesBackground';
-import KaviOrange from 'assets/images/KaviOrange.jpg';
+import KaviOrange from 'assets/images/kaviOrange.jpg';
 import { SHeaderBold, MParagraph, BoldSpan } from 'utils/Headers/Headers';
 import { ColumnWrapper, RowWrapper, MainWrapper } from 'utils/Wrappers/Wrappers';
 import SectionBreak from '../../../../components/molecules/SectionBreak/SectionBreak';

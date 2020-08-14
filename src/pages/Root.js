@@ -1,4 +1,5 @@
 import React from 'react';
+import { paths } from 'utils/paths';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Contact from 'pages/Contact';
 import Shop from 'pages/Shop';
@@ -15,14 +16,14 @@ const Root = () => (
     <BrowserRouter>
       <MainTemplate>
         <Switch>
-          <Route exact path="/" component={OnePager} />
-          <Route exact path="/aboutme" component={AboutMe} />
-          <Route exact path="/lifeqm" component={LifeQm} />
-          <Route exact path="/blog" component={Blog} />
-          <Route exact path="/consultation" component={Consultation} />
-          <Route exact path="/shop" component={Shop} />
-          <Route exact path="/contact" component={Contact} />
-          <Route exact path="/collabo" component={Collaboration} />
+          <Route exact path={paths.main} component={OnePager} />
+          <Route exact path={paths.aboutme} component={AboutMe} />
+          <Route exact path={paths.lifeqm} component={LifeQm} />
+          <Route exact path={paths.blog} component={Blog} />
+          <Route exact path={paths.consultation} component={Consultation} />
+          <Route exact path={paths.shop} component={Shop} />
+          <Route exact path={paths.contact} component={Contact} />
+          <Route exact path={paths.collaboration} component={Collaboration} />
         </Switch>
       </MainTemplate>
     </BrowserRouter>

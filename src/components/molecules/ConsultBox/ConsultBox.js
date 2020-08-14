@@ -1,6 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
+import { CONSULT_TYPES } from 'utils/constans';
 import DotsAndButton from 'components/molecules/DotsAndButton/DotsAndButton';
 import Individual from 'assets/images/individual.jpg';
 import Firm from 'assets/images/firm.jpg';
@@ -47,7 +48,7 @@ const Item = styled.li`
   color: ${({ theme }) => theme.navyblueText};
 `;
 
-const Items = {
+const items = {
   individual: [
     { text: 'Konsultacje indywidualne' },
     { text: 'Life Energy Activator' },
@@ -67,16 +68,16 @@ const ButtonWrapper = styled.div`
     `}
 `;
 
-const ConsultBox = ({ type }) => {
+const ConsultBox = ({ consultType }) => {
   return (
     <>
-      <BoxWrapper type={type}>
-        {type === 'individual' ? (
+      <BoxWrapper consultType={consultType}>
+        {consultType === CONSULT_TYPES.individual ? (
           <>
             <Icon />
             <Label>Life QM indywidualnie</Label>
             <List>
-              {Items.individual.map(({ text }) => (
+              {items.individual.map(({ text }) => (
                 <Item>{text}</Item>
               ))}
             </List>
@@ -89,7 +90,7 @@ const ConsultBox = ({ type }) => {
             <Icon firm />
             <Label>Life QM dla firm</Label>
             <List firm>
-              {Items.firm.map(({ text }) => (
+              {items.firm.map(({ text }) => (
                 <Item>{text}</Item>
               ))}
             </List>
@@ -104,11 +105,11 @@ const ConsultBox = ({ type }) => {
 };
 
 ConsultBox.propTypes = {
-  type: PropTypes.oneOf(['individual', 'firm']),
+  consultType: PropTypes.oneOf(['individual', 'firm']),
 };
 
 ConsultBox.defaultProps = {
-  type: 'individual',
+  consultType: 'individual',
 };
 
 export default ConsultBox;

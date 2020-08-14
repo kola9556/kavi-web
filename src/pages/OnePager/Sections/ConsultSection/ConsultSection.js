@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { CONSULT_TYPES } from 'utils/constans';
 import ConsultBox from 'components/molecules/ConsultBox/ConsultBox';
 import { MainWrapper, RowWrapper } from 'utils/Wrappers/Wrappers';
 import SectionBreak from '../../../../components/molecules/SectionBreak/SectionBreak';
@@ -19,8 +20,8 @@ const ConsultSection = () => {
       <ConsultWrapper>
         <SectionBreak firstTitle="" secondTitle="Konsultacje i Szkolenia" />
         <BoxesWrapper>
-          <ConsultBox type="individual" />
-          <ConsultBox type="firm" />
+          <ConsultBox consultType={CONSULT_TYPES.individual} />
+          <ConsultBox consultType={CONSULT_TYPES.firm} />
         </BoxesWrapper>
       </ConsultWrapper>
     </>
