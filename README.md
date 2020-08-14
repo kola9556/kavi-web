@@ -1,3 +1,15 @@
+## Website develop for Kav Kozłowska - freelance project
+
+#### Hosted on: https://kaviweb.netlify.app/
+
+Further features: 
+- Blog page
+- Inject external shop from ecwid.com
+- Write CMS for blog
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
