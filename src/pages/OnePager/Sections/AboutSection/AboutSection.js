@@ -1,12 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
+import { paths } from 'utils/paths';
 import SquareImgBox from 'components/atoms/SquareImgBox/SquareImgBox';
 import ImagesBackground from 'components/atoms/ImagesBackground/ImagesBackground';
-import KaviOrange from 'assets/images/kaviOrange.jpg';
-import { SHeaderBold, MParagraph, BoldSpan } from 'utils/Headers/Headers';
+import kaviOrange from 'assets/images/kaviOrange.jpg';
+import { SHeaderBold, MParagraph } from 'utils/Headers/Headers';
 import { ColumnWrapper, RowWrapper, MainWrapper } from 'utils/Wrappers/Wrappers';
-import SectionBreak from '../../../../components/molecules/SectionBreak/SectionBreak';
-import DotsAndButton from '../../../../components/molecules/DotsAndButton/DotsAndButton';
+import SectionBreak from 'components/molecules/SectionBreak/SectionBreak';
+import DotsAndButton from 'components/molecules/DotsAndButton/DotsAndButton';
 
 const AboutWrapper = styled(MainWrapper)`
   padding: 80px 30px 80px 0px;
@@ -61,48 +63,34 @@ const AboutSquareImgBox = styled(SquareImgBox)`
   height: 270px;
 `;
 
-const AboutSection = () => {
+const AboutSection = ({ paragraphDown, paragraphUp, heading }) => {
   return (
     <>
       <AboutWrapper>
         <SectionBreak firstTitle="Kavi Kozłowska" secondTitle="O mnie" />
         <ContentWrapper>
           <ColumnWrapper>
-            <AboutSHeader>
-              Zawodowo zajmuję się <BoldSpan>LIFE Quality Managementem (LifeQM)</BoldSpan>, <br />
-              gdzie <BoldSpan>JAKOŚĆ</BoldSpan> życia jest <BoldSpan>WAŻNA</BoldSpan>. Jestem
-              Trenerem Skutecznych Zmian, <br />
-              autorką książek i blogerem.
-            </AboutSHeader>
-            <AboutMParagraphUp>
-              Kiedyś żyłam w rzeczywistości czarnych <br />
-              scenariuszy, negatywnych myśłi i ciągłego
-              <br />
-              narzekania. Nie radziłam sobie dobrze
-              <br /> z wyzwaniami tego świata. Każda porażka <br />
-              urastała do rangi życiowej katastrofy.
-              <br />
-              Widziałam świat jako wrogie miejsce, <br />
-              bez potencjału, bez możliwości rozwoju <br />
-              dla mnie. Nie wierzyłam w swoje siły. <br />
-              Zagubiłam gdzieś poczucie własnej wartości.
-            </AboutMParagraphUp>
-            <AboutMParagraphDown>
-              Jednak w moim życiu nastąpił moment olśnienia. <br />
-              Postanowiłam dokonać ZMIANY..
-            </AboutMParagraphDown>
+            <AboutSHeader>{heading}</AboutSHeader>
+            <AboutMParagraphUp>{paragraphUp}</AboutMParagraphUp>
+            <AboutMParagraphDown>{paragraphDown}</AboutMParagraphDown>
           </ColumnWrapper>
           <AboutGraphicsWrapper>
-            <AboutSquareImgBox src={KaviOrange} />
+            <AboutSquareImgBox src={kaviOrange} />
             <BlueBackground />
           </AboutGraphicsWrapper>
         </ContentWrapper>
         <DotsAndButtonWrapper>
-          <DotsAndButton activeColor="blue" path="/aboutme" side="left" />
+          <DotsAndButton activeColor="blue" path={paths.aboutme} side="left" />
         </DotsAndButtonWrapper>
       </AboutWrapper>
     </>
   );
+};
+
+AboutSection.propTypes = {
+  heading: PropTypes.string.isRequired,
+  paragraphUp: PropTypes.string.isRequired,
+  paragraphDown: PropTypes.string.isRequired,
 };
 
 export default AboutSection;

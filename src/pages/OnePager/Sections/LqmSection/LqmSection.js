@@ -5,10 +5,10 @@ import { paths } from 'utils/paths';
 import { MParagraph } from 'utils/Headers/Headers';
 import { MainWrapper, ColumnWrapper, RowWrapper } from 'utils/Wrappers/Wrappers';
 import { ICON_NAMES } from 'utils/constans';
-import LogoW from 'assets/images/logoW.jpg';
-import Change from 'assets/images/change.jpg';
-import Health from 'assets/images/health.jpg';
-import Mind from 'assets/images/mind.jpg';
+import logoW from 'assets/images/logoW.jpg';
+import change from 'assets/images/change.jpg';
+import health from 'assets/images/health.jpg';
+import mind from 'assets/images/mind.jpg';
 import SectionBreak from '../../../../components/molecules/SectionBreak/SectionBreak';
 import DotsAndButton from '../../../../components/molecules/DotsAndButton/DotsAndButton';
 
@@ -61,25 +61,25 @@ const Icon = styled.div`
     switch (icon) {
       case ICON_NAMES.mind:
         return css`
-          background-image: url(${Mind});
+          background-image: url(${mind});
         `;
       case ICON_NAMES.health:
         return css`
-          background-image: url(${Health});
+          background-image: url(${health});
         `;
       case ICON_NAMES.change:
         return css`
-          background-image: url(${Change});
+          background-image: url(${change});
         `;
       case ICON_NAMES.logoW:
         return css`
           width: 219px;
           height: 66px;
-          background-image: url(${LogoW});
+          background-image: url(${logoW});
         `;
       default:
         return css`
-          background-image: url(${Health});
+          background-image: url(${health});
         `;
     }
   }}
@@ -90,10 +90,10 @@ const Label = styled(MParagraph)`
 `;
 
 const icons = [
-  { name: 'mind', number: 1, label: 'Pozytywny umysł', image: Mind },
-  { name: 'health', number: 2, label: 'Zdrowy lifestyle', image: Health },
-  { name: 'change', number: 3, label: 'Zmiana nawyków', image: Change },
-  { name: 'logoW', number: 4, label: 'Blog', image: LogoW },
+  { name: 'mind', number: 1, label: 'Pozytywny umysł', image: mind },
+  { name: 'health', number: 2, label: 'Zdrowy lifestyle', image: health },
+  { name: 'change', number: 3, label: 'Zmiana nawyków', image: change },
+  { name: 'logoW', number: 4, label: 'Blog', image: logoW },
 ];
 
 const LqmSection = ({ children }) => {

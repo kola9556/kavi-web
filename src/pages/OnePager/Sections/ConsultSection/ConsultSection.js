@@ -19,10 +19,7 @@ const ConsultSection = () => {
     <>
       <ConsultWrapper>
         <SectionBreak firstTitle="" secondTitle="Konsultacje i Szkolenia" />
-        <BoxesWrapper>
-          <ConsultBox consultType={CONSULT_TYPES.individual} />
-          <ConsultBox consultType={CONSULT_TYPES.firm} />
-        </BoxesWrapper>
+        <ConsultBox />
       </ConsultWrapper>
     </>
   );

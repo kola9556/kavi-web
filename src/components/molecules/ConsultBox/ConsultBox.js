@@ -1,12 +1,12 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import PropTypes from 'prop-types';
 import { CONSULT_TYPES } from 'utils/constans';
+import { paths } from 'utils/paths';
 import DotsAndButton from 'components/molecules/DotsAndButton/DotsAndButton';
-import Individual from 'assets/images/individual.jpg';
-import Firm from 'assets/images/firm.jpg';
-import Arrows from 'assets/images/smallerArrows.jpg';
-import { ColumnWrapper } from 'utils/Wrappers/Wrappers';
+import individual from 'assets/images/individual.jpg';
+import firm from 'assets/images/firm.jpg';
+import arrows from 'assets/images/smallerArrows.jpg';
+import { ColumnWrapper, RowWrapper } from 'utils/Wrappers/Wrappers';
 import { XlHeader } from 'utils/Headers/Headers';
 
 const BoxWrapper = styled(ColumnWrapper)`
@@ -15,19 +15,24 @@ const BoxWrapper = styled(ColumnWrapper)`
   padding: 30px 80px;
 `;
 
+const BoxesWrapper = styled(RowWrapper)`
+  align-items: flex-start;
+  padding: 30px;
+`;
+
 const Icon = styled.div`
   width: 200px;
   height: 200px;
   margin-bottom: 40px;
-  background-image: url(${Individual});
+  background-image: url(${individual});
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50% 50%;
 
-  ${({ firm }) =>
-    firm &&
+  ${({ consultType }) =>
+    consultType === CONSULT_TYPES.firm &&
     css`
-      background-image: url(${Firm});
+      background-image: url(${firm});
     `}
 `;
 
@@ -37,7 +42,7 @@ const Label = styled(XlHeader)`
 `;
 
 const List = styled.ul`
-  list-style-image: url(${Arrows});
+  list-style-image: url(${arrows});
   padding: 0px 0px 20px 40px;
 `;
 
@@ -48,68 +53,62 @@ const Item = styled.li`
   color: ${({ theme }) => theme.navyblueText};
 `;
 
-const items = {
-  individual: [
-    { text: 'Konsultacje indywidualne' },
-    { text: 'Life Energy Activator' },
-    { text: 'Grupy Moderujące Zmianę' },
-  ],
-  firm: [{ text: 'Audty Happy Management' }, { text: 'Szkolenia dedykowane' }],
-};
+const items = [
+  {
+    type: 'individual',
+    label: 'Life QM indywidualnie',
+    texts: [
+      { text: 'Konsultacje indywidualne' },
+      { text: 'Life Energy Activator' },
+      { text: 'Grupy Moderujące Zmianę' },
+    ],
+  },
+  {
+    type: 'firm',
+    label: 'Life QM dla firm',
+    texts: [{ text: 'Audty Happy Management' }, { text: 'Szkolenia dedykowane' }],
+  },
+];
 
 const ButtonWrapper = styled.div`
   position: relative;
   left: 60px;
 
-  ${({ firm }) =>
-    firm &&
+  ${({ consultType }) =>
+    consultType === CONSULT_TYPES.firm &&
     css`
       top: 27px;
     `}
 `;
 
-const ConsultBox = ({ consultType }) => {
+const ConsultBox = () => {
   return (
     <>
-      <BoxWrapper consultType={consultType}>
-        {consultType === CONSULT_TYPES.individual ? (
+      <BoxesWrapper>
+        {items.map((item) => (
           <>
-            <Icon />
-            <Label>Life QM indywidualnie</Label>
-            <List>
-              {items.individual.map(({ text }) => (
-                <Item>{text}</Item>
-              ))}
-            </List>
-            <ButtonWrapper>
-              <DotsAndButton activeColor="blue" path="/consultation" side="right" dots="yes" />
-            </ButtonWrapper>
+            <BoxWrapper>
+              <Icon consultType={item.type} />
+              <Label>{item.label}</Label>
+              <List>
+                {item.texts.map((textItem) => (
+                  <Item>{textItem.text}</Item>
+                ))}
+              </List>
+              <ButtonWrapper consultType={item.type}>
+                <DotsAndButton
+                  activeColor="blue"
+                  path={paths.consultation}
+                  side="right"
+                  dots="yes"
+                />
+              </ButtonWrapper>
+            </BoxWrapper>
           </>
-        ) : (
-          <>
-            <Icon firm />
-            <Label>Life QM dla firm</Label>
-            <List firm>
-              {items.firm.map(({ text }) => (
-                <Item>{text}</Item>
-              ))}
-            </List>
-            <ButtonWrapper firm>
-              <DotsAndButton activeColor="blue" path="/consultation" side="right" dots="yes" />
-            </ButtonWrapper>
-          </>
-        )}
-      </BoxWrapper>
+        ))}
+      </BoxesWrapper>
     </>
   );
-};
-
-ConsultBox.propTypes = {
-  consultType: PropTypes.oneOf(['individual', 'firm']),
-};
-
-ConsultBox.defaultProps = {
-  consultType: 'individual',
 };
 
 export default ConsultBox;

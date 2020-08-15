@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import Paragraph from 'components/atoms/Paragraph/Paragraph';
-import KaviBlue from 'assets/images/kaviBlue.jpg';
+import kaviBlue from 'assets/images/kaviBlue.jpg';
 import SquareImgBox from 'components/atoms/SquareImgBox/SquareImgBox';
 import BackgroundShape from 'components/atoms/BackgroundShape/BackgroundShape';
 
@@ -39,18 +40,6 @@ const TopHeader = styled.h1`
 const TopParagraph = styled(Paragraph)`
   padding-left: 5rem;
   font-size: 3rem;
-`;
-
-// Created to colored and weight a part of the text
-const LogoBlack = styled.span`
-  color: black;
-  font-weight: 700;
-`;
-
-// Created to colored and weight a part of the text
-const LogoRed = styled.span`
-  color: ${({ theme }) => theme.redText};
-  font-weight: 700;
 `;
 
 const TopSquareImgBox = styled(SquareImgBox)`
@@ -107,7 +96,7 @@ const InvisibleText = styled(Paragraph)`
   }
 `;
 
-const TopSection = () => {
+const TopSection = ({ heading, paragraph }) => {
   return (
     <>
       <TopWrapper>
@@ -120,22 +109,18 @@ const TopSection = () => {
           </BackgroundShape>
         </BlueShapeWrapper>
         <TopTextWrapper>
-          <TopHeader>
-            Szczęśliwy <br />
-            Styl Życia
-          </TopHeader>
-          <TopParagraph>
-            Jakość jest ważna.
-            <br /> <LogoBlack>WAŻNE,</LogoBlack>
-            <LogoRed> JAK </LogoRed>
-            przeżyjesz <br />
-            swoje życie.
-          </TopParagraph>
+          <TopHeader>{heading}</TopHeader>
+          <TopParagraph>{paragraph}</TopParagraph>
         </TopTextWrapper>
-        <TopSquareImgBox src={KaviBlue} />
+        <TopSquareImgBox src={kaviBlue} />
       </TopWrapper>
     </>
   );
+};
+
+TopSection.propTypes = {
+  heading: PropTypes.string.isRequired,
+  paragraph: PropTypes.string.isRequired,
 };
 
 export default TopSection;
