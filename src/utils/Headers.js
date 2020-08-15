@@ -1,10 +1,11 @@
 // Headers and paragraphs for all project
 
 import styled from 'styled-components';
+import { media } from 'utils';
 
 const XxxlHeading = styled.h1`
   margin: 0;
-  font-size: 6.3rem;
+  font-size: 3.2rem;
   font-weight: 700;
   color: ${({ theme }) => theme.navyblueText};
 `;
@@ -43,7 +44,7 @@ const SHeader = styled.h3`
 
 const XsHeader = styled.h3`
   margin: 0;
-  font-size: 1.8rem;
+  font-size: 1.6rem;
   font-weight: 600;
   color: ${({ theme }) => theme.navyblueText};
 `;
@@ -54,9 +55,13 @@ const SHeaderBold = styled(SHeader)`
 
 const MParagraph = styled.p`
   margin: 0;
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   font-weight: 600;
   color: ${({ theme }) => theme.navyblueText};
+
+  ${media.desktop`
+    font-size: 1.8rem;
+  `}
 `;
 
 const MParagraphBold = styled(MParagraph)`

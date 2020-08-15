@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import { media } from 'utils';
 
 const GlobalStyle = createGlobalStyle`
   
@@ -15,24 +16,18 @@ const GlobalStyle = createGlobalStyle`
     font-size: 62.5%; 
     font-family: 'Mulish', sans-serif;
 
-    @media only screen and (min-width: 1900px) {
-      font-size: 85%;
-    }
-
-    @media only screen and (min-width: 2300px) {
-      font-size: 95%;
-    }
-
+    ${media.desktop`
+    font-size: 72%;
+    `}
   }
   
   body {
     margin:0;
-    padding-top: 5rem;
+    padding: 7rem 0 0 0 ;
     font-size: 1.6rem;
     font-family: 'Mulish', sans-serif;
 
-    
-  }
+    ${media.desktop`padding: 5rem 0 0 0 ;`}}
 `;
 
 export default GlobalStyle;

@@ -1,31 +1,62 @@
 import styled, { css } from 'styled-components';
-import Facebook from 'assets/images/facebook.svg';
-import FacebookHov from 'assets/images/facebookhoover.svg';
-import InstagramHov from 'assets/images/instagramhoover.svg';
-import Instagram from 'assets/images/instagram.svg';
+import instagram from 'assets/images/instagramIcon.svg';
+import facebook from 'assets/images/facebookIcon.svg';
+import instaRev from 'assets/images/instagramIconRevers.svg';
+import facebookRev from 'assets/images/facebookIconRevers.svg';
 
 const MediaIcon = styled.a`
-  width: 3.6rem;
-  height: 3.9rem;
-  background-image: url(${Facebook});
+  margin: 1rem;
+  width: 6rem;
+  height: 6rem;
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  background-size: cover;
-  margin: 0 1.5rem;
+  background-size: 80%;
+  cursor: pointer;
 
-  :hover {
-    background-image: url(${FacebookHov});
-  }
+  ${({ footer }) =>
+    footer &&
+    css`
+      width: 4rem;
+      height: 4rem;
+    `}
 
   ${({ insta }) =>
     insta &&
     css`
-      width: 3.8rem;
-      height: 4rem;
-      background-image: url(${Instagram});
+      background-image: url(${instagram});
 
       :hover {
-        background-image: url(${InstagramHov});
+        background-image: url(${instaRev});
+        animation: changeInsta 0.5s;
+
+        @keyframes changeInsta {
+          from {
+            background-image: url(${instagram});
+          }
+          to {
+            background-image: url(${instaRev});
+          }
+        }
+      }
+    `}
+
+  ${({ face }) =>
+    face &&
+    css`
+      background-image: url(${facebook});
+
+      :hover {
+        background-image: url(${facebookRev});
+        animation: changeFace 0.5s;
+
+        @keyframes changeFace {
+          from {
+            background-image: url(${facebook});
+          }
+          to {
+            background-image: url(${facebookRev});
+          }
+        }
       }
     `}
 `;

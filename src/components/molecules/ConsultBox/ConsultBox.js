@@ -1,29 +1,44 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
+import PropTypes from 'prop-types';
 import { CONSULT_TYPES } from 'utils/constans';
 import { paths } from 'utils/paths';
-import DotsAndButton from 'components/molecules/DotsAndButton/DotsAndButton';
+import { media } from 'utils';
+import MainButton from 'components/atoms/MainButton/MainButton';
 import individual from 'assets/images/individual.jpg';
 import firm from 'assets/images/firm.jpg';
-import arrows from 'assets/images/smallerArrows.jpg';
-import { ColumnWrapper, RowWrapper } from 'utils/Wrappers/Wrappers';
-import { XlHeader } from 'utils/Headers/Headers';
+import arrowsDesktop from 'assets/images/smallerArrows.jpg';
+import arrows from 'assets/images/xxsArrows.jpg';
 
-const BoxWrapper = styled(ColumnWrapper)`
-  align-items: center;
-  align-content: space-between;
-  padding: 30px 80px;
+const BoxesWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  ${media.desktop`
+    padding: 2rem;
+    flex-direction: row;
+  `}
 `;
 
-const BoxesWrapper = styled(RowWrapper)`
-  align-items: flex-start;
-  padding: 30px;
+const SingleBoxWrapper = styled.div`
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: center;
+  align-content: space-between;
+  margin: 8rem 0 4rem;
+
+  ${media.desktop`
+    margin: 4rem 0 4rem;
+    padding: 0 8rem;
+  `}
 `;
 
 const Icon = styled.div`
-  width: 200px;
-  height: 200px;
-  margin-bottom: 40px;
+  width: 10rem;
+  height: 10rem;
+  margin-bottom: 4rem;
   background-image: url(${individual});
   background-repeat: no-repeat;
   background-size: cover;
@@ -34,60 +49,66 @@ const Icon = styled.div`
     css`
       background-image: url(${firm});
     `}
+
+  ${media.desktop`
+    width: 20rem;
+    height: 20rem;
+  `}
 `;
 
-const Label = styled(XlHeader)`
+const Label = styled.h2`
+  margin: 0;
+  font-size: 1.8rem;
+  color: ${({ theme }) => theme.navyblueText};
   font-weight: 700;
-  margin-bottom: 10px;
+  margin-bottom: 1rem;
+
+  ${media.desktop`
+    font-size: 2.6rem;
+  `}
 `;
 
 const List = styled.ul`
   list-style-image: url(${arrows});
   padding: 0px 0px 20px 40px;
+
+  ${media.desktop`
+    list-style-image: url(${arrowsDesktop});
+  `}
 `;
 
 const Item = styled.li`
-  padding-left: 10px;
-  font-size: 18px;
+  padding-left: 1rem;
+  font-size: 1.4rem;
   font-weight: 600;
   color: ${({ theme }) => theme.navyblueText};
-`;
 
-const items = [
-  {
-    type: 'individual',
-    label: 'Life QM indywidualnie',
-    texts: [
-      { text: 'Konsultacje indywidualne' },
-      { text: 'Life Energy Activator' },
-      { text: 'Grupy Moderujące Zmianę' },
-    ],
-  },
-  {
-    type: 'firm',
-    label: 'Life QM dla firm',
-    texts: [{ text: 'Audty Happy Management' }, { text: 'Szkolenia dedykowane' }],
-  },
-];
+  ${media.desktop`
+    font-size: 1.8rem;
+  `}
+`;
 
 const ButtonWrapper = styled.div`
   position: relative;
-  left: 60px;
 
   ${({ consultType }) =>
     consultType === CONSULT_TYPES.firm &&
     css`
-      top: 27px;
+      top: 1.8rem;
+
+      ${media.desktop`
+        top: 2.3rem;
+      `}
     `}
 `;
 
-const ConsultBox = () => {
+const ConsultBox = ({ content }) => {
   return (
     <>
       <BoxesWrapper>
-        {items.map((item) => (
+        {content.map((item) => (
           <>
-            <BoxWrapper>
+            <SingleBoxWrapper>
               <Icon consultType={item.type} />
               <Label>{item.label}</Label>
               <List>
@@ -96,19 +117,18 @@ const ConsultBox = () => {
                 ))}
               </List>
               <ButtonWrapper consultType={item.type}>
-                <DotsAndButton
-                  activeColor="blue"
-                  path={paths.consultation}
-                  side="right"
-                  dots="yes"
-                />
+                <MainButton to={paths.consultation}>Więcej</MainButton>
               </ButtonWrapper>
-            </BoxWrapper>
+            </SingleBoxWrapper>
           </>
         ))}
       </BoxesWrapper>
     </>
   );
+};
+
+ConsultBox.propTypes = {
+  content: PropTypes.element.isRequired,
 };
 
 export default ConsultBox;

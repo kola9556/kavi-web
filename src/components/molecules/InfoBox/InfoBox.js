@@ -1,23 +1,43 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
+import { media } from 'utils';
 import LogoK from 'assets/logos/logoKSmall.jpg';
-import { MParagraph } from 'utils/Headers/Headers';
-import { RowWrapper, ColumnWrapper } from 'utils/Wrappers/Wrappers';
+import { MParagraph } from 'utils/Headers';
 
-const InfoWrapper = styled(RowWrapper)``;
+const InfoWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+`;
 
-const SectionWrapper = styled(ColumnWrapper)`
-  padding-right: 8rem;
+const SectionWrapper = styled.div`
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: flex-start;
+
+  ${media.desktop`padding-right: 5rem;`}
+`;
+
+const OnlyDesktop = styled.div`
+  display: none;
+  ${media.desktop` display: flex;`}
 `;
 
 const Logo = styled.div`
-  min-width: 19rem;
-  height: 6.3rem;
+  width: 13rem;
+  height: 5.3rem;
   background-image: url(${LogoK});
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: 100%;
+
+  ${media.desktop`
+  width: 19rem;
+  height: 6.3rem;
+ `}
 `;
 
 const Label = styled(MParagraph)`
@@ -51,7 +71,7 @@ const Link = styled(NavLink)`
   }
 `;
 
-const InfoBox = () => {
+const InfoBox = ({ mediaType }) => {
   return (
     <>
       <InfoWrapper>
@@ -63,42 +83,48 @@ const InfoBox = () => {
             <Point>Katarzyna Kozłowska</Point>
           </List>
         </SectionWrapper>
-        <SectionWrapper>
-          <Label>Produkty</Label>
-          <List>
-            <Point>
-              <Link to="/shop">Sklep</Link>
-            </Point>
-            <Point>
-              <Link to="/consultations">Szkolenia</Link>
-            </Point>
-          </List>
-        </SectionWrapper>
-        <SectionWrapper>
-          <Label>Dla firm</Label>
-          <List>
-            <Point>
-              <Link to="/collabo">Współpraca</Link>
-            </Point>
-            <Point>
-              <Link to="/contact">Kontakt</Link>
-            </Point>
-          </List>
-        </SectionWrapper>
-        <SectionWrapper>
-          <Label>Marka</Label>
-          <List>
-            <Point>
-              <Link to="/blog">Blog</Link>
-            </Point>
-            <Point>
-              <Link to="/consultations">Szkolenia</Link>
-            </Point>
-          </List>
-        </SectionWrapper>
+        <OnlyDesktop>
+          <SectionWrapper>
+            <Label>Produkty</Label>
+            <List>
+              <Point>
+                <Link to="/shop">Sklep</Link>
+              </Point>
+              <Point>
+                <Link to="/consultations">Szkolenia</Link>
+              </Point>
+            </List>
+          </SectionWrapper>
+          <SectionWrapper>
+            <Label>Dla firm</Label>
+            <List>
+              <Point>
+                <Link to="/collabo">Współpraca</Link>
+              </Point>
+              <Point>
+                <Link to="/contact">Kontakt</Link>
+              </Point>
+            </List>
+          </SectionWrapper>
+          <SectionWrapper>
+            <Label>Marka</Label>
+            <List>
+              <Point>
+                <Link to="/blog">Blog</Link>
+              </Point>
+              <Point>
+                <Link to="/consultations">Szkolenia</Link>
+              </Point>
+            </List>
+          </SectionWrapper>
+        </OnlyDesktop>
       </InfoWrapper>
     </>
   );
+};
+
+InfoBox.propTypes = {
+  mediaType: PropTypes.element.isRequired,
 };
 
 export default InfoBox;

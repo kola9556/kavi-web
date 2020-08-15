@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
-import { MParagraph, BlueSpan, BoldSpan } from 'utils/Headers/Headers';
+import { PAGE_TYPE } from 'utils/constans';
+import { MParagraph, BlueSpan, BoldSpan } from 'utils/Headers';
 import TopSection from 'pages/OnePager/Sections/TopSection/TopSection';
 import LqmSection from 'pages/OnePager/Sections/LqmSection/LqmSection';
 import AboutSection from 'pages/OnePager/Sections/AboutSection/AboutSection';
@@ -129,27 +130,65 @@ const pageContent = {
       prowadząc Cię przez zmianę.
     </MParagraph>
   ),
+  consultation: [
+    {
+      type: 'individual',
+      label: 'Life QM indywidualnie',
+      texts: [
+        { text: 'Konsultacje indywidualne' },
+        { text: 'Life Energy Activator' },
+        { text: 'Grupy Moderujące Zmianę' },
+      ],
+    },
+    {
+      type: 'firm',
+      label: 'Life QM dla firm',
+      texts: [{ text: 'Audty Happy Management' }, { text: 'Szkolenia dedykowane' }],
+    },
+  ],
+  blog: {
+    redText: (
+      <>
+        „Ważne JAK!” to dawka konkretnej wiedzy <br />o sile osobistego wpływu na jakość życia oraz
+        o skutecznym <br /> przeprowadzaniu życiowych zmian.
+      </>
+    ),
+    listPoints: [
+      { text: 'pozbyć się niesprzyjających nawyków i kompulsywnych zachowań' },
+      { text: 'uformować pozytywne podejścia do rzeczywistości' },
+      { text: 'podnieść efektywność osobistą' },
+      {
+        text: 'osiągać cele, zdobywać marzenia, wykorzystać proste sposoby na trudne wyzwania',
+      },
+      {
+        text:
+          'stworzyć osobiste rytuały dla zdrowia i piękna, poznać styl żywienia "80/20" sprzyjający zdrowiu i dobremu sapomoczuciu',
+      },
+    ],
+  },
 };
+
+const { top, home, about, lifeqm, consultation, blog } = pageContent;
 
 const OnePager = () => (
   <>
     <Navigationbar pageType="onePager" />
-    <TopSection heading={pageContent.top.heading} paragraph={pageContent.top.paragraph} />
+    <TopSection heading={top.heading} paragraph={top.paragraph} />
     <HomeSection
-      firstPara={pageContent.home.firstParagraph}
-      secondPara={pageContent.home.secondParagraph}
-      thirdPara={pageContent.home.thirdParagraph}
+      firstPara={home.firstParagraph}
+      secondPara={home.secondParagraph}
+      thirdPara={home.thirdParagraph}
     />
     <AboutSection
-      heading={pageContent.about.heading}
-      paragraphUp={pageContent.about.paragraphUp}
-      paragraphDown={pageContent.about.paragraphDown}
+      heading={about.heading}
+      paragraphUp={about.paragraphUp}
+      paragraphDown={about.paragraphDown}
     />
-    <LqmSection>{pageContent.lifeqm}</LqmSection>
-    <ConsultSection />
-    <BlogSection />
+    <LqmSection>{lifeqm}</LqmSection>
+    <ConsultSection content={consultation} />
+    <BlogSection redText={blog.redText} listPoints={blog.listPoints} />
     <ShopSection />
-    <Footer />
+    <Footer pageType={PAGE_TYPE.main} />
   </>
 );
 

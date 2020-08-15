@@ -1,34 +1,31 @@
 import React from 'react';
 import styled from 'styled-components';
-import Button from 'components/atoms/Button/Button';
-import { ColumnWrapper, RowWrapper } from 'utils/Wrappers/Wrappers';
+import { media } from 'utils';
+
 import BookLabel from '../../molecules/BookLabel/BookLabel';
 
-const ShopWrapper = styled(ColumnWrapper)`
-  padding: 0;
-`;
-
-const ContentWrapper = RowWrapper;
-
-const ButtonWrapper = styled.div`
+const ShopBoxWrapper = styled.div`
+  display: flex;
   position: relative;
-  right: 12rem;
-  bottom: 9rem;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0;
+  margin: 0 3rem;
+  width: 5rem;
+  bottom: 1rem;
+
+  ${media.desktop`
+    margin: 0;
+    width: 35rem;
+  `}
 `;
 
 const ShopBox = () => {
   return (
     <>
-      <ShopWrapper>
-        <ContentWrapper>
-          <BookLabel id={1} />
-          <ButtonWrapper>
-            <Button activeColor="red" path="/shop">
-              Kup teraz
-            </Button>
-          </ButtonWrapper>
-        </ContentWrapper>
-      </ShopWrapper>
+      <ShopBoxWrapper>
+        <BookLabel id={1} />
+      </ShopBoxWrapper>
     </>
   );
 };

@@ -1,66 +1,142 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
+import { media } from 'utils';
+import MainButton from 'components/atoms/MainButton/MainButton';
 import { paths } from 'utils/paths';
-import SquareImgBox from 'components/atoms/SquareImgBox/SquareImgBox';
-import ImagesBackground from 'components/atoms/ImagesBackground/ImagesBackground';
 import kaviOrange from 'assets/images/kaviOrange.jpg';
-import { SHeaderBold, MParagraph } from 'utils/Headers/Headers';
-import { ColumnWrapper, RowWrapper, MainWrapper } from 'utils/Wrappers/Wrappers';
 import SectionBreak from 'components/molecules/SectionBreak/SectionBreak';
-import DotsAndButton from 'components/molecules/DotsAndButton/DotsAndButton';
 
-const AboutWrapper = styled(MainWrapper)`
-  padding: 80px 30px 80px 0px;
+const AboutWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
 
 const ContentWrapper = styled.div`
-  padding: 50px 50px 50px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+
+  ${media.desktop`
+      flex-direction: row;
+      position: relative;
+      right: 8rem;
+  `}
+`;
+
+const TextWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const AboutHeader = styled.h2`
+  margin: 3rem 1rem;
+  width: 32rem;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: ${({ theme }) => theme.navyblueText};
+  text-align: center;
+
+  ${media.desktop`
+    position: relative;
+    left: 18rem;
+    font-size: 1.8rem;
+    width: 65rem;
+  `}
+`;
+
+const AboutParagraph = styled.p`
+  margin: 2rem 0 0rem;
+  width: 32rem;
+  padding: 1rem 0;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: ${({ theme }) => theme.navyblueText};
+
+  ${media.desktop`
+    font-size: 1.6rem;
+    text-align: right;
+    position: relative;
+    left: 12rem;
+
+    ${({ down }) =>
+      down &&
+      css`
+        left: 25rem;
+        text-align: center;
+        width: 42rem;
+      `}
+  `}
+`;
+
+const ButtonWrapper = styled.div`
+  ${media.desktop`
+    position: relative;
+    left: 58rem;
+    bottom: 5rem;
+  `}
+`;
+
+const AboutGraphicsWrapper = styled.div`
   display: flex;
   flex-direction: row;
-  align-content: center;
+  align-items: center;
+  justify-content: center;
+
+  ${({ desktop }) =>
+    desktop &&
+    css`
+      display: none;
+      position: relative;
+      right: 5rem;
+      bottom: 4.5rem;
+    `}
+
+  ${media.desktop`
+  display: none;
+
+  ${({ desktop }) =>
+    desktop &&
+    css`
+      display: flex;
+    `}
+  `}
 `;
 
-const AboutSHeader = styled(SHeaderBold)`
-  text-align: center;
-  position: relative;
-  left: 120px;
-`;
-
-const AboutMParagraphUp = styled(MParagraph)`
-  text-align: right;
-  position: relative;
-  left: 250px;
-  padding-top: 40px;
-`;
-
-const AboutMParagraphDown = styled(MParagraph)`
-  text-align: center;
-  position: relative;
-  left: 390px;
-  top: 55px;
-`;
-
-const DotsAndButtonWrapper = styled.div`
-  position: relative;
-  top: 0px;
-  left: 250px;
-`;
-
-const AboutGraphicsWrapper = styled(RowWrapper)`
-  position: relative;
-  top: 20px;
-`;
-
-const BlueBackground = styled(ImagesBackground)`
+const BlueBackground = styled.div`
+  width: 11.3rem;
+  height: 17rem;
+  border-radius: 0 2rem 0 2rem;
   background-color: ${({ theme }) => theme.elemBlue};
   position: relative;
-  right: 120px;
+  right: 3rem;
+
+  ${media.desktop`
+  width: 22rem;
+  height: 35rem;
+  border-radius: 0 6rem 0 6rem;
+  right: 4rem;
+  `}
 `;
 
-const AboutSquareImgBox = styled(SquareImgBox)`
-  width: 265px;
-  height: 270px;
+const AboutImg = styled.img`
+  width: 12.8rem;
+  height: 13rem;
+  object-fit: cover;
+  z-index: 5;
+  position: relative;
+  left: 4rem;
+
+  ${media.desktop`
+    width: 26.5rem;
+    height: 27rem;
+    left: 7rem;
+  `}
 `;
 
 const AboutSection = ({ paragraphDown, paragraphUp, heading }) => {
@@ -69,19 +145,23 @@ const AboutSection = ({ paragraphDown, paragraphUp, heading }) => {
       <AboutWrapper>
         <SectionBreak firstTitle="Kavi Kozłowska" secondTitle="O mnie" />
         <ContentWrapper>
-          <ColumnWrapper>
-            <AboutSHeader>{heading}</AboutSHeader>
-            <AboutMParagraphUp>{paragraphUp}</AboutMParagraphUp>
-            <AboutMParagraphDown>{paragraphDown}</AboutMParagraphDown>
-          </ColumnWrapper>
-          <AboutGraphicsWrapper>
-            <AboutSquareImgBox src={kaviOrange} />
+          <TextWrapper>
+            <AboutHeader>{heading}</AboutHeader>
+            <AboutGraphicsWrapper>
+              <AboutImg src={kaviOrange} />
+              <BlueBackground />
+            </AboutGraphicsWrapper>
+            <AboutParagraph>{paragraphUp}</AboutParagraph>
+            <AboutParagraph down>{paragraphDown}</AboutParagraph>
+            <ButtonWrapper>
+              <MainButton to={paths.aboutme}>Więcej</MainButton>
+            </ButtonWrapper>
+          </TextWrapper>
+          <AboutGraphicsWrapper desktop>
+            <AboutImg src={kaviOrange} />
             <BlueBackground />
           </AboutGraphicsWrapper>
         </ContentWrapper>
-        <DotsAndButtonWrapper>
-          <DotsAndButton activeColor="blue" path={paths.aboutme} side="left" />
-        </DotsAndButtonWrapper>
       </AboutWrapper>
     </>
   );

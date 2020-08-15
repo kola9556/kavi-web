@@ -1,13 +1,20 @@
 import styled from 'styled-components';
-import Arrows from 'assets/images/arrows.jpg';
+import { media } from 'utils';
+import arrows from 'assets/images/arrows.jpg';
 
 const ArrowIcon = styled.div`
-  width: 61px;
-  height: 34px;
-  background-image: url(${Arrows});
+  width: 41px;
+  height: 28px;
+  background-image: url(${arrows});
   background-position: 50% 50%;
   background-size: 50%;
   background-repeat: no-repeat;
+
+  ${media.desktop`
+    width: 61px;
+    height: 34px;
+    background-size: 90%;
+  `}
 `;
 
 export default ArrowIcon;

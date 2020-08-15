@@ -1,28 +1,31 @@
 import React from 'react';
 import styled from 'styled-components';
-import { CONSULT_TYPES } from 'utils/constans';
+import PropTypes from 'prop-types';
 import ConsultBox from 'components/molecules/ConsultBox/ConsultBox';
-import { MainWrapper, RowWrapper } from 'utils/Wrappers/Wrappers';
 import SectionBreak from '../../../../components/molecules/SectionBreak/SectionBreak';
 
-const ConsultWrapper = styled(MainWrapper)`
+const ConsultWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 0px 50px 0px 50px;
 `;
 
-const BoxesWrapper = styled(RowWrapper)`
-  align-items: flex-start;
-  padding: 30px;
-`;
-
-const ConsultSection = () => {
+const ConsultSection = ({ content }) => {
   return (
     <>
       <ConsultWrapper>
         <SectionBreak firstTitle="" secondTitle="Konsultacje i Szkolenia" />
-        <ConsultBox />
+        <ConsultBox content={content} />
       </ConsultWrapper>
     </>
   );
+};
+
+ConsultSection.propTypes = {
+  content: PropTypes.element.isRequired,
 };
 
 export default ConsultSection;

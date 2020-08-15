@@ -1,100 +1,97 @@
-import React from 'react';
-import styled, { css } from 'styled-components';
+import React, { Component } from 'react';
+import styled from 'styled-components';
+import { media } from 'utils';
 import { NavLink } from 'react-router-dom';
-import { PropTypes } from 'prop-types';
-import LogoKavi from 'assets/logos/logoK.jpg';
+import logoKavi from 'assets/logos/logoK.jpg';
 import NavbarLink from 'components/atoms/NavbarLink/NavbarLink';
+import HamburgerButton from './components/HamburgerButton/HamburgerButton';
+import HamburgerDropdown from './components/HamburgerDropdown/HamburgerDropdown';
 import BlogLink from '../../atoms/BlogLink/BlogLink';
 
-const MainWrapper = styled.div`
+const NavbarWrapper = styled.div`
   position: fixed;
   top: 0;
   right: 0;
   margin: 0;
-  height: 5rem;
+  height: 7rem;
   width: 100%;
   display: flex;
-  flex-direction: row;
-  align-items: center;
   justify-content: space-between;
   background-color: white;
   z-index: 200;
   -webkit-box-shadow: -1px 1px 29px 0px rgba(199, 221, 227, 0.47);
   -moz-box-shadow: -1px 1px 29px 0px rgba(199, 221, 227, 0.47);
   box-shadow: -1px 1px 29px 0px rgba(199, 221, 227, 0.47);
+
+  ${media.desktop`
+  height: 5rem;
+  `}
 `;
 
 const Logo = styled(NavLink)`
   margin: 0;
-  min-width: 29rem;
-  height: 5rem;
-  background-image: url(${LogoKavi});
+  width: 20rem;
+  height: 7rem;
+  background-image: url(${logoKavi});
   display: block;
   background-repeat: no-repeat;
   background-position: 50% 50%;
-  background-size: 60%;
+  background-size: 100%;
   border: none;
-`;
 
-const NavigationWrapper = styled.div`
-  position: relative;
-  width: 124.6rem;
-  height: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
+  ${media.desktop`
+  width: 18rem;
+  height: 5rem;
+  background-size: 80%;
+  `}
 `;
 
 const NavlinksWrapper = styled.div`
   margin: 0;
-  display: flex;
-  flex-direction: row;
-  background-color: white;
-  align-items: center;
-  justify-content: space-between;
+  display: none;
 
-  ${({ pageType }) =>
-    pageType === 'onePager' &&
-    css`
-      background-color: ${({ theme }) => theme.elemBlue};
-    `}
-
-  ${({ pageType }) =>
-    pageType === 'about' &&
-    css`
-      background-color: rgb(199, 230, 247);
-    `}
+  ${media.desktop`
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    align-items: center;
+    justify-content: space-between;
+  `}
 `;
 
-const Navigationbar = ({ pageType }) => (
-  <MainWrapper>
-    <Logo to="/" />
-    <NavigationWrapper>
-      <NavlinksWrapper>
-        <NavbarLink to="/aboutme">O mnie</NavbarLink>
-        <NavbarLink to="/lifeqm">Life QM</NavbarLink>
-        <BlogLink to="/blog" />
-      </NavlinksWrapper>
-      <NavlinksWrapper pageType={pageType}>
-        <NavbarLink secondary to="/consultation">
-          Konsultacje i Szkolenia
-        </NavbarLink>
-        <NavbarLink secondary to="/shop">
-          Sklep
-        </NavbarLink>
-        <NavbarLink secondary to="/contact">
-          Kontakt
-        </NavbarLink>
-      </NavlinksWrapper>
-    </NavigationWrapper>
-  </MainWrapper>
-);
+class Navigationbar extends Component {
+  state = { buttonActive: false, isDropdownVisible: false };
 
-Navigationbar.propTypes = {
-  pageType: PropTypes.oneOf(['onePager', 'about']),
-};
+  handleHamburgerClick = () => {
+    const { buttonActive } = this.state;
+    return buttonActive === false
+      ? this.setState({ buttonActive: true, isDropdownVisible: true })
+      : this.setState({ buttonActive: false, isDropdownVisible: false });
+  };
 
-Navigationbar.defaultProps = {
-  pageType: 'onePager',
-};
+  render() {
+    const { buttonActive } = this.state;
+    const { isDropdownVisible } = this.state;
+
+    return (
+      <NavbarWrapper>
+        <Logo to="/" />
+        <HamburgerButton
+          buttonActive={buttonActive}
+          handleHamClick={() => this.handleHamburgerClick()}
+        />
+        <HamburgerDropdown isVisible={isDropdownVisible} />
+        <NavlinksWrapper>
+          <NavbarLink to="/aboutme">O mnie</NavbarLink>
+          <NavbarLink to="/lifeqm">Life QM</NavbarLink>
+          <BlogLink to="/blog" />
+          <NavbarLink to="/consultation">Konsultacje i Szkolenia</NavbarLink>
+          <NavbarLink to="/shop">Sklep</NavbarLink>
+          <NavbarLink to="/contact">Kontakt</NavbarLink>
+        </NavlinksWrapper>
+      </NavbarWrapper>
+    );
+  }
+}
+
 export default Navigationbar;
