@@ -1,14 +1,9 @@
 import { css } from 'styled-components';
+import { SCREEN_SIZES } from './constans';
 
-export const sizes = {
-  desktop: 1200,
-  tablet: 768,
-  phone: 576,
-};
-
-export default Object.keys(sizes).reduce((acc, mediaType) => {
+export default Object.keys(SCREEN_SIZES).reduce((acc, mediaType) => {
   acc[mediaType] = (...args) => css`
-    @media (min-width: ${sizes[mediaType]}px) {
+    @media (min-width: ${SCREEN_SIZES[mediaType]}px) {
       ${css(...args)}
     }
   `;

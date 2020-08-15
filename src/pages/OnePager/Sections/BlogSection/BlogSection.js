@@ -1,68 +1,96 @@
 import React from 'react';
 import styled from 'styled-components';
-import Arrows from 'assets/images/smallerArrows.jpg';
-import { MainWrapper, RowWrapper, ColumnWrapper } from 'utils/Wrappers/Wrappers';
-import { SHeader, MParagraphBold } from 'utils/Headers/Headers';
+import PropTypes from 'prop-types';
+import { media } from 'utils';
+import arrowsDesktop from 'assets/images/smallerArrows.jpg';
+import arrows from 'assets/images/xxsArrows.jpg';
 import SectionBreak from 'components/molecules/SectionBreak/SectionBreak';
 import LogoButton from 'components/atoms/LogoButton/LogoButton';
 
-const BlogWrapper = styled(MainWrapper)`
+const BlogWrapper = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   padding: 6rem 5rem 6rem 5rem;
 `;
 
-const RedText = styled(SHeader)`
+const RedText = styled.h3`
+  margin: 0;
+  font-size: 1.6rem;
   color: ${({ theme }) => theme.redText};
   text-align: center;
   font-weight: 800;
-  padding: 4rem 0 2rem 0;
+  padding: 4rem 0 4rem 0;
+
+  ${media.desktop`
+    font-size: 2rem;
+  `}
 `;
 
-const ContentWrapper = RowWrapper;
+const ContentWrapper = styled.div`
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
 
-const ListWrapper = styled(ColumnWrapper)`
-  padding: 2rem 4rem;
+  ${media.desktop`
+    flex-direction: row;
+  `}
 `;
 
-const Label = styled(MParagraphBold)`
+const ListWrapper = styled.div`
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 6rem;
+
+  ${media.desktop`
+    padding: 2rem 4rem;
+  `}
+`;
+
+const Label = styled.p`
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: ${({ theme }) => theme.navyblueText};
   padding-bottom: 1rem;
+
+  ${media.desktop`
+    font-size: 1.8rem;
+  `}
 `;
 
 const List = styled.ul`
-  max-width: 37rem;
-  list-style-image: url(${Arrows});
+  max-width: 27rem;
+  list-style-image: url(${arrows});
+
+  ${media.desktop`
+    max-width: 37rem;
+    list-style-image: url(${arrowsDesktop});
+  `}
 `;
 
 const Point = styled.li`
   padding-bottom: 1rem;
   padding-left: 1rem;
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   font-weight: 600;
   color: ${({ theme }) => theme.navyblueText};
+
+  ${media.desktop`
+    font-size: 1.8rem;
+  `}
 `;
 
-const listPoints = [
-  { text: 'pozbyć się niesprzyjających nawyków i kompulsywnych zachowań' },
-  { text: 'uformować pozytywne podejścia do rzeczywistości' },
-  { text: 'podnieść efektywność osobistą' },
-  {
-    text: 'osiągać cele, zdobywać marzenia, wykorzystać proste sposoby na trudne wyzwania',
-  },
-  {
-    text:
-      'stworzyć osobiste rytuały dla zdrowia i piękna, poznać styl żywienia "80/20" sprzyjający zdrowiu i dobremu sapomoczuciu',
-  },
-];
-
-const BlogSection = () => {
+const BlogSection = ({ redText, listPoints }) => {
   return (
     <>
       <BlogWrapper>
         <SectionBreak icon firstTitile="Wazne Jak" secondTitle="Blog" />
-        <RedText>
-          „Ważne JAK!” to dawka konkretnej wiedzy <br />o sile osobistego wpływu na jakość życia
-          oraz o skutecznym <br />
-          przeprowadzaniu życiowych zmian.
-        </RedText>
+        <RedText>{redText}</RedText>
         <ContentWrapper>
           <ListWrapper>
             <Label>Dowiesz się jak:</Label>
@@ -77,6 +105,11 @@ const BlogSection = () => {
       </BlogWrapper>
     </>
   );
+};
+
+BlogSection.propTypes = {
+  redText: PropTypes.element.isRequired,
+  listPoints: PropTypes.element.isRequired,
 };
 
 export default BlogSection;

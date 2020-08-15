@@ -1,28 +1,36 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 import { NavLink } from 'react-router-dom';
-import { SHeader, SParagraph, XsParagraph } from 'utils/Headers/Headers';
+import { media } from 'utils';
+import { SHeader, SParagraph, XsParagraph } from 'utils/Headers';
 import KaviHats from 'assets/images/kaviHats.jpg';
 import Lentils from 'assets/images/lentils.jpg';
 import Provisions from 'assets/images/provisions.jpg';
 
 const CaWrapper = styled.div`
-  margin-bottom: 2rem;
+  margin: 0;
   background-color: white;
+
+  ${media.desktop`
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center;`}
 `;
 
 const Card = styled(NavLink)`
   display: flex;
+  margin-bottom: 2rem;
   flex-direction: column;
-  height: 50rem;
-  width: 32rem;
+  height: 45rem;
+  width: 25rem;
   text-decoration: none;
   background-color: white;
   border-radius: 2rem;
   box-shadow: -1rem 0 2rem #f2f2f2;
+
+  ${media.desktop`
+  height: 50rem;
+  width: 34rem;
   /*   margin-left: -50px; */
   transition: 0.4s ease-out;
   position: relative;
@@ -50,6 +58,7 @@ const Card = styled(NavLink)`
       width: 32rem;
     }
   }
+  `}
 `;
 
 const CaImage = styled.div`
@@ -63,8 +72,11 @@ const CaImage = styled.div`
 
 const CaHeading = styled(SHeader)`
   font-weight: 700;
-  width: 28rem;
   margin: 2rem;
+
+  ${media.desktop`
+  width: 28rem;
+  `}
 `;
 
 const Category = styled(XsParagraph)`
@@ -74,10 +86,12 @@ const Category = styled(XsParagraph)`
 `;
 
 const Text = styled(SParagraph)`
-  width: 28rem;
   margin: 0.5rem 0 2rem 2rem;
   font-weight: 500;
   color: rgba(91, 111, 126, 1);
+
+  ${media.desktop`
+  width: 28rem;`}
 `;
 
 const Posts = [

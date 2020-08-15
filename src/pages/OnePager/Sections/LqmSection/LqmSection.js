@@ -1,61 +1,104 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
+import { media } from 'utils';
 import { paths } from 'utils/paths';
-import { MParagraph } from 'utils/Headers/Headers';
-import { MainWrapper, ColumnWrapper, RowWrapper } from 'utils/Wrappers/Wrappers';
+import { MParagraph } from 'utils/Headers';
 import { ICON_NAMES } from 'utils/constans';
+import MainButton from 'components/atoms/MainButton/MainButton';
 import logoW from 'assets/images/logoW.jpg';
 import change from 'assets/images/change.jpg';
 import health from 'assets/images/health.jpg';
 import mind from 'assets/images/mind.jpg';
 import SectionBreak from '../../../../components/molecules/SectionBreak/SectionBreak';
-import DotsAndButton from '../../../../components/molecules/DotsAndButton/DotsAndButton';
 
-const SectionWrapper = styled(RowWrapper)`
+const LqmWrapper = styled.div`
+  width: 100%;
+  margin-top: 6rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0px 10rem 0px;
+
+  ${media.desktop`
+    margin-top: 0rem;
+  `}
+`;
+
+const TextWrapper = styled.div`
+  display: flex;
   position: relative;
-  left: 30px;
-  justify-content: space-between;
-  width: 65vw;
-  padding-bottom: 80px;
-  align-items: baseline;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: center;
+  padding: 4rem 0 4rem 0;
+  margin: 2rem 2rem 0;
+
+  ${media.desktop`
+    margin: 0;
+  `}
 `;
 
-const LqmWrapper = styled(MainWrapper)`
-  padding: 20px 0px 100px 0px;
-`;
-
-const ContentWrapper = styled.div`
-  padding: 50px 0px 50px 0px;
+const GraphicsWrapper = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  ${media.desktop`
+    flex-direction: row;
+    justify-content: space-between;
+    position: relative;
+    align-items: baseline;
+    left: 30px;
+    width: 65vw;
+    padding-bottom: 4rem;
+  `}
 `;
 
-const TextWrapper = styled(ColumnWrapper)`
-  text-align: center;
-  padding: 10px 0 60px 0;
+const IconWrapper = styled.div`
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 13rem;
+  margin-bottom: 2rem;
+
+  ${media.desktop`
+  width: 20rem;
+  margin-bottom: 0rem;
+  `}
 `;
 
-const IconWrapper = ColumnWrapper;
-
-const TopWrapper = styled(RowWrapper)`
-  align-items: baseline;
+const TopWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: center;
 `;
 
 const Number = styled.h2`
   margin: 0;
-  font-size: 76px;
+  font-size: 5.6rem;
   font-weight: 800;
   color: ${({ theme }) => theme.blueGreyText};
+
+  ${media.desktop`
+    font-size: 7.6rem;
+  `}
 `;
 
 const Icon = styled.div`
-  width: 100px;
-  height: 100px;
+  width: 5rem;
+  height: 5rem;
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 80%;
+
+  ${media.desktop`
+    width: 10rem;
+    height: 10rem;
+  `}
 
   ${({ icon }) => {
     switch (icon) {
@@ -73,9 +116,16 @@ const Icon = styled.div`
         `;
       case ICON_NAMES.logoW:
         return css`
-          width: 219px;
-          height: 66px;
+          width: 18rem;
+          height: 5rem;
           background-image: url(${logoW});
+
+          ${media.desktop`
+            position: relative;
+            bottom: 1.5rem;
+            width: 21.9rem;
+            height: 6.6rem;
+          `}
         `;
       default:
         return css`
@@ -101,21 +151,19 @@ const LqmSection = ({ children }) => {
     <>
       <LqmWrapper>
         <SectionBreak firstTitle="LQM" secondTitle="Life Quality Management" />
-        <ContentWrapper>
-          <TextWrapper>{children}</TextWrapper>
-          <SectionWrapper>
-            {icons.map((icon) => (
-              <IconWrapper>
-                <TopWrapper>
-                  <Number>{icon.number}</Number>
-                  <Icon icon={icon.name} />
-                </TopWrapper>
-                <Label>{icon.label}</Label>
-              </IconWrapper>
-            ))}
-          </SectionWrapper>
-          <DotsAndButton activeColor="red" path={paths.lifeqm} side="right" dots="no" />
-        </ContentWrapper>
+        <TextWrapper>{children}</TextWrapper>
+        <GraphicsWrapper>
+          {icons.map((icon) => (
+            <IconWrapper>
+              <TopWrapper>
+                <Number>{icon.number}</Number>
+                <Icon icon={icon.name} />
+              </TopWrapper>
+              <Label>{icon.label}</Label>
+            </IconWrapper>
+          ))}
+        </GraphicsWrapper>
+        <MainButton to={paths.lqm}>Więcej</MainButton>
       </LqmWrapper>
     </>
   );

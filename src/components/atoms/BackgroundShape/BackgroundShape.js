@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const BackgroundShape = styled.div`
+const BlueBackgroundShape = styled.div`
   margin: 0;
   height: 85vh;
   display: flex;
@@ -11,4 +11,4 @@ const BackgroundShape = styled.div`
   border-radius: 0 0 0 130px;
 `;
 
-export default BackgroundShape;
+export default BlueBackgroundShape;

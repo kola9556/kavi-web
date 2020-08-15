@@ -1,42 +1,94 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import AboutBottom from 'assets/images/aboutBottom.jpg';
-import AboutImg from 'assets/images/about.jpg';
+import { media } from 'utils';
+import { PAGE_TYPE, SCREEN_SIZES, MEDIA_TYPE } from 'utils/constans';
+import aboutBottom from 'assets/images/aboutBottom.jpg';
+import aboutImg from 'assets/images/about.jpg';
 import Navigationbar from 'components/organisms/Navigationbar/Navigationbar';
 import Greet from 'pages/AboutMe/components/Greet';
 import Footer from 'components/organisms/Footer/Footer';
 import MainButton from 'components/atoms/MainButton/MainButton';
-import Insta from 'assets/images/instagramIcon.svg';
-import Facebook from 'assets/images/facebookIcon.svg';
-import InstaRev from 'assets/images/instagramIconRevers.svg';
-import FacebookRev from 'assets/images/facebookIconRevers.svg';
-import { XxlHeading, MParagraph, SParagraph, BoldSpanS } from 'utils/Headers/Headers';
-import KaviCanion from 'assets/images/kaviCanion.jpg';
-import KaviHats from 'assets/images/kaviHats.jpg';
+import MediaIcon from 'components/atoms/MediaIcon/MediaIcon';
+import { SParagraph, BoldSpanS } from 'utils/Headers';
+import kaviCanion from 'assets/images/kaviCanion.jpg';
+import kaviHats from 'assets/images/kaviHats.jpg';
 import Carousel from 'components/organisms/Carousel/Carousel';
 
-const AboutMeWrapper = styled.div`
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-`;
+const pageContent = {
+  mainText: {
+    button: 'Konsultacje i Szkolenia',
+    first: (
+      <>
+        Kiedyś żyłam w rzeczywistości czarnych scenariuszy, negatywnych myśłi i ciągłego narzekania.
+        Nie radziłam sobie dobrze z wyzwaniami tego świata. Każda porażka urastała do rangi życiowej
+        katastrofy. Widziałam świat jako wrogie miejsce, bez potencjału, bez możliwości rozwoju dla
+        mnie. Nie wierzyłam w swoje siły. Zagubiłam gdzieś poczucie własnej wartości.
+        <br />
+        <br />
+        Jednak w moim życiu nastąpił moment olśnienia. Postanowiłam dokonać{' '}
+        <BoldSpanS>ZMIANY</BoldSpanS>. <br />
+        Tak, aby wreszcie móc oddychać swobodnie i rozwinąć skrzydła. <br />
+        Tak, by wreszcie przestać ograniczać swój rozwój. <br />
+        Tak, by w końcu poczuć się wystarczająco dobra, kompetentna, skuteczna. <br />
+        Tak, by zrozumieć naturę szczęścia.
+      </>
+    ),
+    second: (
+      <>
+        Weszłam na drogę poszukiwań, jak dokonać <BoldSpanS>SKUTECZNEJ ZMIANY</BoldSpanS>.
+        Odszukałam sposoby i tricki, by to zrobić. Długoletnie poszukiwania i badania zaowocowały
+        osobistą zmianą oraz książką Autopilot Szczęścia. W końcu stalam się ekspertem ds.
+        Świadomego Optymizmu. <br />
+        Mam udział w <BoldSpanS> PODNOSZENIU JAKOŚCI ŻYCIA</BoldSpanS> moich klientów. Przeprowadzam
+        ich skutecznie przez <BoldSpanS>PROCES ZMIANY</BoldSpanS> do
+        <BoldSpanS> ZDROWEGO I AKTYWNEGO</BoldSpanS> trybu życia a przede wszystkim do
+        <BoldSpanS> POZYTYWNEGO WYSYCENIA EMOCJONALNEGO UMYSŁU</BoldSpanS>. <br />W tym procesie
+        dbamy o umiejętność skutecznego radzenia sobie w świecie ciągłych zmian, pozytywne i
+        PROAKTYWNE podejście do życia, rozumienie emocji oraz silne i zdrowe ciało. Celem jest
+        spełnienie i trwałe poczucie szczęścia. Dlatego mówimy tu o dążeniu do{' '}
+        <BoldSpanS>SZCZĘŚLIWEGO TRYBU ŻYCIA</BoldSpanS>.
+      </>
+    ),
+    third: (
+      <>
+        Pracuję w przekonaniu, że <BoldSpanS>ŚWIADOMY OPTYMIZM</BoldSpanS> to skuteczne narzędzie
+        dla każdego, w konfrontacji z wyzwaniami dynamicznie zmieniającego się świata. Towarzyszę
+        osobiście lub wirtualnie moim klientom: <BoldSpanS> INSPIRUJĘ, MODERUJĘ</BoldSpanS>i{' '}
+        <BoldSpanS>PODTRZYMUJĘ</BoldSpanS> ich <BoldSpanS>PROCES ZMIAN</BoldSpanS>, aż{' '}
+        <BoldSpanS>DO OSIĄGNIĘCIA</BoldSpanS> zamierzonych CELÓW. <br />
+        <br />
+        <SParagraph>
+          Zapraszam do kontaktu,
+          <br /> <BoldSpanS>Kavi Kozłowska.</BoldSpanS>
+        </SParagraph>
+      </>
+    ),
+  },
+  lastPosts: {
+    button: 'Wszystkie wpisy',
+    title: 'Ostatnie posty',
+    paragraph:
+      '„Ważne JAK!” to dawka konkretnej wiedzy o sile osobistego wpływu na jakość życia oraz o skutecznym przeprowadzaniu życiowych zmian.',
+  },
+};
 
 const GreetWrapper = styled.div`
   width: 100%;
-  height: 75vh;
+  height: 100vh;
   margin: 0;
   padding: 0;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   position: relative;
   opacity: 1;
   animation: show 3s;
+
+  ${media.desktop`
+    height: 80vh;
+  `}
 
   @keyframes show {
     from {
@@ -49,7 +101,7 @@ const GreetWrapper = styled.div`
   // Fake background made to give the opacity only for background
   :after {
     content: '';
-    background-image: url(${AboutImg});
+    background-image: url(${aboutImg});
     background-position: 50% 50%;
     background-size: cover;
     background-attachment: fixed;
@@ -82,89 +134,58 @@ const Medias = styled.div`
   }
 `;
 
-const Icon = styled.a`
-  margin: 1rem;
-  width: 6rem;
-  height: 6rem;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  background-size: 80%;
-  cursor: pointer;
-
-  ${({ insta }) =>
-    insta &&
-    css`
-      background-image: url(${Insta});
-
-      :hover {
-        background-image: url(${InstaRev});
-        animation: changeInsta 0.5s;
-
-        @keyframes changeInsta {
-          from {
-            background-image: url(${Insta});
-          }
-          to {
-            background-image: url(${InstaRev});
-          }
-        }
-      }
-    `}
-
-  ${({ facebook }) =>
-    facebook &&
-    css`
-      background-image: url(${Facebook});
-
-      :hover {
-        background-image: url(${FacebookRev});
-        animation: changeface 0.5s;
-
-        @keyframes changeface {
-          from {
-            background-image: url(${Facebook});
-          }
-          to {
-            background-image: url(${FacebookRev});
-          }
-        }
-      }
-    `}
-`;
-
-const AbContentWrapper = styled.div`
+const AbMainContent = styled.div`
   margin: 0;
-  padding: 0;
+  padding: 15rem 0.5rem 8rem 0.5rem;
   width: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
+
+  ${media.desktop`
+    margin: 15rem 0 15rem 0;
+    padding:0;
+    align-content: space-between;
+  `}
 `;
 
-const AbMainContent = styled.div`
-  margin: 15rem 0 20rem 0;
-  padding: 0;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-`;
+const AbContentHeading = styled.h1`
+  margin: 0;
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: ${({ theme }) => theme.navyblueText};
+  padding-bottom: 2rem;
 
-const AbContentHeading = styled(XxlHeading)`
-  margin: 4rem 0;
+  ${media.desktop`
+    margin: 2rem 0;
+    position: relative;
+    right: 37rem;
+    padding-bottom: 0rem;
+  `}
 `;
 
 const AbGridItems = styled.div`
+  margin: 0 1rem;
   display: grid;
-  grid-template-columns: 42rem 42rem;
+  grid-template-columns: auto;
   align-items: center;
   justify-items: center;
   grid-gap: 2rem 3rem;
+
+  ${media.desktop`
+    margin: 0;
+    grid-template-columns: 42rem 42rem;
+    grid-gap: 0.5rem 1rem;
+  `}
 `;
 
-const AbParagraph = styled(MParagraph)`
-  width: 42rem;
+const AbParagraph = styled.p`
+  margin: 0;
+  padding: 2rem 0;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: ${({ theme }) => theme.navyblueText};
 `;
 
 const AbImage = styled.img`
@@ -174,7 +195,7 @@ const AbImage = styled.img`
 
 const LastPostsWrapper = styled.div`
   margin: 0;
-  margin-bottom: 30rem;
+  margin-bottom: 20rem;
   padding: 0;
   width: 100%;
   display: flex;
@@ -185,12 +206,26 @@ const LastPostsWrapper = styled.div`
 
 const LastPostsHeading = styled(AbContentHeading)`
   margin: 1rem 0;
+
+  ${media.desktop`
+  position: static;
+  margin: 0rem 0;
+  `}
 `;
 
-const LastPostsParagraph = styled(SParagraph)`
-  width: 40%;
-  margin-bottom: 8rem;
+const LastPostsParagraph = styled.p`
   text-align: center;
+  width: 80%;
+  margin-bottom: 4rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: ${({ theme }) => theme.navyblueText};
+
+  ${media.desktop`
+  width: 40%;
+  margin-bottom: 5rem;
+  font-weight: 500;
+  `}
 `;
 
 const ToBlogButton = MainButton;
@@ -201,7 +236,7 @@ const BottomBackground = styled.div`
   width: 100%;
   height: 80vh;
   background-image: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0) 52%),
-    url(${AboutBottom});
+    url(${aboutBottom});
   background-position: 100% 30%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -209,86 +244,58 @@ const BottomBackground = styled.div`
   opacity: 0.6;
 `;
 
+const currentSize = window.screen.width;
+
+/* Checks the size od the screen and return screen type (desktop/phone). 
+Display order of images and text sections depends on this function 
+*/
+const handleGridDisplay = () =>
+  currentSize >= SCREEN_SIZES.desktop ? MEDIA_TYPE.desktop : MEDIA_TYPE.phone;
+
 const AboutMe = () => {
   return (
     <>
-      <Navigationbar pageType="about" />
-      <AboutMeWrapper>
-        <GreetWrapper>
-          <Greet />
-          <Medias>
-            <Icon
-              facebook
-              href="https://www.facebook.com/pg/Wa%C5%BCne-JAK-104715450959726/about/?ref=page_internal"
-              target="_blank"
-            />
-            <Icon insta href="https://www.instagram.com/kavi_foodies/" target="_blank" />
-          </Medias>
-        </GreetWrapper>
-        <AbContentWrapper>
-          <AbMainContent>
-            <AbContentHeading>O mnie</AbContentHeading>
-            <AbGridItems>
-              <AbParagraph>
-                Kiedyś żyłam w rzeczywistości czarnych scenariuszy, negatywnych myśłi i ciągłego
-                narzekania. Nie radziłam sobie dobrze z wyzwaniami tego świata. Każda porażka
-                urastała do rangi życiowej katastrofy. Widziałam świat jako wrogie miejsce, bez
-                potencjału, bez możliwości rozwoju dla mnie. Nie wierzyłam w swoje siły. Zagubiłam
-                gdzieś poczucie własnej wartości.
-                <br />
-                <br />
-                Jednak w moim życiu nastąpił moment olśnienia. Postanowiłam dokonać{' '}
-                <BoldSpanS>ZMIANY</BoldSpanS>. <br />
-                Tak, aby wreszcie móc oddychać swobodnie i rozwinąć skrzydła. <br />
-                Tak, by wreszcie przestać ograniczać swój rozwój. <br />
-                Tak, by w końcu poczuć się wystarczająco dobra, kompetentna, skuteczna. <br />
-                Tak, by zrozumieć naturę szczęścia.
-              </AbParagraph>
-              <AbImage src={KaviHats} />
-              <AbImage src={KaviCanion} />
-              <AbParagraph>
-                Weszłam na drogę poszukiwań, jak dokonać <BoldSpanS>SKUTECZNEJ ZMIANY</BoldSpanS>.
-                Odszukałam sposoby i tricki, by to zrobić. Długoletnie poszukiwania i badania
-                zaowocowały osobistą zmianą oraz książką Autopilot Szczęścia. W końcu stalam się
-                ekspertem ds. Świadomego Optymizmu. <br />
-                Mam udział w <BoldSpanS> PODNOSZENIU JAKOŚCI ŻYCIA</BoldSpanS> moich klientów.
-                Przeprowadzam ich skutecznie przez <BoldSpanS>PROCES ZMIANY</BoldSpanS> do
-                <BoldSpanS> ZDROWEGO I AKTYWNEGO</BoldSpanS> trybu życia a przede wszystkim do
-                <BoldSpanS> POZYTYWNEGO WYSYCENIA EMOCJONALNEGO UMYSŁU</BoldSpanS>. <br />W tym
-                procesie dbamy o umiejętność skutecznego radzenia sobie w świecie ciągłych zmian,
-                pozytywne i PROAKTYWNE podejście do życia, rozumienie emocji oraz silne i zdrowe
-                ciało. Celem jest spełnienie i trwałe poczucie szczęścia. Dlatego mówimy tu o
-                dążeniu do <BoldSpanS>SZCZĘŚLIWEGO TRYBU ŻYCIA</BoldSpanS>.
-              </AbParagraph>
-              <AbParagraph>
-                Pracuję w przekonaniu, że <BoldSpanS>ŚWIADOMY OPTYMIZM</BoldSpanS> to skuteczne
-                narzędzie dla każdego, w konfrontacji z wyzwaniami dynamicznie zmieniającego się
-                świata. Towarzyszę osobiście lub wirtualnie moim klientom:{' '}
-                <BoldSpanS> INSPIRUJĘ, MODERUJĘ</BoldSpanS>i <BoldSpanS>PODTRZYMUJĘ</BoldSpanS> ich{' '}
-                <BoldSpanS>PROCES ZMIAN</BoldSpanS>, aż <BoldSpanS>DO OSIĄGNIĘCIA</BoldSpanS>{' '}
-                zamierzonych CELÓW. <br />
-                <br />
-                <SParagraph>
-                  Zapraszam do kontaktu,
-                  <br /> <BoldSpanS>Kavi Kozłowska.</BoldSpanS>
-                </SParagraph>
-              </AbParagraph>
-            </AbGridItems>
-            <MainButton to="/consultation">Konsultacje i Szkolenia</MainButton>
-          </AbMainContent>
-          <LastPostsWrapper>
-            <LastPostsHeading>Ostatnie posty</LastPostsHeading>
-            <LastPostsParagraph>
-              „Ważne JAK!” to dawka konkretnej wiedzy o sile osobistego wpływu na jakość życia oraz
-              o skutecznym przeprowadzaniu życiowych zmian.
-            </LastPostsParagraph>
-            <Carousel />
-            <ToBlogButton to="/blog">Wszystkie wpisy</ToBlogButton>
-          </LastPostsWrapper>
-          <BottomBackground />
-        </AbContentWrapper>
-        <Footer about="true" />
-      </AboutMeWrapper>
+      <Navigationbar pageType={PAGE_TYPE.about} />
+      <GreetWrapper>
+        <Greet />
+        <Medias>
+          <MediaIcon
+            face
+            href="https://www.facebook.com/pg/Wa%C5%BCne-JAK-104715450959726/about/?ref=page_internal"
+            target="_blank"
+          />
+          <MediaIcon insta href="https://www.instagram.com/kavi_foodies/" target="_blank" />
+        </Medias>
+      </GreetWrapper>
+      <AbMainContent>
+        <AbContentHeading>O mnie</AbContentHeading>
+        <AbGridItems>
+          <AbParagraph>{pageContent.mainText.first}</AbParagraph>
+          <AbImage src={kaviHats} />
+          {handleGridDisplay() === MEDIA_TYPE.desktop ? (
+            <>
+              <AbImage src={kaviCanion} />
+              <AbParagraph>{pageContent.mainText.second}</AbParagraph>
+              <AbParagraph>{pageContent.mainText.third}</AbParagraph>
+            </>
+          ) : (
+            <>
+              <AbParagraph>{pageContent.mainText.second}</AbParagraph>
+              <AbImage src={kaviCanion} />
+              <AbParagraph>{pageContent.mainText.third}</AbParagraph>
+            </>
+          )}
+        </AbGridItems>
+        <MainButton to="/consultation">{pageContent.mainText.button}</MainButton>
+      </AbMainContent>
+      <LastPostsWrapper>
+        <LastPostsHeading>{pageContent.lastPosts.title}</LastPostsHeading>
+        <LastPostsParagraph>{pageContent.lastPosts.paragraph}</LastPostsParagraph>
+        <Carousel />
+        <ToBlogButton to="/blog">{pageContent.lastPosts.button}</ToBlogButton>
+      </LastPostsWrapper>
+      <BottomBackground />
+      <Footer pageType={PAGE_TYPE.about} />
     </>
   );
 };

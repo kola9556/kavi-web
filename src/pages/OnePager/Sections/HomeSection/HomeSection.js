@@ -1,70 +1,161 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
-import ImagesBackground from 'components/atoms/ImagesBackground/ImagesBackground';
-import RectaImgBox from 'components/atoms/RectaImgBox/RectaImgBox';
-import { ColumnWrapper, RowWrapper, MainWrapper } from 'utils/Wrappers/Wrappers';
-import Paragraph from 'components/atoms/Paragraph/Paragraph';
+import { media } from 'utils';
+import book from 'assets/images/book.jpg';
 
-const HomeWrapper = styled(MainWrapper)`
+const HomeWrapper = styled.div`
+  margin: 10rem 0 5rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  ${media.desktop`
+    margin: 30rem 0 20rem;
+    display: flex;
+    flex-direction: row;
+  `}
+`;
+
+const BookWrapper = styled.div`
+  display: flex;
   flex-direction: row;
-  padding-left: 25rem;
+  align-items: center;
+  margin: 1rem 0;
+  position: relative;
+  right: 3rem;
+
+  ${media.desktop`
+  display: none;
+  `}
+
+  ${({ desktop }) =>
+    desktop &&
+    css`
+      display: none;
+
+      ${media.desktop`
+        display: flex;
+        position: relative;
+        left 3rem;
+        bottom: 3rem;
+      `}
+    `}
 `;
 
-const RedBackground = styled(ImagesBackground)`
+const RedBackground = styled.div`
+  width: 9.3rem;
+  height: 15rem;
+  border-radius: 0 2rem 0 2rem;
   background-color: ${({ theme }) => theme.elemRed};
+  position: relative;
+  left: 5rem;
+
+  ${media.desktop`
+  width: 18rem;
+  height: 28.9rem;
+  border-radius: 0 6rem 0 6rem;
+  position: static;
+  left:0;
+  `}
 `;
 
-const HomeRectaImgBox = styled(RectaImgBox)`
+const HomeRectaImgBox = styled.div`
   position: relative;
+  width: 8rem;
+  height: 11.8rem;
+  background-image: url(${book});
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  z-index: 5;
+
+  ${media.desktop`
+  width: 16rem;
+  height: 23.7rem;
   right: 11rem;
+  `}
 `;
 
-const HomeTextWrapper = styled(ColumnWrapper)`
+const HomeTextWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   position: relative;
-  top: 7.5rem;
-  right: 16rem;
+
+  ${media.desktop`
+  top: 0rem;
+  right: 0rem;
+  `}
 `;
 
 const ParaWrapper = styled.div`
   display: flex;
   padding-bottom: 2rem;
 
+  ${media.desktop`
+  display: flex;
+  padding-bottom: 2rem;
+  position: relative;
+
   ${({ first }) =>
     first &&
     css`
-      padding-left: 10rem;
+      right: 5rem;
     `}
 
-  ${({ second }) =>
-    second &&
+    ${({ second }) =>
+      second &&
+      css`
+        top: 2rem;
+      `}
+
+  ${({ third }) =>
+    third &&
     css`
-      padding-left: 16rem;
-    `}
+      top: 4rem;
+      right: 16rem;
+    `}`}
 `;
 
-const HomeParagraph = styled(Paragraph)`
-margin: 0;
+const HomeParagraph = styled.p`
+  margin: 0;
+  color: ${({ theme }) => theme.navyblueText};
 
 ${({ first }) =>
   first &&
   css`
-    font-size: 2.6rem;
+    font-size: 1.6rem;
     font-weight: 600;
     text-transform: uppercase;
+
+    ${media.desktop`
+    font-size: 2.2rem;
+    `}
   `}
 
 ${({ second }) =>
   second &&
   css`
-    font-size: 1.8rem;
+    font-size: 1.3rem;
     font-weight: 500;
+
+    ${media.desktop`
+    font-size: 1.6rem;
+    `}
   `}
 
 ${({ third }) =>
   third &&
   css`
-    font-size: 1.6rem;
+    font-size: 1.2rem;
+    margin-left: 8rem;
+
+    ${media.desktop`
+    font-size: 1.4rem;
+    `}
   `}
 `;
 
@@ -72,10 +163,10 @@ const HomeSection = ({ firstPara, secondPara, thirdPara }) => {
   return (
     <>
       <HomeWrapper>
-        <RowWrapper>
+        <BookWrapper desktop>
           <RedBackground />
           <HomeRectaImgBox />
-        </RowWrapper>
+        </BookWrapper>
         <HomeTextWrapper>
           <ParaWrapper first>
             <HomeParagraph first>{firstPara}</HomeParagraph>
@@ -83,7 +174,11 @@ const HomeSection = ({ firstPara, secondPara, thirdPara }) => {
           <ParaWrapper second>
             <HomeParagraph second>{secondPara}</HomeParagraph>
           </ParaWrapper>
-          <ParaWrapper>
+          <BookWrapper>
+            <RedBackground />
+            <HomeRectaImgBox />
+          </BookWrapper>
+          <ParaWrapper third>
             <HomeParagraph third>{thirdPara}</HomeParagraph>
           </ParaWrapper>
         </HomeTextWrapper>

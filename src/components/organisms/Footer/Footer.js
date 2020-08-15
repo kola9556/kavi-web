@@ -1,30 +1,50 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
+import { media } from 'utils';
 import Bead from 'assets/images/bead.svg';
 import MediaIcon from 'components/atoms/MediaIcon/MediaIcon';
 import InfoBox from 'components/molecules/InfoBox/InfoBox';
-import { MainWrapper, RowWrapper, ColumnWrapper } from 'utils/Wrappers/Wrappers';
+import { PAGE_TYPE } from 'utils/constans';
 
-const FooterWrapper = styled(MainWrapper)`
-  padding: 3rem 5rem 0 5rem;
+const FooterWrapper = styled.div`
+  width: 100%;
+  padding: 2rem 0 0 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
   background-color: ${({ theme }) => theme.footerBackground};
 
-  ${({ about }) =>
-    about &&
+  ${({ pageType }) =>
+    pageType === PAGE_TYPE.about &&
     css`
       background: rgb(233, 231, 231);
       background: linear-gradient(0deg, rgba(233, 231, 231, 1) 17%, rgba(250, 253, 254, 1) 100%);
     `}
+
+  ${({ pageType }) =>
+    pageType === PAGE_TYPE.main &&
+    css`
+      background: rgb(218, 218, 218);
+      background: linear-gradient(0deg, rgba(218, 218, 218, 1) 59%, rgba(246, 246, 246, 1) 100%);
+    `}
+
+  ${media.desktop`align-items: center;
+  padding: 0;`}
 `;
 
-const ContentWrapper = styled(RowWrapper)`
+const ContentWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   justify-content: flex-start;
 `;
 
-const BottomWrapper = styled(ColumnWrapper)`
-  margin-left: 6rem;
-  width: 70vw;
+const LeftWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 `;
 
 const BeadIcon = styled.div`
@@ -34,49 +54,58 @@ const BeadIcon = styled.div`
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: cover;
+  display: none;
+
+  ${media.desktop`
+  display: inline;
+  `}
 `;
 
 const Line = styled.div`
-  width: 50%;
+  width: 100%;
   height: 1px;
   border-top: 1px solid rgba(141, 141, 141, 0.31);
-  position: relative;
-  bottom: 8rem;
-  left: 3rem;
 `;
 
-const MediaWrapper = styled(RowWrapper)`
-  position: relative;
-
-  bottom: 4rem;
+const MediaWrapper = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 `;
 
 const Copyrights = styled.p`
   color: ${({ theme }) => theme.footerText};
   font-size: 1.2rem;
   font-weight: 600;
-  padding-top: 2rem;
+
+  ${media.desktop`margin: 0 0 1rem 0;`}
 `;
 
-const Footer = ({ about }) => {
+const Footer = ({ pageType }) => {
   return (
     <>
-      <FooterWrapper about={about}>
+      <FooterWrapper pageType={pageType}>
         <ContentWrapper>
-          <InfoBox />
+          <LeftWrapper>
+            <InfoBox />
+            <Line />
+            <MediaWrapper>
+              <MediaIcon
+                href="https://www.facebook.com/profile.php?id=1798136115"
+                target="_blank"
+                face
+                footer
+              />
+              <MediaIcon
+                href="https://www.instagram.com/kavi_foodies/?fbclid=IwAR3IVi3_fs1Rcl6vhLMTalRGyhWT5KU_X_mBgr9p56uZX6WdX3no1I8W694"
+                target="_blank"
+                insta
+                footer
+              />
+            </MediaWrapper>
+          </LeftWrapper>
           <BeadIcon />
         </ContentWrapper>
-        <BottomWrapper>
-          <Line />
-          <MediaWrapper>
-            <MediaIcon href="https://www.facebook.com/profile.php?id=1798136115" target="_blank" />
-            <MediaIcon
-              href="https://www.instagram.com/kavi_foodies/?fbclid=IwAR3IVi3_fs1Rcl6vhLMTalRGyhWT5KU_X_mBgr9p56uZX6WdX3no1I8W694"
-              target="_blank"
-              insta
-            />
-          </MediaWrapper>
-        </BottomWrapper>
         <Copyrights>&copy; 2020 Aleksandra Kurdej. All rights reserved.</Copyrights>
       </FooterWrapper>
     </>
@@ -84,11 +113,11 @@ const Footer = ({ about }) => {
 };
 
 Footer.propTypes = {
-  about: PropTypes.bool,
+  pageType: PropTypes.oneOf(['main', 'about']),
 };
 
 Footer.defaultProps = {
-  about: 'false',
+  pageType: 'main',
 };
 
 export default Footer;
