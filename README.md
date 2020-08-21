@@ -1,4 +1,4 @@
-## Website develop for Kav Kozłowska - freelance project
+## Website develop for Kavi Kozłowska - freelance project
 
 #### Hosted on: https://kaviweb.netlify.app/
 
