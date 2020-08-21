@@ -5,6 +5,7 @@ import { PAGE_TYPE, SCREEN_SIZES, MEDIA_TYPE } from 'utils/constans';
 import aboutBottom from 'assets/images/aboutBottom.jpg';
 import aboutImg from 'assets/images/about.jpg';
 import Navigationbar from 'components/organisms/Navigationbar/Navigationbar';
+import FixedBackgroundTop from 'components/atoms/FixedBackgroundTop/FixedBackgroundTop';
 import Greet from 'pages/AboutMe/components/Greet';
 import Footer from 'components/organisms/Footer/Footer';
 import MainButton from 'components/atoms/MainButton/MainButton';
@@ -13,6 +14,7 @@ import { SParagraph, BoldSpanS } from 'utils/Headers';
 import kaviCanion from 'assets/images/kaviCanion.jpg';
 import kaviHats from 'assets/images/kaviHats.jpg';
 import Carousel from 'components/organisms/Carousel/Carousel';
+import FixedBackgroundBottom from 'components/atoms/FixedBackgroundBottom/FixedBackgroundBottom';
 
 const pageContent = {
   mainText: {
@@ -71,49 +73,6 @@ const pageContent = {
       '„Ważne JAK!” to dawka konkretnej wiedzy o sile osobistego wpływu na jakość życia oraz o skutecznym przeprowadzaniu życiowych zmian.',
   },
 };
-
-const GreetWrapper = styled.div`
-  width: 100%;
-  height: 100vh;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  opacity: 1;
-  animation: show 3s;
-
-  ${media.desktop`
-    height: 80vh;
-  `}
-
-  @keyframes show {
-    from {
-      opacity: 0;
-    }
-    to {
-      opacity: 1;
-    }
-  }
-  // Fake background made to give the opacity only for background
-  :after {
-    content: '';
-    background-image: url(${aboutImg});
-    background-position: 50% 50%;
-    background-size: cover;
-    background-attachment: fixed;
-    opacity: 0.3;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    position: absolute;
-    z-index: -1;
-  }
-`;
 
 const Medias = styled.div`
   display: flex;
@@ -230,20 +189,6 @@ const LastPostsParagraph = styled.p`
 
 const ToBlogButton = MainButton;
 
-const BottomBackground = styled.div`
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 80vh;
-  background-image: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0) 52%),
-    url(${aboutBottom});
-  background-position: 100% 30%;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  opacity: 0.6;
-`;
-
 const currentSize = window.screen.width;
 
 /* Checks the size od the screen and return screen type (desktop/phone). 
@@ -256,7 +201,7 @@ const AboutMe = () => {
   return (
     <>
       <Navigationbar pageType={PAGE_TYPE.about} />
-      <GreetWrapper>
+      <FixedBackgroundTop img={aboutImg}>
         <Greet />
         <Medias>
           <MediaIcon
@@ -266,7 +211,7 @@ const AboutMe = () => {
           />
           <MediaIcon insta href="https://www.instagram.com/kavi_foodies/" target="_blank" />
         </Medias>
-      </GreetWrapper>
+      </FixedBackgroundTop>
       <AbMainContent>
         <AbContentHeading>O mnie</AbContentHeading>
         <AbGridItems>
@@ -294,7 +239,7 @@ const AboutMe = () => {
         <Carousel />
         <ToBlogButton to="/blog">{pageContent.lastPosts.button}</ToBlogButton>
       </LastPostsWrapper>
-      <BottomBackground />
+      <FixedBackgroundBottom img={aboutBottom} />
       <Footer pageType={PAGE_TYPE.about} />
     </>
   );

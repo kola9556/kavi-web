@@ -1,7 +1,7 @@
 import React from 'react';
 import { paths } from 'utils/paths';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import Contact from 'pages/Contact';
+import Contact from 'pages/Contact/Contact';
 import Shop from 'pages/Shop';
 import Consultation from 'pages/Consultation';
 import Collaboration from 'pages/Collaboration';

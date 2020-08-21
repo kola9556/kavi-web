@@ -1,5 +1,4 @@
 // Headers and paragraphs for all project
-
 import styled from 'styled-components';
 import { media } from 'utils';
 
@@ -47,6 +46,10 @@ const XsHeader = styled.h3`
   font-size: 1.6rem;
   font-weight: 600;
   color: ${({ theme }) => theme.navyblueText};
+
+  ${media.desktop`
+  font-size: 2rem;
+  `}
 `;
 
 const SHeaderBold = styled(SHeader)`
@@ -94,6 +97,37 @@ const BoldSpanS = styled.span`
   font-weight: 700;
 `;
 
+const MainHeading = styled.h1`
+  margin: 0;
+  font-size: 3.2rem;
+  font-weight: 700;
+  color: ${({ theme }) => theme.navyblueText};
+  margin-bottom: 0.5rem;
+  text-align: center;
+
+  ${media.desktop`
+  font-size: 4rem;
+  `}
+`;
+
+const PostscriptHeading = styled.h3`
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: ${({ theme }) => theme.navyblueText};
+  word-spacing: 0.3rem;
+  letter-spacing: 0.2rem;
+  text-transform: uppercase;
+  text-align: center;
+`;
+
+const DescriptionParagraph = styled.p`
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: ${({ theme }) => theme.footerText};
+`;
+
 export {
   XxxlHeading,
   XxlHeading,
@@ -110,4 +144,7 @@ export {
   BoldSpan,
   BoldSpanS,
   BlueSpan,
+  MainHeading,
+  PostscriptHeading,
+  DescriptionParagraph,
 };

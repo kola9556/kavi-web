@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
 import { media } from 'utils';
 import Bead from 'assets/images/bead.svg';
-import MediaIcon from 'components/atoms/MediaIcon/MediaIcon';
+import MediaBox from 'components/molecules/MediaBox/MediaBox';
 import InfoBox from 'components/molecules/InfoBox/InfoBox';
 import { PAGE_TYPE } from 'utils/constans';
 
@@ -67,12 +67,6 @@ const Line = styled.div`
   border-top: 1px solid rgba(141, 141, 141, 0.31);
 `;
 
-const MediaWrapper = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-`;
-
 const Copyrights = styled.p`
   color: ${({ theme }) => theme.footerText};
   font-size: 1.2rem;
@@ -89,20 +83,7 @@ const Footer = ({ pageType }) => {
           <LeftWrapper>
             <InfoBox />
             <Line />
-            <MediaWrapper>
-              <MediaIcon
-                href="https://www.facebook.com/profile.php?id=1798136115"
-                target="_blank"
-                face
-                footer
-              />
-              <MediaIcon
-                href="https://www.instagram.com/kavi_foodies/?fbclid=IwAR3IVi3_fs1Rcl6vhLMTalRGyhWT5KU_X_mBgr9p56uZX6WdX3no1I8W694"
-                target="_blank"
-                insta
-                footer
-              />
-            </MediaWrapper>
+            <MediaBox />
           </LeftWrapper>
           <BeadIcon />
         </ContentWrapper>
