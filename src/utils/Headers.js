@@ -110,6 +110,19 @@ const MainHeading = styled.h1`
   `}
 `;
 
+const SecondHeading = styled.h2`
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: ${({ theme }) => theme.navyblueText};
+  margin-bottom: 0.5rem;
+  text-align: left;
+
+  ${media.desktop`
+  font-size: 2rem;
+  `}
+`;
+
 const PostscriptHeading = styled.h3`
   margin: 0;
   font-size: 1.6rem;
@@ -145,6 +158,7 @@ export {
   BoldSpanS,
   BlueSpan,
   MainHeading,
+  SecondHeading,
   PostscriptHeading,
   DescriptionParagraph,
 };

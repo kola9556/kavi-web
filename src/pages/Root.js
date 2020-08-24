@@ -8,7 +8,7 @@ import Collaboration from 'pages/Collaboration';
 import OnePager from 'pages/OnePager/OnePager';
 import LifeQm from 'pages/LifeQm';
 import AboutMe from 'pages/AboutMe/AboutMe';
-import Blog from 'pages/Blog';
+import Blog from 'pages/Blog/Blog';
 import MainTemplate from '../templates/MainTemplate';
 
 const Root = () => (

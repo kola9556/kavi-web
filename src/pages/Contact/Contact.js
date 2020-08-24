@@ -8,7 +8,7 @@ import contactTop from 'assets/images/contactTop.jpg';
 import contactBottom from 'assets/images/contactBottom.jpg';
 import FixedBackgroundBottom from 'components/atoms/FixedBackgroundBottom/FixedBackgroundBottom';
 import Footer from 'components/organisms/Footer/Footer';
-import AboutMeBlock from './components/AboutMeBlock';
+import AboutMeBlock from '../../components/molecules/AboutMeBlock/AboutMeBlock';
 
 const pageContent = {
   header: 'Napisz do mnie!',

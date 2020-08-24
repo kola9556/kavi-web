@@ -8,7 +8,7 @@ import kaviHats from 'assets/images/kaviHats.jpg';
 import MediaBox from 'components/molecules/MediaBox/MediaBox';
 
 const AboutMeBlockWrapper = styled.div`
-  height: 55rem;
+  height: 60rem;
   display: flex;
   flex-direction: column;
   align-items: center;

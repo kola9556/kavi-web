@@ -94,7 +94,7 @@ const Text = styled(SParagraph)`
   width: 28rem;`}
 `;
 
-const Posts = [
+const posts = [
   {
     id: 1,
     image: Provisions,
@@ -125,7 +125,7 @@ const Carousel = () => {
   return (
     <>
       <CaWrapper>
-        {Posts.map((post) => (
+        {posts.map((post) => (
           <>
             <Card to="/blog">
               <CaImage image={post.image} />
