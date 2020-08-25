@@ -15,6 +15,14 @@ const NavArrowWrapper = styled.div`
     css`
       flex-direction: row-reverse;
     `}
+
+  ${({ post }) =>
+    post &&
+    css`
+      margin-top: 10rem;
+      width: 25rem;
+      flex-direction: row-reverse;
+    `}
 `;
 
 const ArrowsIcon = styled.div`
@@ -29,15 +37,22 @@ const ArrowsIcon = styled.div`
     css`
       transform: rotate(180deg);
     `}
+
+  ${({ post }) =>
+    post &&
+    css`
+      transform: rotate(180deg);
+    `}
 `;
 
 const StyledDescriptionParagraph = styled(DescriptionParagraph)`
   font-weight: 700;
 `;
 
-const NavArrow = ({ children, previous }) => (
+const NavArrow = ({ children, previous, post }) => (
   <>
-    <NavArrowWrapper previous={previous}>
+    <NavArrowWrapper post={post} previous={previous}>
+      {post ? <ArrowsIcon post={post} /> : null}
       <StyledDescriptionParagraph>{children}</StyledDescriptionParagraph>
       <ArrowsIcon previous={previous} />
     </NavArrowWrapper>
@@ -47,10 +62,12 @@ const NavArrow = ({ children, previous }) => (
 NavArrow.propTypes = {
   children: PropTypes.string.isRequired,
   previous: PropTypes.bool,
+  post: PropTypes.bool,
 };
 
 NavArrow.defaultProps = {
   previous: false,
+  post: false,
 };
 
 export default NavArrow;
