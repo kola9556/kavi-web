@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import { media } from 'utils';
 import { SecondHeading } from 'utils/Headers';
 import { blogPosts as posts } from 'content/blogContent';
+import ScrollTemplate from 'templates/ScrollTemplate';
 import AboutMeBlock from 'components/molecules/AboutMeBlock/AboutMeBlock';
 import Navigationbar from 'components/organisms/Navigationbar/Navigationbar';
 import FixedBackgroundBottom from 'components/atoms/FixedBackgroundBottom/FixedBackgroundBottom';
@@ -130,37 +131,44 @@ const pageContent = {
   },
 };
 
-const Blog = () => (
-  <>
-    <Navigationbar />
-    <StyledFixedBackground img={blogTopMobile}>
-      <TopBackgroundTextWrapper>
-        <StyledSecondHeading>Blog o szczęśliwym stylu życiu...</StyledSecondHeading>
-        <StyledSecondHeading>Blog dla życia świadomie zarządzanego...</StyledSecondHeading>
-        <StyledSecondHeading>Blog o życiu z sensem...</StyledSecondHeading>
-      </TopBackgroundTextWrapper>
-    </StyledFixedBackground>
-    <BlogContentWrapper>
-      <PostLabelsWrapper>
-        {posts.map((post) => (
-          <PostLabel image={post.mainImage} title={post.title} id={post.id} />
-        ))}
-      </PostLabelsWrapper>
-      <AboutMeBlockWrapper>
-        <AboutMeBlock
-          mediaHeader={pageContent.aboutMeBlock.media}
-          header={pageContent.aboutMeBlock.header}
-          description={pageContent.aboutMeBlock.description}
-        />
-      </AboutMeBlockWrapper>
-    </BlogContentWrapper>
-    <NavArrowsWrapper>
-      <NavArrow previous>Poprzedni</NavArrow>
-      <NavArrow>Następny</NavArrow>
-    </NavArrowsWrapper>
-    <StyledFixedBackgroundBottom img={blogBottom} />
-    <Footer />
-  </>
-);
+class Blog extends Component {
+  state = {};
 
+  render() {
+    return (
+      <>
+        <ScrollTemplate>
+          <Navigationbar />
+          <StyledFixedBackground img={blogTopMobile}>
+            <TopBackgroundTextWrapper>
+              <StyledSecondHeading>Blog o szczęśliwym stylu życiu...</StyledSecondHeading>
+              <StyledSecondHeading>Blog dla życia świadomie zarządzanego...</StyledSecondHeading>
+              <StyledSecondHeading>Blog o życiu z sensem...</StyledSecondHeading>
+            </TopBackgroundTextWrapper>
+          </StyledFixedBackground>
+          <BlogContentWrapper>
+            <PostLabelsWrapper>
+              {posts.map((post) => (
+                <PostLabel image={post.mainImage} title={post.title} id={post.id} />
+              ))}
+            </PostLabelsWrapper>
+            <AboutMeBlockWrapper>
+              <AboutMeBlock
+                mediaHeader={pageContent.aboutMeBlock.media}
+                header={pageContent.aboutMeBlock.header}
+                description={pageContent.aboutMeBlock.description}
+              />
+            </AboutMeBlockWrapper>
+          </BlogContentWrapper>
+          <NavArrowsWrapper>
+            <NavArrow previous>Poprzedni</NavArrow>
+            <NavArrow>Następny</NavArrow>
+          </NavArrowsWrapper>
+          <StyledFixedBackgroundBottom img={blogBottom} />
+          <Footer />
+        </ScrollTemplate>
+      </>
+    );
+  }
+}
 export default Blog;

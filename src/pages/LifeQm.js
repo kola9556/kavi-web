@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import Navigationbar from 'components/organisms/Navigationbar/Navigationbar';
+import ScrollTemplate from 'templates/ScrollTemplate';
 
 const LqmWrapper = styled.div`
   width: 100%;
@@ -25,14 +26,22 @@ const Paragraph = styled.p`
   color: ${({ theme }) => theme.navyblueText};
 `;
 
-const LifeQm = () => (
-  <>
-    <Navigationbar />
-    <LqmWrapper>
-      <Heading>Sorry!</Heading>
-      <Paragraph>This side is in the process of building</Paragraph>
-    </LqmWrapper>
-  </>
-);
+class LifeQm extends Component {
+  state = {};
+
+  render() {
+    return (
+      <>
+        <ScrollTemplate>
+          <Navigationbar />
+          <LqmWrapper>
+            <Heading>Sorry!</Heading>
+            <Paragraph>This side is in the process of building</Paragraph>
+          </LqmWrapper>
+        </ScrollTemplate>
+      </>
+    );
+  }
+}
 
 export default LifeQm;

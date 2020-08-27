@@ -1,6 +1,7 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import Navigationbar from 'components/organisms/Navigationbar/Navigationbar';
+import ScrollTemplate from 'templates/ScrollTemplate';
 
 const ConsultWrapper = styled.div`
   width: 100%;
@@ -25,14 +26,22 @@ const Paragraph = styled.p`
   color: ${({ theme }) => theme.navyblueText};
 `;
 
-const Consultation = () => (
-  <>
-    <Navigationbar />
-    <ConsultWrapper>
-      <Heading>Sorry!</Heading>
-      <Paragraph>This side is in the process of building</Paragraph>
-    </ConsultWrapper>
-  </>
-);
+class Consultation extends Component {
+  state = {};
+
+  render() {
+    return (
+      <>
+        <ScrollTemplate>
+          <Navigationbar />
+          <ConsultWrapper>
+            <Heading>Sorry!</Heading>
+            <Paragraph>This side is in the process of building</Paragraph>
+          </ConsultWrapper>
+        </ScrollTemplate>
+      </>
+    );
+  }
+}
 
 export default Consultation;

@@ -14,6 +14,7 @@ import blogPost1 from 'assets/images/blogPost1.jpg';
 import blogPost2 from 'assets/images/blogPost2.jpg';
 import blogPost3 from 'assets/images/blogPost3.jpg';
 import Footer from 'components/organisms/Footer/Footer';
+import ScrollTemplate from 'templates/ScrollTemplate';
 
 const StyledFixedBackgroundTop = styled(FixedBackgroundTop)`
   height: 50vh;
@@ -88,30 +89,32 @@ class Post extends Component {
     const currentPath = window.location.pathname;
     return (
       <>
-        <Navigationbar />
-        <StyledFixedBackgroundTop img={postTop}>
-          {posts.map(
-            (post) =>
-              `/blog/post/${post.id}` === currentPath && <PostHeading>{post.title}</PostHeading>,
-          )}
-        </StyledFixedBackgroundTop>
-        <PostWrapper>
-          {posts.map(
-            (post) =>
-              `/blog/post/${post.id}` === currentPath && (
-                <>
-                  <Date>{post.date}</Date>
-                  <MainImage mainImage={post.mainImage} />
-                  <Content>
-                    {post.text}
-                    <Next post>Zobaczy kolejny post</Next>
-                  </Content>
-                </>
-              ),
-          )}
-        </PostWrapper>
-        <StyledFixedBackgroundBottom img={postBottom} />
-        <Footer />
+        <ScrollTemplate>
+          <Navigationbar />
+          <StyledFixedBackgroundTop img={postTop}>
+            {posts.map(
+              (post) =>
+                `/blog/post/${post.id}` === currentPath && <PostHeading>{post.title}</PostHeading>,
+            )}
+          </StyledFixedBackgroundTop>
+          <PostWrapper>
+            {posts.map(
+              (post) =>
+                `/blog/post/${post.id}` === currentPath && (
+                  <>
+                    <Date>{post.date}</Date>
+                    <MainImage mainImage={post.mainImage} />
+                    <Content>
+                      {post.text}
+                      <Next post>Zobaczy kolejny post</Next>
+                    </Content>
+                  </>
+                ),
+            )}
+          </PostWrapper>
+          <StyledFixedBackgroundBottom img={postBottom} />
+          <Footer />
+        </ScrollTemplate>
       </>
     );
   }

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import styled from 'styled-components';
 import { PAGE_TYPE } from 'utils/constans';
 import { MParagraph, BlueSpan, BoldSpan } from 'utils/Headers';
+import ScrollTemplate from 'templates/ScrollTemplate';
 import TopSection from 'pages/OnePager/Sections/TopSection/TopSection';
 import LqmSection from 'pages/OnePager/Sections/LqmSection/LqmSection';
 import AboutSection from 'pages/OnePager/Sections/AboutSection/AboutSection';
@@ -170,26 +171,33 @@ const pageContent = {
 
 const { top, home, about, lifeqm, consultation, blog } = pageContent;
 
-const OnePager = () => (
-  <>
-    <Navigationbar pageType="onePager" />
-    <TopSection heading={top.heading} paragraph={top.paragraph} />
-    <HomeSection
-      firstPara={home.firstParagraph}
-      secondPara={home.secondParagraph}
-      thirdPara={home.thirdParagraph}
-    />
-    <AboutSection
-      heading={about.heading}
-      paragraphUp={about.paragraphUp}
-      paragraphDown={about.paragraphDown}
-    />
-    <LqmSection>{lifeqm}</LqmSection>
-    <ConsultSection content={consultation} />
-    <BlogSection redText={blog.redText} listPoints={blog.listPoints} />
-    <ShopSection />
-    <Footer pageType={PAGE_TYPE.main} />
-  </>
-);
+class OnePager extends Component {
+  state = {};
 
+  render() {
+    return (
+      <>
+        <ScrollTemplate>
+          <Navigationbar pageType="onePager" />
+          <TopSection heading={top.heading} paragraph={top.paragraph} />
+          <HomeSection
+            firstPara={home.firstParagraph}
+            secondPara={home.secondParagraph}
+            thirdPara={home.thirdParagraph}
+          />
+          <AboutSection
+            heading={about.heading}
+            paragraphUp={about.paragraphUp}
+            paragraphDown={about.paragraphDown}
+          />
+          <LqmSection>{lifeqm}</LqmSection>
+          <ConsultSection content={consultation} />
+          <BlogSection redText={blog.redText} listPoints={blog.listPoints} />
+          <ShopSection />
+          <Footer pageType={PAGE_TYPE.main} />
+        </ScrollTemplate>
+      </>
+    );
+  }
+}
 export default OnePager;

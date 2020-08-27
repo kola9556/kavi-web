@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import { media } from 'utils';
 import { MainHeading, PostscriptHeading, MParagraph } from 'utils/Headers';
+import ScrollTemplate from 'templates/ScrollTemplate';
 import Navigationbar from 'components/organisms/Navigationbar/Navigationbar';
 import FixedBackgroundTop from 'components/atoms/FixedBackgroundTop/FixedBackgroundTop';
 import contactTop from 'assets/images/contactTop.jpg';
@@ -87,31 +88,39 @@ const StyledBackgroundBottom = styled(FixedBackgroundBottom)`
   height: 50vh;
 `;
 
-const Contact = () => (
-  <>
-    <Navigationbar />
-    <StyledFixedBackground img={contactTop}>
-      <MainHeading>{pageContent.header}</MainHeading>
-      <PostscriptHeading>{pageContent.postscript}</PostscriptHeading>
-    </StyledFixedBackground>
-    <ContactContent>
-      <ContactTextWrapper>
-        <ContactLabel>{pageContent.mailHeader}</ContactLabel>
-        <ContactParagraph>{pageContent.mail}</ContactParagraph>
-        <ContactLabel>{pageContent.corespondingHeader}</ContactLabel>
-        <ContactParagraph>{pageContent.adress}</ContactParagraph>
-        <ContactLabel>{pageContent.phoneHeader}</ContactLabel>
-        <ContactParagraph>{pageContent.phone}</ContactParagraph>
-      </ContactTextWrapper>
-      <AboutMeBlock
-        mediaHeader={pageContent.aboutMeBlock.media}
-        header={pageContent.aboutMeBlock.header}
-        description={pageContent.aboutMeBlock.description}
-      />
-    </ContactContent>
-    <StyledBackgroundBottom img={contactBottom} />
-    <Footer />
-  </>
-);
+class Contact extends Component {
+  state = {};
+
+  render() {
+    return (
+      <>
+        <ScrollTemplate>
+          <Navigationbar />
+          <StyledFixedBackground img={contactTop}>
+            <MainHeading>{pageContent.header}</MainHeading>
+            <PostscriptHeading>{pageContent.postscript}</PostscriptHeading>
+          </StyledFixedBackground>
+          <ContactContent>
+            <ContactTextWrapper>
+              <ContactLabel>{pageContent.mailHeader}</ContactLabel>
+              <ContactParagraph>{pageContent.mail}</ContactParagraph>
+              <ContactLabel>{pageContent.corespondingHeader}</ContactLabel>
+              <ContactParagraph>{pageContent.adress}</ContactParagraph>
+              <ContactLabel>{pageContent.phoneHeader}</ContactLabel>
+              <ContactParagraph>{pageContent.phone}</ContactParagraph>
+            </ContactTextWrapper>
+            <AboutMeBlock
+              mediaHeader={pageContent.aboutMeBlock.media}
+              header={pageContent.aboutMeBlock.header}
+              description={pageContent.aboutMeBlock.description}
+            />
+          </ContactContent>
+          <StyledBackgroundBottom img={contactBottom} />
+          <Footer />
+        </ScrollTemplate>
+      </>
+    );
+  }
+}
 
 export default Contact;

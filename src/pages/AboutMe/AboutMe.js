@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled, { css } from 'styled-components';
 import { media } from 'utils';
 import { PAGE_TYPE, SCREEN_SIZES, MEDIA_TYPE } from 'utils/constans';
+import ScrollTemplate from 'templates/ScrollTemplate';
 import aboutBottom from 'assets/images/aboutBottom.jpg';
 import aboutImg from 'assets/images/about.jpg';
 import Navigationbar from 'components/organisms/Navigationbar/Navigationbar';
@@ -193,51 +194,58 @@ Display order of images and text sections depends on this function
 const handleGridDisplay = () =>
   currentSize >= SCREEN_SIZES.desktop ? MEDIA_TYPE.desktop : MEDIA_TYPE.phone;
 
-const AboutMe = () => {
-  return (
-    <>
-      <Navigationbar pageType={PAGE_TYPE.about} />
-      <FixedBackgroundTop img={aboutImg}>
-        <Greet />
-        <Medias>
-          <MediaIcon
-            face
-            href="https://www.facebook.com/pg/Wa%C5%BCne-JAK-104715450959726/about/?ref=page_internal"
-            target="_blank"
-          />
-          <MediaIcon insta href="https://www.instagram.com/kavi_foodies/" target="_blank" />
-        </Medias>
-      </FixedBackgroundTop>
-      <AbMainContent>
-        <AbContentHeading>O mnie</AbContentHeading>
-        <AbGridItems>
-          <AbParagraph>{pageContent.mainText.first}</AbParagraph>
-          <AbImage src={kaviHats} />
-          {handleGridDisplay() === MEDIA_TYPE.desktop ? (
-            <>
-              <AbImage src={kaviCanion} />
-              <AbParagraph>{pageContent.mainText.second}</AbParagraph>
-              <AbParagraph>{pageContent.mainText.third}</AbParagraph>
-            </>
-          ) : (
-            <>
-              <AbParagraph>{pageContent.mainText.second}</AbParagraph>
-              <AbImage src={kaviCanion} />
-              <AbParagraph>{pageContent.mainText.third}</AbParagraph>
-            </>
-          )}
-        </AbGridItems>
-        <MainButton to="/consultation">{pageContent.mainText.button}</MainButton>
-      </AbMainContent>
-      <LastPostsWrapper>
-        <LastPostsHeading>{pageContent.lastPosts.title}</LastPostsHeading>
-        <LastPostsParagraph>{pageContent.lastPosts.paragraph}</LastPostsParagraph>
-        <Carousel />
-        <ToBlogButton to="/blog">{pageContent.lastPosts.button}</ToBlogButton>
-      </LastPostsWrapper>
-      <FixedBackgroundBottom img={aboutBottom} />
-      <Footer pageType={PAGE_TYPE.about} />
-    </>
-  );
-};
+class AboutMe extends Component {
+  state = {};
+
+  render() {
+    return (
+      <>
+        <ScrollTemplate>
+          <Navigationbar pageType={PAGE_TYPE.about} />
+          <FixedBackgroundTop img={aboutImg}>
+            <Greet />
+            <Medias>
+              <MediaIcon
+                face
+                href="https://www.facebook.com/pg/Wa%C5%BCne-JAK-104715450959726/about/?ref=page_internal"
+                target="_blank"
+              />
+              <MediaIcon insta href="https://www.instagram.com/kavi_foodies/" target="_blank" />
+            </Medias>
+          </FixedBackgroundTop>
+          <AbMainContent>
+            <AbContentHeading>O mnie</AbContentHeading>
+            <AbGridItems>
+              <AbParagraph>{pageContent.mainText.first}</AbParagraph>
+              <AbImage src={kaviHats} />
+              {handleGridDisplay() === MEDIA_TYPE.desktop ? (
+                <>
+                  <AbImage src={kaviCanion} />
+                  <AbParagraph>{pageContent.mainText.second}</AbParagraph>
+                  <AbParagraph>{pageContent.mainText.third}</AbParagraph>
+                </>
+              ) : (
+                <>
+                  <AbParagraph>{pageContent.mainText.second}</AbParagraph>
+                  <AbImage src={kaviCanion} />
+                  <AbParagraph>{pageContent.mainText.third}</AbParagraph>
+                </>
+              )}
+            </AbGridItems>
+            <MainButton to="/consultation">{pageContent.mainText.button}</MainButton>
+          </AbMainContent>
+          <LastPostsWrapper>
+            <LastPostsHeading>{pageContent.lastPosts.title}</LastPostsHeading>
+            <LastPostsParagraph>{pageContent.lastPosts.paragraph}</LastPostsParagraph>
+            <Carousel />
+            <ToBlogButton to="/blog">{pageContent.lastPosts.button}</ToBlogButton>
+          </LastPostsWrapper>
+          <FixedBackgroundBottom img={aboutBottom} />
+          <Footer pageType={PAGE_TYPE.about} />
+        </ScrollTemplate>
+      </>
+    );
+  }
+}
+
 export default AboutMe;
