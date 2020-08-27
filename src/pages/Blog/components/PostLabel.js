@@ -1,17 +1,19 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
+import { Redirect } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import { blogPosts as posts } from 'content/blogContent';
 import { media } from 'utils';
+import { paths } from 'utils/paths';
 import { SHeader } from 'utils/Headers';
-import { NavLink } from 'react-router-dom';
 import kaviHats from 'assets/images/kaviHats.jpg';
 
-const PostLabelWrapper = styled(NavLink)`
+const PostLabelWrapper = styled.div`
   display: flex;
   margin-bottom: 4rem;
   flex-direction: column;
   width: 28rem;
-  text-decoration: none;
+  align-items: center;
   background-color: white;
   border-radius: 2rem;
   box-shadow: -1rem 0 2rem #f2f2f2;
@@ -24,7 +26,7 @@ const PostLabelWrapper = styled(NavLink)`
 const PostImage = styled.div`
   width: 100%;
   height: 20rem;
-  background-image: url(${kaviHats});
+  background-image: url(${({ image }) => image});
   background-position: 50% 50%;
   background-repeat: no-repeat;
   background-size: 100%;
@@ -36,21 +38,39 @@ const PostHeading = styled(SHeader)`
   text-align: center;
 
   ${media.desktop`
-  width: 28rem;
+  width: 32rem;
   `}
 `;
-const PostLabel = () => (
-  <>
-    {posts.map(
-      (post) =>
-        post.id === 1 && (
-          <PostLabelWrapper to="/blog">
-            <PostImage image={post.image} />
-            <PostHeading>{post.title}</PostHeading>
-          </PostLabelWrapper>
-        ),
-    )}
-  </>
-);
+class PostLabel extends Component {
+  state = {
+    redirect: false,
+  };
+
+  handlePostClick = () => this.setState({ redirect: true });
+
+  render() {
+    const { title, image, id } = this.props;
+    const { redirect } = this.state;
+
+    if (redirect) {
+      return <Redirect push to={`/blog/post/${id}`} />;
+    }
+
+    return (
+      <>
+        <PostLabelWrapper onClick={this.handlePostClick}>
+          <PostImage image={image} />
+          <PostHeading>{title}</PostHeading>
+        </PostLabelWrapper>
+      </>
+    );
+  }
+}
+
+PostLabel.propTypes = {
+  title: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  id: PropTypes.number.isRequired,
+};
 
 export default PostLabel;

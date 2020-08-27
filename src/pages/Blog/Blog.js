@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { media } from 'utils';
 import { SecondHeading } from 'utils/Headers';
+import { blogPosts as posts } from 'content/blogContent';
 import AboutMeBlock from 'components/molecules/AboutMeBlock/AboutMeBlock';
 import Navigationbar from 'components/organisms/Navigationbar/Navigationbar';
 import FixedBackgroundBottom from 'components/atoms/FixedBackgroundBottom/FixedBackgroundBottom';
@@ -141,12 +142,9 @@ const Blog = () => (
     </StyledFixedBackground>
     <BlogContentWrapper>
       <PostLabelsWrapper>
-        <PostLabel />
-        <PostLabel />
-        <PostLabel />
-        <PostLabel />
-        <PostLabel />
-        <PostLabel />
+        {posts.map((post) => (
+          <PostLabel image={post.mainImage} title={post.title} id={post.id} />
+        ))}
       </PostLabelsWrapper>
       <AboutMeBlockWrapper>
         <AboutMeBlock

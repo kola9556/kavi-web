@@ -10,7 +10,7 @@ import Greet from 'pages/AboutMe/components/Greet';
 import Footer from 'components/organisms/Footer/Footer';
 import MainButton from 'components/atoms/MainButton/MainButton';
 import MediaIcon from 'components/atoms/MediaIcon/MediaIcon';
-import { SParagraph, BoldSpanS } from 'utils/Headers';
+import { SParagraph, BoldSpanS, MainText } from 'utils/Headers';
 import kaviCanion from 'assets/images/kaviCanion.jpg';
 import kaviHats from 'assets/images/kaviHats.jpg';
 import Carousel from 'components/organisms/Carousel/Carousel';
@@ -139,12 +139,8 @@ const AbGridItems = styled.div`
   `}
 `;
 
-const AbParagraph = styled.p`
-  margin: 0;
+const AbParagraph = styled(MainText)`
   padding: 2rem 0;
-  font-size: 1.6rem;
-  font-weight: 600;
-  color: ${({ theme }) => theme.navyblueText};
 `;
 
 const AbImage = styled.img`

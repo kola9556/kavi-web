@@ -141,6 +141,13 @@ const DescriptionParagraph = styled.p`
   color: ${({ theme }) => theme.footerText};
 `;
 
+const MainText = styled.p`
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: ${({ theme }) => theme.navyblueText};
+`;
+
 export {
   XxxlHeading,
   XxlHeading,
@@ -161,4 +168,5 @@ export {
   SecondHeading,
   PostscriptHeading,
   DescriptionParagraph,
+  MainText,
 };
