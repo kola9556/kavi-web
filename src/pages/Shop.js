@@ -1,3 +1,5 @@
+/* eslint-disable react/self-closing-comp */
+/* eslint-disable react/no-unescaped-entities */
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import Navigationbar from 'components/organisms/Navigationbar/Navigationbar';

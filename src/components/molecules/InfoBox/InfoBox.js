@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
+import { paths } from 'utils/paths';
 import { NavLink } from 'react-router-dom';
 import { media } from 'utils';
 import LogoK from 'assets/logos/logoKSmall.jpg';
@@ -78,8 +79,8 @@ const InfoBox = ({ mediaType }) => {
         <SectionWrapper>
           <Logo />
           <List>
-            <Point>tel. 658 984 125</Point>
-            <Point>kavikozlowska@gmail.com</Point>
+            <Point>tel. 660 720 706</Point>
+            <Point>lifeqm.kontakt@gmail.com</Point>
             <Point>Katarzyna Kozłowska</Point>
           </List>
         </SectionWrapper>
@@ -88,10 +89,10 @@ const InfoBox = ({ mediaType }) => {
             <Label>Produkty</Label>
             <List>
               <Point>
-                <Link to="/shop">Sklep</Link>
+                <Link to={paths.shop}>Sklep</Link>
               </Point>
               <Point>
-                <Link to="/consultations">Szkolenia</Link>
+                <Link to={paths.consultation}>Szkolenia</Link>
               </Point>
             </List>
           </SectionWrapper>
@@ -99,10 +100,10 @@ const InfoBox = ({ mediaType }) => {
             <Label>Dla firm</Label>
             <List>
               <Point>
-                <Link to="/collabo">Współpraca</Link>
+                <Link to={paths.collabo}>Współpraca</Link>
               </Point>
               <Point>
-                <Link to="/contact">Kontakt</Link>
+                <Link to={paths.contact}>Kontakt</Link>
               </Point>
             </List>
           </SectionWrapper>
@@ -110,10 +111,10 @@ const InfoBox = ({ mediaType }) => {
             <Label>Marka</Label>
             <List>
               <Point>
-                <Link to="/blog">Blog</Link>
+                <Link to={paths.blog}>Blog</Link>
               </Point>
               <Point>
-                <Link to="/consultations">Szkolenia</Link>
+                <Link to={paths.consultation}>Szkolenia</Link>
               </Point>
             </List>
           </SectionWrapper>

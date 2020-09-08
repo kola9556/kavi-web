@@ -4,6 +4,7 @@ import { MainHeading, PostscriptHeading } from 'utils/Headers';
 import MainButton from 'components/atoms/MainButton/MainButton';
 import RoundImage from 'components/atoms/RoundImage/RoundImage';
 import kaviProfile from 'assets/images/kaviProfile.jpg';
+import { paths } from 'utils/paths';
 
 const GrWrapper = styled.div`
   display: flex;
@@ -20,7 +21,7 @@ const Greet = () => {
         <RoundImage img={kaviProfile} />
         <MainHeading>Cześć! Jestem Kavi,</MainHeading>
         <PostscriptHeading>trener skutecznej zmiany i bloger</PostscriptHeading>
-        <MainButton>
+        <MainButton to={paths.shop}>
           Autorka <br />
           „Autopilot Szczęścia”
         </MainButton>

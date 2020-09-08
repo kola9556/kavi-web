@@ -163,7 +163,7 @@ const LqmSection = ({ children }) => {
             </IconWrapper>
           ))}
         </GraphicsWrapper>
-        <MainButton to={paths.lqm}>Więcej</MainButton>
+        <MainButton to={paths.lifeqm}>Więcej</MainButton>
       </LqmWrapper>
     </>
   );

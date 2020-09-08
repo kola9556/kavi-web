@@ -9,7 +9,10 @@ import { SHeader } from 'utils/Headers';
 import kaviHats from 'assets/images/kaviHats.jpg';
 
 const PostLabelWrapper = styled.div`
-  display: flex;
+  /* Display: none - We don't have clients content for the blog, also we want to have
+   some default text placement, that's why I only make it not displayed before deployment*/
+  display: none;
+  cursor: pointer;
   margin-bottom: 4rem;
   flex-direction: column;
   width: 28rem;

@@ -207,7 +207,7 @@ class AboutMe extends Component {
             <Medias>
               <MediaIcon
                 face
-                href="https://www.facebook.com/pg/Wa%C5%BCne-JAK-104715450959726/about/?ref=page_internal"
+                href="https://www.facebook.com/profile.php?id=1798136115"
                 target="_blank"
               />
               <MediaIcon insta href="https://www.instagram.com/kavi_foodies/" target="_blank" />

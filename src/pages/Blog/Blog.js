@@ -94,7 +94,9 @@ const AboutMeBlockWrapper = styled.div`
 `;
 
 const NavArrowsWrapper = styled.div`
-  display: flex;
+  /* There are only few blog posts and for now no logic for how much blog post 
+should display and how Next/Previous buttons should handle this - so display: none */
+  display: none;
   justify-content: space-around;
 
   ${media.desktop`

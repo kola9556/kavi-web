@@ -11,14 +11,14 @@ const LabelWrapper = styled.div`
   flex-direction: column;
   align-items: flex-start;
   width: 18rem;
-  height: 15.1rem;
+  height: 17.1rem;
   border: 2px solid ${({ theme }) => theme.lightBlueText};
   border-radius: 0 7rem 0 7rem;
   justify-content: center;
 
   ${media.desktop`
     width: 38.4rem;
-    height: 29.6rem;
+    height: 31rem;
     border-radius: 0 10rem 0 10rem;
   `}
 `;
@@ -32,7 +32,16 @@ const Title = styled.h3`
 
   ${media.desktop`
     font-size: 2rem;
-    padding: 3rem 0 3rem 2rem;
+    padding: 3rem 0 0rem 2rem;
+  `}
+`;
+
+const SecondTitle = styled(Title)`
+  font-size: 0.8rem;
+
+  ${media.desktop`
+    font-size: 1.2rem;
+    padding: 1rem 0 3rem 2rem;
   `}
 `;
 
@@ -42,7 +51,7 @@ const Description = styled.p`
   font-weight: 600;
   color: ${({ theme }) => theme.navyblueText};
   padding-left: 2rem;
-  max-width: 85%;
+  max-width: 90%;
 
   ${media.desktop`
     font-size: 1.6rem;
@@ -66,16 +75,17 @@ const labels = [
   {
     id: 1,
     title: 'Autopilot Sczęścia',
+    secondTitle: 'Świadomy optymizm w świecie zmian',
     description:
-      'Wczesne lata dwutysięczne. Blokowisko na osiedlu RZNiW żyje w rytmie rapu, oddycha dymem z jointów i nie toleruje obcych. Na dwunastym piętrze jednego z bloków mieszka Deso.',
+      '„Szczęśliwy człowiek wnosi światło tam, gdzie panują ciemności.” (Phil Bosmans). Zażyj antidotum – włącz Autopilot Szczęścia i zostań Świadomym Optymistą. Trwałe poczucie szczęścia w świecie dynamicznych zmian? To możliwe!',
     price: '59,99zł',
   },
 ];
 
 const ButtonWrapper = styled.div`
   position: absolute;
-  left: 12rem;
-  top: 8rem;
+  left: 1rem;
+  top: 11.5rem;
 
   ${media.desktop`
     top: 1rem;
@@ -91,6 +101,7 @@ const BookLabel = ({ id }) => {
           label.id === id ? (
             <>
               <Title>{label.title}</Title>
+              <SecondTitle>{label.secondTitle}</SecondTitle>
               <Description>{label.description}</Description>
               <ButtonWrapper>
                 <MainButton color="red" path="/shop">

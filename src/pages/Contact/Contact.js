@@ -15,11 +15,11 @@ const pageContent = {
   header: 'Napisz do mnie!',
   postscript: 'Z przyjemnością odpowiem na Twoje pytania',
   mailHeader: 'Adres mailowy:',
-  mail: 'kavikozlowska@gmail.com',
+  mail: 'lifeqm.kontakt@gmail.com',
   corespondingHeader: 'Adres korespondencyjny:',
-  adress: 'Al. Iberyjska 10/2 (Ogrody Tesoro) 81-198 Pogórze k. Gdyni',
+  adress: '',
   phoneHeader: 'Telefon:',
-  phone: '658 984 125',
+  phone: '660 720 706',
   aboutMeBlock: {
     header: 'Kavi Kozłowska',
     description: (
@@ -104,8 +104,6 @@ class Contact extends Component {
             <ContactTextWrapper>
               <ContactLabel>{pageContent.mailHeader}</ContactLabel>
               <ContactParagraph>{pageContent.mail}</ContactParagraph>
-              <ContactLabel>{pageContent.corespondingHeader}</ContactLabel>
-              <ContactParagraph>{pageContent.adress}</ContactParagraph>
               <ContactLabel>{pageContent.phoneHeader}</ContactLabel>
               <ContactParagraph>{pageContent.phone}</ContactParagraph>
             </ContactTextWrapper>
