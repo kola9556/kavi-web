@@ -1,6 +1,6 @@
 ## Website develop for Kavi Kozłowska - freelance project
 
-#### Hosted on: https://kaviweb.netlify.app/
+#### Hosted on: http://kavikozlowska.pl/
 
 Further features: 
 - Blog page
