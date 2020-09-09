@@ -36,10 +36,6 @@ class Shop extends Component {
       <>
         <ScrollTemplate>
           <Navigationbar />
-          <ShopWrapper>
-            <Heading>Sorry!</Heading>
-            <Paragraph>This side is in the process of building</Paragraph>
-          </ShopWrapper>
         </ScrollTemplate>
       </>
     );
