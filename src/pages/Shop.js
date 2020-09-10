@@ -1,6 +1,6 @@
 /* eslint-disable react/self-closing-comp */
 /* eslint-disable react/no-unescaped-entities */
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import styled from 'styled-components';
 import { MainHeading, PostscriptHeading } from 'utils/Headers';
 import { media } from 'utils';
@@ -62,11 +62,16 @@ const StyledBottomBackground = styled(FixedBackgroundBottom)`
 `;
 
 class Shop extends Component {
+  refresh = () => {
+    setTimeout(() => window.location.reload(false), 300);
+    window.location.reload(false);
+  };
+
   render() {
     return (
       <>
         <ScrollTemplate>
-          <Navigationbar />
+          <Navigationbar refresh={this.refresh} />
           <StyledTopBackground img={topShop}>
             <MainHeading>Cześć!</MainHeading>
             <StyledPostscriptHeading>

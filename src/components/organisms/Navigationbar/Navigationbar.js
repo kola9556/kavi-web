@@ -1,3 +1,5 @@
+/* eslint-disable react/state-in-constructor */
+/* eslint-disable react/prop-types */
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import { media } from 'utils';
@@ -72,6 +74,7 @@ class Navigationbar extends Component {
   render() {
     const { buttonActive } = this.state;
     const { isDropdownVisible } = this.state;
+    const { refresh } = this.props;
 
     return (
       <NavbarWrapper>
@@ -86,7 +89,9 @@ class Navigationbar extends Component {
           <NavbarLink to="/lifeqm">Life QM</NavbarLink>
           <BlogLink to="/blog" />
           <NavbarLink to="/consultation">Konsultacje i Szkolenia</NavbarLink>
-          <NavbarLink to="/shop">Sklep</NavbarLink>
+          <NavbarLink onClick={refresh} to="/shop">
+            Sklep
+          </NavbarLink>
           <NavbarLink to="/contact">Kontakt</NavbarLink>
         </NavlinksWrapper>
       </NavbarWrapper>

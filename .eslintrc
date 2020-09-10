@@ -12,7 +12,9 @@
     "import/no-extraneous-dependencies": 0,
     "import/prefer-default-export": 0,
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-    "no-unused-vars": 0
+    "no-unused-vars": 0,
+    "prefer-stateless-function": "off",
+    "react/prefer-stateless-function": "off"
   },
   "settings": {
     "import/resolver": {

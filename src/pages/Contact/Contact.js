@@ -77,8 +77,6 @@ const StyledBackgroundBottom = styled(FixedBackgroundBottom)`
 `;
 
 class Contact extends Component {
-  state = {};
-
   render() {
     return (
       <>
