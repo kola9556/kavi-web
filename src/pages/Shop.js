@@ -1,3 +1,4 @@
+/* eslint-disable react/no-danger */
 /* eslint-disable react/self-closing-comp */
 /* eslint-disable react/no-unescaped-entities */
 import React, { Component } from 'react';
@@ -92,7 +93,6 @@ class Shop extends Component {
             <Footer />
           </BottomWrapper>
         </ScrollTemplate>
-        <div dangerouslySetInnerHTML={createMarkup()} />
       </>
     );
   }

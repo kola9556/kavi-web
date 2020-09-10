@@ -1,11 +1,13 @@
 ## Website develop for Kavi Kozłowska - freelance project
 
-#### Hosted on: https://kaviweb.netlify.app/
+#### Hosted on: http://kavikozlowska.pl/
 
 Further features: 
-- Blog page
-- Inject external shop from ecwid.com
-- Write CMS for blog
+- Blog page (DONE ✔️ )
+- Inject external shop from ecwid.com (DONE ✔️)
+- Blog CMS 
+- First load welcome animation
+- Improve animations and all page displaying (first load, loading order)
 
 
 
