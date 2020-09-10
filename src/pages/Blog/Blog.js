@@ -119,18 +119,6 @@ const pageContent = {
   adress: 'Al. Iberyjska 10/2 (Ogrody Tesoro) 81-198 Pogórze k. Gdyni',
   phoneHeader: 'Telefon:',
   phone: '658 984 125',
-  aboutMeBlock: {
-    header: 'Kavi Kozłowska',
-    description: (
-      <>
-        Zawodowo zajmuję się LIFE Quality Managementem (LifeQM), gdzie JAKOŚĆ życia jest WAŻNA.{' '}
-        <br />
-        Jestem trenerem skutecznej zmiany i blogerem. <br />
-        Autorką książki „Autopilot Szczęścia”.
-      </>
-    ),
-    media: 'Znajdziesz mnie na:',
-  },
 };
 
 class Blog extends Component {
@@ -155,11 +143,7 @@ class Blog extends Component {
               ))}
             </PostLabelsWrapper>
             <AboutMeBlockWrapper>
-              <AboutMeBlock
-                mediaHeader={pageContent.aboutMeBlock.media}
-                header={pageContent.aboutMeBlock.header}
-                description={pageContent.aboutMeBlock.description}
-              />
+              <AboutMeBlock />
             </AboutMeBlockWrapper>
           </BlogContentWrapper>
           <NavArrowsWrapper>

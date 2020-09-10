@@ -20,18 +20,6 @@ const pageContent = {
   adress: '',
   phoneHeader: 'Telefon:',
   phone: '660 720 706',
-  aboutMeBlock: {
-    header: 'Kavi Kozłowska',
-    description: (
-      <>
-        Zawodowo zajmuję się LIFE Quality Managementem (LifeQM), gdzie JAKOŚĆ życia jest WAŻNA.{' '}
-        <br />
-        Jestem trenerem skutecznej zmiany i blogerem. <br />
-        Autorką książki „Autopilot Szczęścia”.
-      </>
-    ),
-    media: 'Znajdziesz mnie na:',
-  },
 };
 
 const StyledFixedBackground = styled(FixedBackgroundTop)`
@@ -107,11 +95,7 @@ class Contact extends Component {
               <ContactLabel>{pageContent.phoneHeader}</ContactLabel>
               <ContactParagraph>{pageContent.phone}</ContactParagraph>
             </ContactTextWrapper>
-            <AboutMeBlock
-              mediaHeader={pageContent.aboutMeBlock.media}
-              header={pageContent.aboutMeBlock.header}
-              description={pageContent.aboutMeBlock.description}
-            />
+            <AboutMeBlock />
           </ContactContent>
           <StyledBackgroundBottom img={contactBottom} />
           <Footer />

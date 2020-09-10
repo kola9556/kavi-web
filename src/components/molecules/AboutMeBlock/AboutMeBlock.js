@@ -1,11 +1,22 @@
 import React from 'react';
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
 import { media } from 'utils';
 import { XsHeader, DescriptionParagraph } from 'utils/Headers';
 import RoundImage from 'components/atoms/RoundImage/RoundImage';
 import kaviHats from 'assets/images/kaviHats.jpg';
 import MediaBox from 'components/molecules/MediaBox/MediaBox';
+
+const aboutMeContent = {
+  header: 'Kavi Kozłowska',
+  description: (
+    <>
+      Zawodowo zajmuję się LIFE Quality Managementem (LifeQM), gdzie JAKOŚĆ życia jest WAŻNA. <br />
+      Jestem trenerem skutecznej zmiany i blogerem. <br />
+      Autorką książki „Autopilot Szczęścia”.
+    </>
+  ),
+  media: 'Znajdziesz mnie na:',
+};
 
 const AboutMeBlockWrapper = styled.div`
   height: 60rem;
@@ -42,20 +53,14 @@ const MediaHeader = styled.h4`
   `}
 `;
 
-const AboutMeBlock = ({ mediaHeader, header, description }) => (
+const AboutMeBlock = () => (
   <AboutMeBlockWrapper>
     <RoundImage img={kaviHats} />
-    <StyledHeader>{header}</StyledHeader>
-    <StyledDescriptionParagraph>{description}</StyledDescriptionParagraph>
-    <MediaHeader>{mediaHeader}</MediaHeader>
+    <StyledHeader>{aboutMeContent.header}</StyledHeader>
+    <StyledDescriptionParagraph>{aboutMeContent.description}</StyledDescriptionParagraph>
+    <MediaHeader>{aboutMeContent.media}</MediaHeader>
     <MediaBox />
   </AboutMeBlockWrapper>
 );
-
-AboutMeBlock.propTypes = {
-  mediaHeader: PropTypes.element.isRequired,
-  header: PropTypes.element.isRequired,
-  description: PropTypes.element.isRequired,
-};
 
 export default AboutMeBlock;
