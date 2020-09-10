@@ -12,6 +12,7 @@ import FixedBackgroundBottom from 'components/atoms/FixedBackgroundBottom/FixedB
 import topShop from 'assets/images/topShop.jpg';
 import bottomShop from 'assets/images/bottomShop.jpg';
 import Footer from 'components/organisms/Footer/Footer';
+import ShopItem from 'components/atoms/ShopItem';
 
 const StyledTopBackground = styled(FixedBackgroundTop)`
   margin-bottom: 18rem;
@@ -60,19 +61,7 @@ const StyledBottomBackground = styled(FixedBackgroundBottom)`
   height: 60vh;
 `;
 
-const createMarkup = () => {
-  return {
-    __html: `<div id="my-store-36587055"></div>
-    <div>
-    <script data-cfasync="false" type="text/javascript" src="https://app.ecwid.com/script.js?36587055&data_platform=code&data_date=2020-09-10" charset="utf-8"></script><script type="text/javascript"> xProductBrowser("categoriesPerRow=3","views=grid(20,3) list(60) table(60)","categoryView=grid","searchView=list","id=my-store-36587055");</script>
-    </div>
-  `,
-  };
-};
-
 class Shop extends Component {
-  state = {};
-
   render() {
     return (
       <>
@@ -91,8 +80,8 @@ class Shop extends Component {
             <StyledBottomBackground img={bottomShop} />
             <Footer />
           </BottomWrapper>
+          <ShopItem />
         </ScrollTemplate>
-        <div dangerouslySetInnerHTML={createMarkup()} />
       </>
     );
   }
