@@ -1,4 +1,5 @@
 import React from 'react';
+
 import SectionBreak from './SectionBreak';
 
 export default {

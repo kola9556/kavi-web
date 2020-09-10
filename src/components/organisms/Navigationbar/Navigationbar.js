@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
-import { media } from 'utils';
 import { NavLink } from 'react-router-dom';
 import logoKavi from 'assets/logos/logoK.jpg';
 import NavbarLink from 'components/atoms/NavbarLink/NavbarLink';
+import { ShopNavLInk } from 'components/atoms/ShopNavLink';
+import styled from 'styled-components';
+import { media } from 'utils';
+
+import BlogLink from '../../atoms/BlogLink/BlogLink';
 import HamburgerButton from './components/HamburgerButton/HamburgerButton';
 import HamburgerDropdown from './components/HamburgerDropdown/HamburgerDropdown';
-import BlogLink from '../../atoms/BlogLink/BlogLink';
 
 const NavbarWrapper = styled.div`
   position: fixed;
@@ -86,7 +88,7 @@ class Navigationbar extends Component {
           <NavbarLink to="/lifeqm">Life QM</NavbarLink>
           <BlogLink to="/blog" />
           <NavbarLink to="/consultation">Konsultacje i Szkolenia</NavbarLink>
-          <NavbarLink to="/shop">Sklep</NavbarLink>
+          <ShopNavLInk />
           <NavbarLink to="/contact">Kontakt</NavbarLink>
         </NavlinksWrapper>
       </NavbarWrapper>

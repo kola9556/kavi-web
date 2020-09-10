@@ -1,6 +1,6 @@
+import arrows from 'assets/images/arrows.jpg';
 import styled from 'styled-components';
 import { media } from 'utils';
-import arrows from 'assets/images/arrows.jpg';
 
 const ArrowIcon = styled.div`
   width: 41px;

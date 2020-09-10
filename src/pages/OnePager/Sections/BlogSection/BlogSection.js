@@ -1,11 +1,11 @@
 import React from 'react';
-import styled from 'styled-components';
-import PropTypes from 'prop-types';
-import { media } from 'utils';
 import arrowsDesktop from 'assets/images/smallerArrows.jpg';
 import arrows from 'assets/images/xxsArrows.jpg';
-import SectionBreak from 'components/molecules/SectionBreak/SectionBreak';
 import LogoButton from 'components/atoms/LogoButton/LogoButton';
+import SectionBreak from 'components/molecules/SectionBreak/SectionBreak';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import { media } from 'utils';
 
 const BlogWrapper = styled.div`
   width: 100%;
@@ -95,8 +95,8 @@ const BlogSection = ({ redText, listPoints }) => {
           <ListWrapper>
             <Label>Dowiesz się jak:</Label>
             <List>
-              {listPoints.map((point) => (
-                <Point>{point.text}</Point>
+              {listPoints.map((point, index) => (
+                <Point key={index}>{point.text}</Point>
               ))}
             </List>
           </ListWrapper>

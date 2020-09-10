@@ -1,27 +1,78 @@
 {
-  "extends": ["airbnb", "prettier", "prettier/react"],
+  "root": true,
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": [
+    "eslint-plugin-simple-import-sort",
+    "prettier"
+  ],
   "parser": "babel-eslint",
   "env": {
     "jest": true
   },
   "globals": {
+    "React": "writable",
     "document": true,
     "window": true
   },
-  "rules": {
-    "import/no-extraneous-dependencies": 0,
-    "import/prefer-default-export": 0,
-    "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
-    "no-unused-vars": 0,
-    "prefer-stateless-function": "off",
-    "react/prefer-stateless-function": "off"
-  },
   "settings": {
+    "react": {
+      "version": "detect"
+    },
     "import/resolver": {
       "node": {
-        "extensions": [".js", ".jsx", ".ts", ".tsx"],
-        "paths": ["./src"]
+        "extensions": [
+          ".js",
+          ".jsx",
+          ".ts",
+          ".tsx"
+        ],
+        "paths": [
+          "./src"
+        ]
       }
     }
+  },
+  "rules": {
+    "simple-import-sort/sort": [
+      "error",
+      {
+        "groups": [
+          [
+            "^\\u0000"
+          ],
+          [
+            "^react",
+            "^@?\\w"
+          ],
+          [
+            "^[^.]"
+          ],
+          [
+            "^\\."
+          ]
+        ]
+      }
+    ],
+    "sort-imports": "off",
+    "import/order": "off",
+    "import/no-extraneous-dependencies": 0,
+    "import/prefer-default-export": 0,
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
+      }
+    ],
+    "no-unused-vars": 0,
+    "prefer-stateless-function": "off",
+    "react/prefer-stateless-function": "off",
+    "react/state-in-constructor": "off"
   }
 }

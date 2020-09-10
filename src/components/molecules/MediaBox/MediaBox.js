@@ -1,6 +1,6 @@
 import React from 'react';
-import styled from 'styled-components';
 import MediaIcon from 'components/atoms/MediaIcon/MediaIcon';
+import styled from 'styled-components';
 
 const MediaWrapper = styled.div`
   display: flex;

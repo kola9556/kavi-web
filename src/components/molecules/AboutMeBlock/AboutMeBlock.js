@@ -1,10 +1,10 @@
 import React from 'react';
+import kaviHats from 'assets/images/kaviHats.jpg';
+import RoundImage from 'components/atoms/RoundImage/RoundImage';
+import MediaBox from 'components/molecules/MediaBox/MediaBox';
 import styled from 'styled-components';
 import { media } from 'utils';
-import { XsHeader, DescriptionParagraph } from 'utils/Headers';
-import RoundImage from 'components/atoms/RoundImage/RoundImage';
-import kaviHats from 'assets/images/kaviHats.jpg';
-import MediaBox from 'components/molecules/MediaBox/MediaBox';
+import { DescriptionParagraph, XsHeader } from 'utils/Headers';
 
 const aboutMeContent = {
   header: 'Kavi Kozłowska',

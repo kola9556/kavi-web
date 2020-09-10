@@ -1,9 +1,9 @@
 import React from 'react';
-import styled from 'styled-components';
 import LogoW from 'assets/images/logoW.jpg';
-import PropTypes from 'prop-types';
-import { media } from 'utils';
 import ArrowIcon from 'components/atoms/ArrowIcon/ArrowIcon';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import { media } from 'utils';
 
 const SecBrWrapper = styled.div`
   display: flex;

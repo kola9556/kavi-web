@@ -1,8 +1,9 @@
 import React from 'react';
-import styled from 'styled-components';
-import PropTypes from 'prop-types';
-import { paths } from 'utils/paths';
 import NavbarLink from 'components/atoms/NavbarLink/NavbarLink';
+import { ShopNavLInk } from 'components/atoms/ShopNavLink';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import { paths } from 'utils/paths';
 
 const DropdownWrapper = styled.div`
   width: 60vw;
@@ -28,7 +29,7 @@ const HamburgerDropdown = ({ isVisible }) => {
       <NavbarLink to={paths.lifeqm}>Life QM</NavbarLink>
       <NavbarLink to={paths.blog}>Blog</NavbarLink>
       <NavbarLink to={paths.consultation}>Konsultacje i Szkolenia</NavbarLink>
-      <NavbarLink to={paths.shop}>Sklep</NavbarLink>
+      <ShopNavLInk />
       <NavbarLink to={paths.contact}>Kontakt</NavbarLink>
     </DropdownWrapper>
   );

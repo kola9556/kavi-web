@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { ThemeProvider } from 'styled-components';
 import GlobalStyle from 'utils/theme/GlobalStyle';
 import { theme } from 'utils/theme/mainTheme';
+
 import ScrollTemplate from './ScrollTemplate';
 
 const MainTemplate = ({ children }) => {
