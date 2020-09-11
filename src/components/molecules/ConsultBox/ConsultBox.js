@@ -1,14 +1,15 @@
+/* eslint-disable react/no-array-index-key */
 import React from 'react';
-import styled, { css } from 'styled-components';
-import PropTypes from 'prop-types';
-import { CONSULT_TYPES } from 'utils/constans';
-import { paths } from 'utils/paths';
-import { media } from 'utils';
-import MainButton from 'components/atoms/MainButton/MainButton';
-import individual from 'assets/images/individual.jpg';
 import firm from 'assets/images/firm.jpg';
+import individual from 'assets/images/individual.jpg';
 import arrowsDesktop from 'assets/images/smallerArrows.jpg';
 import arrows from 'assets/images/xxsArrows.jpg';
+import MainButton from 'components/atoms/MainButton/MainButton';
+import PropTypes from 'prop-types';
+import styled, { css } from 'styled-components';
+import { media } from 'utils';
+import { CONSULT_TYPES } from 'utils/constans';
+import { paths } from 'utils/paths';
 
 const BoxesWrapper = styled.div`
   display: flex;
@@ -112,8 +113,8 @@ const ConsultBox = ({ content }) => {
               <Icon consultType={item.type} />
               <Label>{item.label}</Label>
               <List>
-                {item.texts.map((textItem) => (
-                  <Item>{textItem.text}</Item>
+                {item.texts.map((textItem, index) => (
+                  <Item key={index}>{textItem.text}</Item>
                 ))}
               </List>
               <ButtonWrapper consultType={item.type}>

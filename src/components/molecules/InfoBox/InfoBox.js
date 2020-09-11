@@ -1,11 +1,11 @@
 import React from 'react';
-import styled from 'styled-components';
-import PropTypes from 'prop-types';
-import { paths } from 'utils/paths';
 import { NavLink } from 'react-router-dom';
-import { media } from 'utils';
 import LogoK from 'assets/logos/logoKSmall.jpg';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import { media } from 'utils';
 import { MParagraph } from 'utils/Headers';
+import { paths } from 'utils/paths';
 
 const InfoWrapper = styled.div`
   display: flex;

@@ -1,4 +1,4 @@
-import React, { Component, Children } from 'react';
+import React, { Children, Component } from 'react';
 import PropTypes from 'prop-types';
 
 class ScrollTemplate extends Component {

@@ -1,7 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
-import PropTypes from 'prop-types';
 import ConsultBox from 'components/molecules/ConsultBox/ConsultBox';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+
 import SectionBreak from '../../../../components/molecules/SectionBreak/SectionBreak';
 
 const ConsultWrapper = styled.div`

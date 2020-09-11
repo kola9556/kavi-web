@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
 import Navigationbar from 'components/organisms/Navigationbar/Navigationbar';
+import styled from 'styled-components';
 import ScrollTemplate from 'templates/ScrollTemplate';
 
 const CollaboWrapper = styled.div`

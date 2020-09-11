@@ -1,8 +1,8 @@
 import React from 'react';
-import styled from 'styled-components';
-import PropTypes from 'prop-types';
-import { media } from 'utils';
 import MainButton from 'components/atoms/MainButton/MainButton';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import { media } from 'utils';
 import { BoldSpan } from 'utils/Headers';
 
 const LabelWrapper = styled.div`

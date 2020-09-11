@@ -1,20 +1,20 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
-import { media } from 'utils';
-import { MainHeading, DescriptionParagraph, MainText } from 'utils/Headers';
-import { blogPosts as posts } from 'content/blogContent';
-import Navigationbar from 'components/organisms/Navigationbar/Navigationbar';
-import FixedBackgroundTop from 'components/atoms/FixedBackgroundTop/FixedBackgroundTop';
-import FixedBackgroundBottom from 'components/atoms/FixedBackgroundBottom/FixedBackgroundBottom';
-import NavArrow from 'pages/Blog/components/NavArrow';
-import postTop from 'assets/images/postTop.jpg';
-import postBottom from 'assets/images/postBottom.jpg';
-import blogPostMain from 'assets/images/blogPostMain.jpg';
 import blogPost1 from 'assets/images/blogPost1.jpg';
 import blogPost2 from 'assets/images/blogPost2.jpg';
 import blogPost3 from 'assets/images/blogPost3.jpg';
+import blogPostMain from 'assets/images/blogPostMain.jpg';
+import postBottom from 'assets/images/postBottom.jpg';
+import postTop from 'assets/images/postTop.jpg';
+import FixedBackgroundBottom from 'components/atoms/FixedBackgroundBottom/FixedBackgroundBottom';
+import FixedBackgroundTop from 'components/atoms/FixedBackgroundTop/FixedBackgroundTop';
 import Footer from 'components/organisms/Footer/Footer';
+import Navigationbar from 'components/organisms/Navigationbar/Navigationbar';
+import { blogPosts as posts } from 'content/blogContent';
+import NavArrow from 'pages/Blog/components/NavArrow';
+import styled from 'styled-components';
 import ScrollTemplate from 'templates/ScrollTemplate';
+import { media } from 'utils';
+import { DescriptionParagraph, MainHeading, MainText } from 'utils/Headers';
 
 const StyledFixedBackgroundTop = styled(FixedBackgroundTop)`
   height: 50vh;

@@ -1,8 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import LogoW from 'assets/images/logoW.jpg';
 import styled from 'styled-components';
 import { media } from 'utils';
-import LogoW from 'assets/images/logoW.jpg';
 
 const ButtonWrapper = styled.button`
   width: 24.3rem;

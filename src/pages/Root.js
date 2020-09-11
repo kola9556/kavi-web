@@ -1,15 +1,16 @@
 import React from 'react';
-import { paths } from 'utils/paths';
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
-import Contact from 'pages/Contact/Contact';
-import Shop from 'pages/Shop';
-import Consultation from 'pages/Consultation';
-import Collaboration from 'pages/Collaboration';
-import OnePager from 'pages/OnePager/OnePager';
-import LifeQm from 'pages/LifeQm';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import AboutMe from 'pages/AboutMe/AboutMe';
 import Blog from 'pages/Blog/Blog';
+import Collaboration from 'pages/Collaboration';
+import Consultation from 'pages/Consultation';
+import Contact from 'pages/Contact/Contact';
+import LifeQm from 'pages/LifeQm';
+import OnePager from 'pages/OnePager/OnePager';
 import Post from 'pages/Post';
+import Shop from 'pages/Shop';
+import { paths } from 'utils/paths';
+
 import MainTemplate from '../templates/MainTemplate';
 
 const Root = () => (
