@@ -1,9 +1,9 @@
 import React from 'react';
-import styled from 'styled-components';
-import PropTypes from 'prop-types';
-import { media } from 'utils';
 import kaviBlue from 'assets/images/KaviBlue.jpg';
 import BlueBackgroundShape from 'components/atoms/BackgroundShape/BackgroundShape';
+import PropTypes from 'prop-types';
+import styled from 'styled-components';
+import { media } from 'utils';
 
 // Flex Wrapper for all TopSection elements. Main children: TopTextWrapper, TopImageBox and BlueShapeWrapper
 const TopWrapper = styled.div`

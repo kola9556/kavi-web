@@ -1,11 +1,11 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
-import PropTypes from 'prop-types';
-import { media } from 'utils';
-import MainButton from 'components/atoms/MainButton/MainButton';
-import { paths } from 'utils/paths';
 import kaviOrange from 'assets/images/KaviOrange.jpg';
+import MainButton from 'components/atoms/MainButton/MainButton';
 import SectionBreak from 'components/molecules/SectionBreak/SectionBreak';
+import PropTypes from 'prop-types';
+import styled, { css } from 'styled-components';
+import { media } from 'utils';
+import { paths } from 'utils/paths';
 
 const AboutWrapper = styled.div`
   width: 100%;

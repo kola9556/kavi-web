@@ -1,8 +1,8 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
-import PropTypes from 'prop-types';
-import { media } from 'utils';
 import book from 'assets/images/book.jpg';
+import PropTypes from 'prop-types';
+import styled, { css } from 'styled-components';
+import { media } from 'utils';
 
 const HomeWrapper = styled.div`
   margin: 10rem 0 5rem;
@@ -124,39 +124,39 @@ const HomeParagraph = styled.p`
   margin: 0;
   color: ${({ theme }) => theme.navyblueText};
 
-${({ first }) =>
-  first &&
-  css`
-    font-size: 1.6rem;
-    font-weight: 600;
-    text-transform: uppercase;
+  ${({ first }) =>
+    first &&
+    css`
+      font-size: 1.6rem;
+      font-weight: 600;
+      text-transform: uppercase;
 
-    ${media.desktop`
+      ${media.desktop`
     font-size: 2.2rem;
     `}
-  `}
+    `}
 
-${({ second }) =>
-  second &&
-  css`
-    font-size: 1.3rem;
-    font-weight: 500;
+  ${({ second }) =>
+    second &&
+    css`
+      font-size: 1.3rem;
+      font-weight: 500;
 
-    ${media.desktop`
+      ${media.desktop`
     font-size: 1.6rem;
     `}
-  `}
+    `}
 
 ${({ third }) =>
-  third &&
-  css`
-    font-size: 1.2rem;
-    margin-left: 8rem;
+    third &&
+    css`
+      font-size: 1.2rem;
+      margin-left: 8rem;
 
-    ${media.desktop`
+      ${media.desktop`
     font-size: 1.4rem;
     `}
-  `}
+    `}
 `;
 
 const HomeSection = ({ firstPara, secondPara, thirdPara }) => {

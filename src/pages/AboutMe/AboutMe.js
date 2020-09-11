@@ -1,21 +1,21 @@
 import React, { Component } from 'react';
-import styled, { css } from 'styled-components';
-import { media } from 'utils';
-import { PAGE_TYPE, SCREEN_SIZES, MEDIA_TYPE } from 'utils/constans';
-import ScrollTemplate from 'templates/ScrollTemplate';
-import aboutBottom from 'assets/images/aboutBottom.jpg';
 import aboutImg from 'assets/images/about.jpg';
-import Navigationbar from 'components/organisms/Navigationbar/Navigationbar';
-import FixedBackgroundTop from 'components/atoms/FixedBackgroundTop/FixedBackgroundTop';
-import Greet from 'pages/AboutMe/components/Greet';
-import Footer from 'components/organisms/Footer/Footer';
-import MainButton from 'components/atoms/MainButton/MainButton';
-import MediaIcon from 'components/atoms/MediaIcon/MediaIcon';
-import { SParagraph, BoldSpanS, MainText } from 'utils/Headers';
+import aboutBottom from 'assets/images/aboutBottom.jpg';
 import kaviCanion from 'assets/images/kaviCanion.jpg';
 import kaviHats from 'assets/images/kaviHats.jpg';
-import Carousel from 'components/organisms/Carousel/Carousel';
 import FixedBackgroundBottom from 'components/atoms/FixedBackgroundBottom/FixedBackgroundBottom';
+import FixedBackgroundTop from 'components/atoms/FixedBackgroundTop/FixedBackgroundTop';
+import MainButton from 'components/atoms/MainButton/MainButton';
+import MediaIcon from 'components/atoms/MediaIcon/MediaIcon';
+import Carousel from 'components/organisms/Carousel/Carousel';
+import Footer from 'components/organisms/Footer/Footer';
+import Navigationbar from 'components/organisms/Navigationbar/Navigationbar';
+import Greet from 'pages/AboutMe/components/Greet';
+import styled, { css } from 'styled-components';
+import ScrollTemplate from 'templates/ScrollTemplate';
+import { media } from 'utils';
+import { MEDIA_TYPE, PAGE_TYPE, SCREEN_SIZES } from 'utils/constans';
+import { BoldSpanS, MainText, SParagraph } from 'utils/Headers';
 
 const pageContent = {
   mainText: {

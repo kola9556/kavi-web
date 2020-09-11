@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
-import { media } from 'utils';
-import { MainHeading, PostscriptHeading, MParagraph } from 'utils/Headers';
-import ScrollTemplate from 'templates/ScrollTemplate';
-import Navigationbar from 'components/organisms/Navigationbar/Navigationbar';
-import FixedBackgroundTop from 'components/atoms/FixedBackgroundTop/FixedBackgroundTop';
-import contactTop from 'assets/images/contactTop.jpg';
 import contactBottom from 'assets/images/contactBottom.jpg';
+import contactTop from 'assets/images/contactTop.jpg';
 import FixedBackgroundBottom from 'components/atoms/FixedBackgroundBottom/FixedBackgroundBottom';
+import FixedBackgroundTop from 'components/atoms/FixedBackgroundTop/FixedBackgroundTop';
 import Footer from 'components/organisms/Footer/Footer';
+import Navigationbar from 'components/organisms/Navigationbar/Navigationbar';
+import styled from 'styled-components';
+import ScrollTemplate from 'templates/ScrollTemplate';
+import { media } from 'utils';
+import { MainHeading, MParagraph, PostscriptHeading } from 'utils/Headers';
+
 import AboutMeBlock from '../../components/molecules/AboutMeBlock/AboutMeBlock';
 
 const pageContent = {
@@ -76,31 +77,29 @@ const StyledBackgroundBottom = styled(FixedBackgroundBottom)`
   height: 50vh;
 `;
 
-class Contact extends Component {
-  render() {
-    return (
-      <>
-        <ScrollTemplate>
-          <Navigationbar />
-          <StyledFixedBackground img={contactTop}>
-            <MainHeading>{pageContent.header}</MainHeading>
-            <PostscriptHeading>{pageContent.postscript}</PostscriptHeading>
-          </StyledFixedBackground>
-          <ContactContent>
-            <ContactTextWrapper>
-              <ContactLabel>{pageContent.mailHeader}</ContactLabel>
-              <ContactParagraph>{pageContent.mail}</ContactParagraph>
-              <ContactLabel>{pageContent.phoneHeader}</ContactLabel>
-              <ContactParagraph>{pageContent.phone}</ContactParagraph>
-            </ContactTextWrapper>
-            <AboutMeBlock />
-          </ContactContent>
-          <StyledBackgroundBottom img={contactBottom} />
-          <Footer />
-        </ScrollTemplate>
-      </>
-    );
-  }
-}
+const Contact = () => {
+  return (
+    <>
+      <ScrollTemplate>
+        <Navigationbar />
+        <StyledFixedBackground img={contactTop}>
+          <MainHeading>{pageContent.header}</MainHeading>
+          <PostscriptHeading>{pageContent.postscript}</PostscriptHeading>
+        </StyledFixedBackground>
+        <ContactContent>
+          <ContactTextWrapper>
+            <ContactLabel>{pageContent.mailHeader}</ContactLabel>
+            <ContactParagraph>{pageContent.mail}</ContactParagraph>
+            <ContactLabel>{pageContent.phoneHeader}</ContactLabel>
+            <ContactParagraph>{pageContent.phone}</ContactParagraph>
+          </ContactTextWrapper>
+          <AboutMeBlock />
+        </ContactContent>
+        <StyledBackgroundBottom img={contactBottom} />
+        <Footer />
+      </ScrollTemplate>
+    </>
+  );
+};
 
 export default Contact;

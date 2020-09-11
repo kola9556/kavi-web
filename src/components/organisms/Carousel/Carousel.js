@@ -1,11 +1,11 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
 import { NavLink } from 'react-router-dom';
-import { media } from 'utils';
-import { SHeader, SParagraph, XsParagraph } from 'utils/Headers';
 import KaviHats from 'assets/images/kaviHats.jpg';
 import Lentils from 'assets/images/lentils.jpg';
 import Provisions from 'assets/images/provisions.jpg';
+import styled, { css } from 'styled-components';
+import { media } from 'utils';
+import { SHeader, SParagraph, XsParagraph } from 'utils/Headers';
 
 const CaWrapper = styled.div`
   margin: 0;

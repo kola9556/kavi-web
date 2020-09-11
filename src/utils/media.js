@@ -1,4 +1,5 @@
 import { css } from 'styled-components';
+
 import { SCREEN_SIZES } from './constans';
 
 export default Object.keys(SCREEN_SIZES).reduce((acc, mediaType) => {

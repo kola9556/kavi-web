@@ -1,8 +1,8 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
-import PropTypes from 'prop-types';
-import { media } from 'utils';
 import { NavLink } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import styled, { css } from 'styled-components';
+import { media } from 'utils';
 
 const Button = styled(NavLink)`
   margin: 2rem 0;

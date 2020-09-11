@@ -1,4 +1,5 @@
 import React from 'react';
+
 import NavbarLink from './NavbarLink';
 
 export default {

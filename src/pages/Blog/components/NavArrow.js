@@ -1,8 +1,8 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
-import PropTypes from 'prop-types';
-import { DescriptionParagraph } from 'utils/Headers';
 import smallerArrow from 'assets/images/smallerArrows.jpg';
+import PropTypes from 'prop-types';
+import styled, { css } from 'styled-components';
+import { DescriptionParagraph } from 'utils/Headers';
 
 const NavArrowWrapper = styled.div`
   width: 11rem;

@@ -1,9 +1,9 @@
 import React from 'react';
-import styled from 'styled-components';
-import { MainHeading, PostscriptHeading } from 'utils/Headers';
+import kaviProfile from 'assets/images/kaviProfile.jpg';
 import MainButton from 'components/atoms/MainButton/MainButton';
 import RoundImage from 'components/atoms/RoundImage/RoundImage';
-import kaviProfile from 'assets/images/kaviProfile.jpg';
+import styled from 'styled-components';
+import { MainHeading, PostscriptHeading } from 'utils/Headers';
 import { paths } from 'utils/paths';
 
 const GrWrapper = styled.div`

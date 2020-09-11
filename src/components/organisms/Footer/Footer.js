@@ -1,10 +1,10 @@
 import React from 'react';
-import styled, { css } from 'styled-components';
-import PropTypes from 'prop-types';
-import { media } from 'utils';
 import Bead from 'assets/images/bead.svg';
-import MediaBox from 'components/molecules/MediaBox/MediaBox';
 import InfoBox from 'components/molecules/InfoBox/InfoBox';
+import MediaBox from 'components/molecules/MediaBox/MediaBox';
+import PropTypes from 'prop-types';
+import styled, { css } from 'styled-components';
+import { media } from 'utils';
 import { PAGE_TYPE } from 'utils/constans';
 
 const FooterWrapper = styled.div`

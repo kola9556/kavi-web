@@ -1,15 +1,17 @@
+/* eslint-disable react/no-array-index-key */
 import React from 'react';
-import styled, { css } from 'styled-components';
-import PropTypes from 'prop-types';
-import { media } from 'utils';
-import { paths } from 'utils/paths';
-import { MParagraph } from 'utils/Headers';
-import { ICON_NAMES } from 'utils/constans';
-import MainButton from 'components/atoms/MainButton/MainButton';
-import logoW from 'assets/images/logoW.jpg';
 import change from 'assets/images/change.jpg';
 import health from 'assets/images/health.jpg';
+import logoW from 'assets/images/logoW.jpg';
 import mind from 'assets/images/mind.jpg';
+import MainButton from 'components/atoms/MainButton/MainButton';
+import PropTypes from 'prop-types';
+import styled, { css } from 'styled-components';
+import { media } from 'utils';
+import { ICON_NAMES } from 'utils/constans';
+import { MParagraph } from 'utils/Headers';
+import { paths } from 'utils/paths';
+
 import SectionBreak from '../../../../components/molecules/SectionBreak/SectionBreak';
 
 const LqmWrapper = styled.div`
@@ -153,8 +155,8 @@ const LqmSection = ({ children }) => {
         <SectionBreak firstTitle="LQM" secondTitle="Life Quality Management" />
         <TextWrapper>{children}</TextWrapper>
         <GraphicsWrapper>
-          {icons.map((icon) => (
-            <IconWrapper>
+          {icons.map((icon, index) => (
+            <IconWrapper key={index}>
               <TopWrapper>
                 <Number>{icon.number}</Number>
                 <Icon icon={icon.name} />

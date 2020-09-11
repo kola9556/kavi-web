@@ -1,18 +1,18 @@
 /* eslint-disable react/self-closing-comp */
 /* eslint-disable react/no-unescaped-entities */
-import React, { Component, useState } from 'react';
-import styled from 'styled-components';
-import { MainHeading, PostscriptHeading } from 'utils/Headers';
-import { media } from 'utils';
-import Navigationbar from 'components/organisms/Navigationbar/Navigationbar';
-import ScrollTemplate from 'templates/ScrollTemplate';
-import FixedBackgroundTop from 'components/atoms/FixedBackgroundTop/FixedBackgroundTop';
-import AboutMeBlock from 'components/molecules/AboutMeBlock/AboutMeBlock';
-import FixedBackgroundBottom from 'components/atoms/FixedBackgroundBottom/FixedBackgroundBottom';
-import topShop from 'assets/images/topShop.jpg';
+import React, { Component } from 'react';
 import bottomShop from 'assets/images/bottomShop.jpg';
-import Footer from 'components/organisms/Footer/Footer';
+import topShop from 'assets/images/topShop.jpg';
+import FixedBackgroundBottom from 'components/atoms/FixedBackgroundBottom/FixedBackgroundBottom';
+import FixedBackgroundTop from 'components/atoms/FixedBackgroundTop/FixedBackgroundTop';
 import ShopItem from 'components/atoms/ShopItem';
+import AboutMeBlock from 'components/molecules/AboutMeBlock/AboutMeBlock';
+import Footer from 'components/organisms/Footer/Footer';
+import Navigationbar from 'components/organisms/Navigationbar/Navigationbar';
+import styled from 'styled-components';
+import ScrollTemplate from 'templates/ScrollTemplate';
+import { media } from 'utils';
+import { MainHeading, PostscriptHeading } from 'utils/Headers';
 
 const StyledTopBackground = styled(FixedBackgroundTop)`
   margin-bottom: 18rem;
@@ -61,35 +61,28 @@ const StyledBottomBackground = styled(FixedBackgroundBottom)`
   height: 60vh;
 `;
 
-class Shop extends Component {
-  refresh = () => {
-    setTimeout(() => window.location.reload(false), 300);
-    window.location.reload(false);
-  };
-
-  render() {
-    return (
-      <>
-        <ScrollTemplate>
-          <Navigationbar refresh={this.refresh} />
-          <StyledTopBackground img={topShop}>
-            <MainHeading>Cześć!</MainHeading>
-            <StyledPostscriptHeading>
-              Zapraszam Cię do zapoznania się z ofertą przygotowanych dla Ciebie książek i szkoleń.
-            </StyledPostscriptHeading>
-          </StyledTopBackground>
-          <AboutMeBlockWrapper>
-            <AboutMeBlock />
-          </AboutMeBlockWrapper>
-          <BottomWrapper>
-            <StyledBottomBackground img={bottomShop} />
-            <Footer />
-          </BottomWrapper>
-          <ShopItem />
-        </ScrollTemplate>
-      </>
-    );
-  }
-}
+const Shop = () => {
+  return (
+    <>
+      <ScrollTemplate>
+        <Navigationbar />
+        <StyledTopBackground img={topShop}>
+          <MainHeading>Cześć!</MainHeading>
+          <StyledPostscriptHeading>
+            Zapraszam Cię do zapoznania się z ofertą przygotowanych dla Ciebie książek i szkoleń.
+          </StyledPostscriptHeading>
+        </StyledTopBackground>
+        <AboutMeBlockWrapper>
+          <AboutMeBlock />
+        </AboutMeBlockWrapper>
+        <BottomWrapper>
+          <StyledBottomBackground img={bottomShop} />
+          <Footer />
+        </BottomWrapper>
+        <ShopItem />
+      </ScrollTemplate>
+    </>
+  );
+};
 
 export default Shop;

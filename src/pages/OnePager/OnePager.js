@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
-import { PAGE_TYPE } from 'utils/constans';
-import { MParagraph, BlueSpan, BoldSpan } from 'utils/Headers';
-import ScrollTemplate from 'templates/ScrollTemplate';
-import TopSection from 'pages/OnePager/Sections/TopSection/TopSection';
-import LqmSection from 'pages/OnePager/Sections/LqmSection/LqmSection';
 import AboutSection from 'pages/OnePager/Sections/AboutSection/AboutSection';
-import HomeSection from './Sections/HomeSection/HomeSection';
-import Navigationbar from '../../components/organisms/Navigationbar/Navigationbar';
-import ConsultSection from './Sections/ConsultSection/ConsultSection';
-import BlogSection from './Sections/BlogSection/BlogSection';
-import ShopSection from './Sections/ShopSection/ShopSection';
+import LqmSection from 'pages/OnePager/Sections/LqmSection/LqmSection';
+import TopSection from 'pages/OnePager/Sections/TopSection/TopSection';
+import styled from 'styled-components';
+import ScrollTemplate from 'templates/ScrollTemplate';
+import { PAGE_TYPE } from 'utils/constans';
+import { BlueSpan, BoldSpan, MParagraph } from 'utils/Headers';
+
 import Footer from '../../components/organisms/Footer/Footer';
+import Navigationbar from '../../components/organisms/Navigationbar/Navigationbar';
+import BlogSection from './Sections/BlogSection/BlogSection';
+import ConsultSection from './Sections/ConsultSection/ConsultSection';
+import HomeSection from './Sections/HomeSection/HomeSection';
+import ShopSection from './Sections/ShopSection/ShopSection';
 
 // Created to colored and weight a part of the text
 const LogoBlack = styled.span`

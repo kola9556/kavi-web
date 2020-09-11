@@ -1,8 +1,8 @@
-import styled, { css } from 'styled-components';
-import instagram from 'assets/images/instagramIcon.svg';
 import facebook from 'assets/images/facebookIcon.svg';
-import instaRev from 'assets/images/instagramIconRevers.svg';
 import facebookRev from 'assets/images/facebookIconRevers.svg';
+import instagram from 'assets/images/instagramIcon.svg';
+import instaRev from 'assets/images/instagramIconRevers.svg';
+import styled, { css } from 'styled-components';
 
 const MediaIcon = styled.a`
   margin: 1rem;

@@ -1,19 +1,21 @@
+/* eslint-disable react/no-array-index-key */
 import React, { Component } from 'react';
-import styled from 'styled-components';
-import { media } from 'utils';
-import { SecondHeading } from 'utils/Headers';
-import { blogPosts as posts } from 'content/blogContent';
-import ScrollTemplate from 'templates/ScrollTemplate';
-import AboutMeBlock from 'components/molecules/AboutMeBlock/AboutMeBlock';
-import Navigationbar from 'components/organisms/Navigationbar/Navigationbar';
-import FixedBackgroundBottom from 'components/atoms/FixedBackgroundBottom/FixedBackgroundBottom';
-import FixedBackgroundTop from 'components/atoms/FixedBackgroundTop/FixedBackgroundTop';
+import blogBottom from 'assets/images/blogBottom.jpg';
 import blogTop from 'assets/images/blogTop.jpg';
 import blogTopMobile from 'assets/images/blogTopMobile.jpg';
-import blogBottom from 'assets/images/blogBottom.jpg';
+import FixedBackgroundBottom from 'components/atoms/FixedBackgroundBottom/FixedBackgroundBottom';
+import FixedBackgroundTop from 'components/atoms/FixedBackgroundTop/FixedBackgroundTop';
+import AboutMeBlock from 'components/molecules/AboutMeBlock/AboutMeBlock';
 import Footer from 'components/organisms/Footer/Footer';
-import PostLabel from './components/PostLabel';
+import Navigationbar from 'components/organisms/Navigationbar/Navigationbar';
+import { blogPosts as posts } from 'content/blogContent';
+import styled from 'styled-components';
+import ScrollTemplate from 'templates/ScrollTemplate';
+import { media } from 'utils';
+import { SecondHeading } from 'utils/Headers';
+
 import NavArrow from './components/NavArrow';
+import PostLabel from './components/PostLabel';
 
 const StyledFixedBackground = styled(FixedBackgroundTop)`
   :after {
@@ -138,8 +140,8 @@ class Blog extends Component {
           </StyledFixedBackground>
           <BlogContentWrapper>
             <PostLabelsWrapper>
-              {posts.map((post) => (
-                <PostLabel image={post.mainImage} title={post.title} id={post.id} />
+              {posts.map((post, index) => (
+                <PostLabel key={index} image={post.mainImage} title={post.title} id={post.id} />
               ))}
             </PostLabelsWrapper>
             <AboutMeBlockWrapper>
