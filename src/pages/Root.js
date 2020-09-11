@@ -8,7 +8,7 @@ import Contact from 'pages/Contact/Contact';
 import LifeQm from 'pages/LifeQm';
 import OnePager from 'pages/OnePager/OnePager';
 import Post from 'pages/Post';
-import Shop from 'pages/Shop';
+import Shop from 'pages/Shop/Shop';
 import { paths } from 'utils/paths';
 
 import MainTemplate from '../templates/MainTemplate';
