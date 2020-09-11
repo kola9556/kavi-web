@@ -47,10 +47,10 @@ const pageContent = {
   home: {
     firstParagraph: (
       <>
-        Czy chcesz iść przez
+        Chcesz iść przez
         <br />
         życie <BoldSpan>pewnym krokiem?</BoldSpan>
-        <br /> Czy pragniesz poczucia <br />
+        <br /> Pragniesz poczucia <br />
         <BoldSpan>sukcesu i spełnienia?</BoldSpan>
       </>
     ),

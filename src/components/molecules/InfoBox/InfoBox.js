@@ -81,7 +81,7 @@ const InfoBox = ({ mediaType }) => {
           <List>
             <Point>tel. 660 720 706</Point>
             <Point>lifeqm.kontakt@gmail.com</Point>
-            <Point>Katarzyna Kozłowska</Point>
+            <Point>Kavi Kozłowska</Point>
           </List>
         </SectionWrapper>
         <OnlyDesktop>
