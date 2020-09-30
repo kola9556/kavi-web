@@ -60,10 +60,8 @@ const pageContent = {
         <BoldSpanS>PODTRZYMUJĘ</BoldSpanS> ich <BoldSpanS>PROCES ZMIAN</BoldSpanS>, aż{' '}
         <BoldSpanS>DO OSIĄGNIĘCIA</BoldSpanS> zamierzonych CELÓW. <br />
         <br />
-        <SParagraph>
-          Zapraszam do kontaktu,
-          <br /> <BoldSpanS>Kavi Kozłowska.</BoldSpanS>
-        </SParagraph>
+        Zapraszam do kontaktu,
+        <br /> <BoldSpanS>Kavi Kozłowska.</BoldSpanS>
       </>
     ),
   },

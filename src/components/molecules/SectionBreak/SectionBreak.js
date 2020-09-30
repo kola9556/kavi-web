@@ -82,13 +82,14 @@ const SectionBreak = ({ firstTitle, secondTitle, icon }) => {
 };
 
 SectionBreak.propTypes = {
-  firstTitle: PropTypes.string.isRequired,
+  firstTitle: PropTypes.string,
   secondTitle: PropTypes.string.isRequired,
   icon: PropTypes.bool,
 };
 
 SectionBreak.defaultProps = {
   icon: false,
+  firstTitle: null,
 };
 
 export default SectionBreak;

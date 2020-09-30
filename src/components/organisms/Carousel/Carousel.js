@@ -126,14 +126,14 @@ const Carousel = () => {
     <>
       <CaWrapper>
         {posts.map((post) => (
-          <>
+          <div key={post.id}>
             <Card to="/blog">
               <CaImage image={post.image} />
               <CaHeading>{post.title}</CaHeading>
               <Category>{post.category}</Category>
               <Text>{post.text}</Text>
             </Card>
-          </>
+          </div>
         ))}
       </CaWrapper>
     </>

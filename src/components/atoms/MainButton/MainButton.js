@@ -109,7 +109,7 @@ const MainButton = ({ children, to, color }) => {
 };
 
 MainButton.propTypes = {
-  children: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
   to: PropTypes.oneOf([
     '/',
     '/aboutme',

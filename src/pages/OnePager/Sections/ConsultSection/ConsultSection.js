@@ -26,7 +26,6 @@ const ConsultSection = ({ content }) => {
 };
 
 ConsultSection.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
   content: PropTypes.array.isRequired,
 };
 

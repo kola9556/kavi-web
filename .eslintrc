@@ -42,6 +42,12 @@
     "no-unused-vars": 0,
     "prefer-stateless-function": "off",
     "react/prefer-stateless-function": "off",
-    "react/state-in-constructor": "off"
+    "react/state-in-constructor": "off",
+    "prettier/prettier": [
+      "error",
+      {
+        "endOfLine": "auto"
+      }
+    ]
   }
 }

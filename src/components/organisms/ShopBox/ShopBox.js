@@ -24,7 +24,7 @@ const ShopBox = () => {
   return (
     <>
       <ShopBoxWrapper>
-        <BookLabel id={1} />
+        <BookLabel />
       </ShopBoxWrapper>
     </>
   );
