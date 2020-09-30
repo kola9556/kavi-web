@@ -66,8 +66,8 @@
   },
   "lint-staged": {
     "src/**/*.{js,jsx}": [
-      "yarn prettier:write",
-      "yarn lint:fix"
+      "npm run prettier:write",
+      "npm run lint:fix"
     ]
   }
 }
