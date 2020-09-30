@@ -137,9 +137,9 @@ const pageContent = {
       type: 'individual',
       label: 'Life QM indywidualnie',
       texts: [
-        { text: 'Konsultacje indywidualne' },
-        { text: 'Life Energy Activator' },
-        { text: 'Grupy Moderujące Zmianę' },
+        { text: 'Konsultacje indywidualne', id: 1 },
+        { text: 'Life Energy Activator', id: 2 },
+        { text: 'Grupy Moderujące Zmianę', id: 3 },
       ],
     },
     {

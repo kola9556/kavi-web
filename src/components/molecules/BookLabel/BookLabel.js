@@ -1,6 +1,5 @@
 import React from 'react';
 import MainButton from 'components/atoms/MainButton/MainButton';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { media } from 'utils';
 import { BoldSpan } from 'utils/Headers';
@@ -71,16 +70,14 @@ const Price = styled.h3`
   `}
 `;
 
-const labels = [
-  {
-    id: 1,
-    title: 'Autopilot Sczęścia',
-    secondTitle: 'Świadomy optymizm w świecie zmian',
-    description:
-      '„Szczęśliwy człowiek wnosi światło tam, gdzie panują ciemności.” (Phil Bosmans). Zażyj antidotum – włącz Autopilot Szczęścia i zostań Świadomym Optymistą. Trwałe poczucie szczęścia w świecie dynamicznych zmian? To możliwe!',
-    price: '59,99zł',
-  },
-];
+const labels = {
+  number: 1,
+  title: 'Autopilot Sczęścia',
+  secondTitle: 'Świadomy optymizm w świecie zmian',
+  description:
+    '„Szczęśliwy człowiek wnosi światło tam, gdzie panują ciemności.” (Phil Bosmans). Zażyj antidotum – włącz Autopilot Szczęścia i zostań Świadomym Optymistą. Trwałe poczucie szczęścia w świecie dynamicznych zmian? To możliwe!',
+  price: '59,99zł',
+};
 
 const ButtonWrapper = styled.div`
   position: absolute;
@@ -93,34 +90,24 @@ const ButtonWrapper = styled.div`
   `}
 `;
 
-const BookLabel = ({ id }) => {
+const BookLabel = () => {
   return (
     <>
-      <LabelWrapper id={id}>
-        {labels.map((label) =>
-          label.id === id ? (
-            <>
-              <Title>{label.title}</Title>
-              <SecondTitle>{label.secondTitle}</SecondTitle>
-              <Description>{label.description}</Description>
-              <ButtonWrapper>
-                <MainButton color="red" path="/shop">
-                  Kup teraz
-                </MainButton>
-              </ButtonWrapper>
-              <Price>
-                <BoldSpan>Cena:</BoldSpan> &nbsp;&nbsp;{label.price}
-              </Price>
-            </>
-          ) : null,
-        )}
+      <LabelWrapper>
+        <Title>{labels.title}</Title>
+        <SecondTitle>{labels.secondTitle}</SecondTitle>
+        <Description>{labels.description}</Description>
+        <ButtonWrapper>
+          <MainButton color="red" path="/shop">
+            Kup teraz
+          </MainButton>
+        </ButtonWrapper>
+        <Price>
+          <BoldSpan>Cena:</BoldSpan> &nbsp;&nbsp;{labels.price}
+        </Price>
       </LabelWrapper>
     </>
   );
-};
-
-BookLabel.propTypes = {
-  id: PropTypes.number.isRequired,
 };
 
 export default BookLabel;

@@ -108,20 +108,20 @@ const ConsultBox = ({ content }) => {
     <>
       <BoxesWrapper>
         {content.map((item) => (
-          <>
+          <div key={item.type}>
             <SingleBoxWrapper>
               <Icon consultType={item.type} />
               <Label>{item.label}</Label>
               <List>
-                {item.texts.map((textItem, index) => (
-                  <Item key={index}>{textItem.text}</Item>
+                {item.texts.map((textItem) => (
+                  <Item key={textItem.text}>{textItem.text}</Item>
                 ))}
               </List>
               <ButtonWrapper consultType={item.type}>
                 <MainButton to={paths.consultation}>Więcej</MainButton>
               </ButtonWrapper>
             </SingleBoxWrapper>
-          </>
+          </div>
         ))}
       </BoxesWrapper>
     </>
@@ -129,7 +129,7 @@ const ConsultBox = ({ content }) => {
 };
 
 ConsultBox.propTypes = {
-  content: PropTypes.node.isRequired,
+  content: PropTypes.array.isRequired,
 };
 
 export default ConsultBox;
