@@ -2,7 +2,6 @@ import React from 'react';
 import ConsultBox from 'components/molecules/ConsultBox/ConsultBox';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-
 import SectionBreak from '../../../../components/molecules/SectionBreak/SectionBreak';
 
 const ConsultWrapper = styled.div`
@@ -26,7 +25,8 @@ const ConsultSection = ({ content }) => {
 };
 
 ConsultSection.propTypes = {
-  content: PropTypes.element.isRequired,
+  // eslint-disable-next-line react/forbid-prop-types
+  content: PropTypes.array.isRequired,
 };
 
 export default ConsultSection;

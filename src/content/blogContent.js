@@ -4,7 +4,6 @@ import blogPost2 from 'assets/images/blogPost2.jpg';
 import blogPost3 from 'assets/images/blogPost3.jpg';
 import blogPostMain from 'assets/images/blogPostMain.jpg';
 import howToPlan from 'assets/images/howToPlan.jpg';
-import kaviHats from 'assets/images/kaviHats.jpg';
 import styled from 'styled-components';
 import { media } from 'utils';
 import { MainText } from 'utils/Headers';

@@ -76,7 +76,6 @@ class Navigationbar extends Component {
   render() {
     const { buttonActive } = this.state;
     const { isDropdownVisible } = this.state;
-    const { refresh } = this.props;
 
     return (
       <NavbarWrapper>

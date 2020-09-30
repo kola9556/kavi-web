@@ -161,8 +161,8 @@ const TopSection = ({ heading, paragraph }) => {
 };
 
 TopSection.propTypes = {
-  heading: PropTypes.string.isRequired,
-  paragraph: PropTypes.string.isRequired,
+  heading: PropTypes.element.isRequired,
+  paragraph: PropTypes.element.isRequired,
 };
 
 export default TopSection;

@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
-import kaviHats from 'assets/images/kaviHats.jpg';
-import { blogPosts as posts } from 'content/blogContent';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { media } from 'utils';
 import { SHeader } from 'utils/Headers';
-import { paths } from 'utils/paths';
 
 const PostLabelWrapper = styled.div`
   /* Display: none - We don't have clients content for the blog, also we want to have

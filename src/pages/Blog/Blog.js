@@ -112,17 +112,6 @@ const StyledFixedBackgroundBottom = styled(FixedBackgroundBottom)`
   opacity: 0.9;
 `;
 
-const pageContent = {
-  header: 'Napisz do mnie!',
-  postscript: 'Z przyjemnością odpowiem na Twoje pytania',
-  mailHeader: 'Adres mailowy:',
-  mail: 'kavikozlowska@gmail.com',
-  corespondingHeader: 'Adres korespondencyjny:',
-  adress: 'Al. Iberyjska 10/2 (Ogrody Tesoro) 81-198 Pogórze k. Gdyni',
-  phoneHeader: 'Telefon:',
-  phone: '658 984 125',
-};
-
 class Blog extends Component {
   state = {};
 
@@ -130,30 +119,32 @@ class Blog extends Component {
     return (
       <>
         <ScrollTemplate>
-          <Navigationbar />
-          <StyledFixedBackground img={blogTopMobile}>
-            <TopBackgroundTextWrapper>
-              <StyledSecondHeading>Blog o szczęśliwym stylu życiu...</StyledSecondHeading>
-              <StyledSecondHeading>Blog dla życia świadomie zarządzanego...</StyledSecondHeading>
-              <StyledSecondHeading>Blog o życiu z sensem...</StyledSecondHeading>
-            </TopBackgroundTextWrapper>
-          </StyledFixedBackground>
-          <BlogContentWrapper>
-            <PostLabelsWrapper>
-              {posts.map((post, index) => (
-                <PostLabel key={index} image={post.mainImage} title={post.title} id={post.id} />
-              ))}
-            </PostLabelsWrapper>
-            <AboutMeBlockWrapper>
-              <AboutMeBlock />
-            </AboutMeBlockWrapper>
-          </BlogContentWrapper>
-          <NavArrowsWrapper>
-            <NavArrow previous>Poprzedni</NavArrow>
-            <NavArrow>Następny</NavArrow>
-          </NavArrowsWrapper>
-          <StyledFixedBackgroundBottom img={blogBottom} />
-          <Footer />
+          <>
+            <Navigationbar />
+            <StyledFixedBackground img={blogTopMobile}>
+              <TopBackgroundTextWrapper>
+                <StyledSecondHeading>Blog o szczęśliwym stylu życiu...</StyledSecondHeading>
+                <StyledSecondHeading>Blog dla życia świadomie zarządzanego...</StyledSecondHeading>
+                <StyledSecondHeading>Blog o życiu z sensem...</StyledSecondHeading>
+              </TopBackgroundTextWrapper>
+            </StyledFixedBackground>
+            <BlogContentWrapper>
+              <PostLabelsWrapper>
+                {posts.map((post, index) => (
+                  <PostLabel key={index} image={post.mainImage} title={post.title} id={post.id} />
+                ))}
+              </PostLabelsWrapper>
+              <AboutMeBlockWrapper>
+                <AboutMeBlock />
+              </AboutMeBlockWrapper>
+            </BlogContentWrapper>
+            <NavArrowsWrapper>
+              <NavArrow previous>Poprzedni</NavArrow>
+              <NavArrow>Następny</NavArrow>
+            </NavArrowsWrapper>
+            <StyledFixedBackgroundBottom img={blogBottom} />
+            <Footer />
+          </>
         </ScrollTemplate>
       </>
     );

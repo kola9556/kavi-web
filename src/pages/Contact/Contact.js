@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import contactBottom from 'assets/images/contactBottom.jpg';
 import contactTop from 'assets/images/contactTop.jpg';
 import FixedBackgroundBottom from 'components/atoms/FixedBackgroundBottom/FixedBackgroundBottom';

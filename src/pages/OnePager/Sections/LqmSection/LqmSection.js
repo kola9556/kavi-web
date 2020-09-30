@@ -1,16 +1,10 @@
 /* eslint-disable react/no-array-index-key */
 import React from 'react';
-import change from 'assets/images/change.jpg';
-import health from 'assets/images/health.jpg';
-import logoW from 'assets/images/logoW.jpg';
-import mind from 'assets/images/mind.jpg';
 import Icons from 'components/molecules/Icons/Icons';
 import MainButton from 'components/atoms/MainButton/MainButton';
 import PropTypes from 'prop-types';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { media } from 'utils';
-import { ICON_NAMES } from 'utils/constans';
-import { MParagraph } from 'utils/Headers';
 import { paths } from 'utils/paths';
 import SectionBreak from '../../../../components/molecules/SectionBreak/SectionBreak';
 
@@ -56,7 +50,7 @@ const LqmSection = ({ children }) => {
 };
 
 LqmSection.propTypes = {
-  children: PropTypes.string.isRequired,
+  children: PropTypes.element.isRequired,
 };
 
 export default LqmSection;

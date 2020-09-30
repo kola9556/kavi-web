@@ -129,7 +129,7 @@ const ConsultBox = ({ content }) => {
 };
 
 ConsultBox.propTypes = {
-  content: PropTypes.element.isRequired,
+  content: PropTypes.node.isRequired,
 };
 
 export default ConsultBox;

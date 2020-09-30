@@ -1,4 +1,4 @@
-import React, { Children, Component } from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
 class ScrollTemplate extends Component {
@@ -15,7 +15,7 @@ class ScrollTemplate extends Component {
 }
 
 ScrollTemplate.propTypes = {
-  children: PropTypes.element.isRequired,
+  children: PropTypes.node.isRequired,
 };
 
 export default ScrollTemplate;

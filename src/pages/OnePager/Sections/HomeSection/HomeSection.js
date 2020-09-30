@@ -188,9 +188,9 @@ const HomeSection = ({ firstPara, secondPara, thirdPara }) => {
 };
 
 HomeSection.propTypes = {
-  firstPara: PropTypes.string.isRequired,
-  secondPara: PropTypes.string.isRequired,
-  thirdPara: PropTypes.string.isRequired,
+  firstPara: PropTypes.element.isRequired,
+  secondPara: PropTypes.element.isRequired,
+  thirdPara: PropTypes.element.isRequired,
 };
 
 export default HomeSection;

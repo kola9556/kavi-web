@@ -8,7 +8,6 @@ import logoW from 'assets/images/logoW.jpg';
 import mind from 'assets/images/mind.jpg';
 import { ICON_NAMES } from 'utils/constans';
 import { MParagraph } from 'utils/Headers';
-import { paths } from 'utils/paths';
 
 const GraphicsWrapper = styled.div`
   display: flex;

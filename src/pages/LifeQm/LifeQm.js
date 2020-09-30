@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { media } from 'utils';
 import topLife from 'assets/images/topLife.jpg';
 import lifeBottom from 'assets/images/lifeBottom.jpg';

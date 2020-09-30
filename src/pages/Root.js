@@ -5,7 +5,7 @@ import Blog from 'pages/Blog/Blog';
 import Collaboration from 'pages/Collaboration';
 import Consultation from 'pages/Consultation';
 import Contact from 'pages/Contact/Contact';
-import LifeQm from 'pages/LifeQm';
+import LifeQm from 'pages/LifeQm/LifeQm';
 import OnePager from 'pages/OnePager/OnePager';
 import Post from 'pages/Post';
 import Shop from 'pages/Shop/Shop';

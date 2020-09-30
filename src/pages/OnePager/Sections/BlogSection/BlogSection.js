@@ -110,7 +110,8 @@ const BlogSection = ({ redText, listPoints }) => {
 
 BlogSection.propTypes = {
   redText: PropTypes.element.isRequired,
-  listPoints: PropTypes.element.isRequired,
+  // eslint-disable-next-line react/forbid-prop-types
+  listPoints: PropTypes.array.isRequired,
 };
 
 export default BlogSection;

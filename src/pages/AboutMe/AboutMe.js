@@ -11,7 +11,7 @@ import Carousel from 'components/organisms/Carousel/Carousel';
 import Footer from 'components/organisms/Footer/Footer';
 import Navigationbar from 'components/organisms/Navigationbar/Navigationbar';
 import Greet from 'pages/AboutMe/components/Greet';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import ScrollTemplate from 'templates/ScrollTemplate';
 import { media } from 'utils';
 import { MEDIA_TYPE, PAGE_TYPE, SCREEN_SIZES } from 'utils/constans';

@@ -168,9 +168,9 @@ const AboutSection = ({ paragraphDown, paragraphUp, heading }) => {
 };
 
 AboutSection.propTypes = {
-  heading: PropTypes.string.isRequired,
-  paragraphUp: PropTypes.string.isRequired,
-  paragraphDown: PropTypes.string.isRequired,
+  heading: PropTypes.element.isRequired,
+  paragraphUp: PropTypes.element.isRequired,
+  paragraphDown: PropTypes.element.isRequired,
 };
 
 export default AboutSection;

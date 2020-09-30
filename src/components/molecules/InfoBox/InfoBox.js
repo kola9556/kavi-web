@@ -1,7 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import LogoK from 'assets/logos/logoKSmall.jpg';
-import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { media } from 'utils';
 import { MParagraph } from 'utils/Headers';
@@ -72,7 +71,7 @@ const Link = styled(NavLink)`
   }
 `;
 
-const InfoBox = ({ mediaType }) => {
+const InfoBox = () => {
   return (
     <>
       <InfoWrapper>
@@ -122,10 +121,6 @@ const InfoBox = ({ mediaType }) => {
       </InfoWrapper>
     </>
   );
-};
-
-InfoBox.propTypes = {
-  mediaType: PropTypes.element.isRequired,
 };
 
 export default InfoBox;

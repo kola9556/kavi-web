@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import KaviHats from 'assets/images/kaviHats.jpg';
 import Lentils from 'assets/images/lentils.jpg';
 import Provisions from 'assets/images/provisions.jpg';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { media } from 'utils';
 import { SHeader, SParagraph, XsParagraph } from 'utils/Headers';
 

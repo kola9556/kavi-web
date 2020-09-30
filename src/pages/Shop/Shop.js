@@ -1,7 +1,7 @@
 /* eslint-disable react/no-danger */
 /* eslint-disable react/self-closing-comp */
 /* eslint-disable react/no-unescaped-entities */
-import React, { Component } from 'react';
+import React from 'react';
 import bottomShop from 'assets/images/bottomShop.jpg';
 import topShop from 'assets/images/topShop.jpg';
 import FixedBackgroundBottom from 'components/atoms/FixedBackgroundBottom/FixedBackgroundBottom';
