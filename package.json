@@ -9,8 +9,9 @@
     "test": "react-scripts test",
     "storybook": "start-storybook -p 9009 -s public",
     "build-storybook": "build-storybook -s public",
-    "lint:fix": "eslint  --fix 'src/**/*.{js,jsx}'",
-    "prettier:write": "npx prettier --write 'src/**/*.{js,jsx,ts,tsx,json}'"
+    "lint:fix": "eslint  --fix \"src/**/*.{js,jsx}\"",
+    "prettier:write": "npx prettier --write \"src/**/*.{js,jsx,ts,tsx,json}\"",
+    "lint": "eslint --fix '*/.js' --ignore-pattern node_modules/"
   },
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",

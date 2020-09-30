@@ -1,11 +1,12 @@
 /* eslint-disable react/no-array-index-key */
 import React from 'react';
-import Icons from 'components/molecules/Icons/Icons';
 import MainButton from 'components/atoms/MainButton/MainButton';
+import Icons from 'components/molecules/Icons/Icons';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { media } from 'utils';
 import { paths } from 'utils/paths';
+
 import SectionBreak from '../../../../components/molecules/SectionBreak/SectionBreak';
 
 const LqmWrapper = styled.div`

@@ -1,11 +1,11 @@
 /* eslint-disable react/no-array-index-key */
 import React from 'react';
-import styled, { css } from 'styled-components';
-import { media } from 'utils';
 import change from 'assets/images/change.jpg';
 import health from 'assets/images/health.jpg';
 import logoW from 'assets/images/logoW.jpg';
 import mind from 'assets/images/mind.jpg';
+import styled, { css } from 'styled-components';
+import { media } from 'utils';
 import { ICON_NAMES } from 'utils/constans';
 import { MParagraph } from 'utils/Headers';
 

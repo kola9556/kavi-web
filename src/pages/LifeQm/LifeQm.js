@@ -1,19 +1,19 @@
 import React from 'react';
-import { media } from 'utils';
-import topLife from 'assets/images/topLife.jpg';
+import lifeActivator from 'assets/images/lifeActivator.jpg';
 import lifeBottom from 'assets/images/lifeBottom.jpg';
 import lifeGrid1 from 'assets/images/lifeGrid1.jpg';
 import lifeGrid2 from 'assets/images/lifeGrid2.jpg';
 import lifeGrid3 from 'assets/images/lifeGrid3.jpg';
-import lifeActivator from 'assets/images/lifeActivator.jpg';
+import topLife from 'assets/images/topLife.jpg';
+import FixedBackgroundBottom from 'components/atoms/FixedBackgroundBottom/FixedBackgroundBottom';
+import FixedBackgroundTop from 'components/atoms/FixedBackgroundTop/FixedBackgroundTop';
+import Icons from 'components/molecules/Icons/Icons';
+import Footer from 'components/organisms/Footer/Footer';
 import Navigationbar from 'components/organisms/Navigationbar/Navigationbar';
 import styled from 'styled-components';
-import { MainHeading, PostscriptHeading, MainText } from 'utils/Headers';
 import ScrollTemplate from 'templates/ScrollTemplate';
-import FixedBackgroundTop from 'components/atoms/FixedBackgroundTop/FixedBackgroundTop';
-import FixedBackgroundBottom from 'components/atoms/FixedBackgroundBottom/FixedBackgroundBottom';
-import Footer from 'components/organisms/Footer/Footer';
-import Icons from 'components/molecules/Icons/Icons';
+import { media } from 'utils';
+import { MainHeading, MainText, PostscriptHeading } from 'utils/Headers';
 
 const StyledBackgroundTop = styled(FixedBackgroundTop)`
   ${media.desktop`
