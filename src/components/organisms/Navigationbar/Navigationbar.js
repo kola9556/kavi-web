@@ -3,12 +3,12 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import logoKavi from 'assets/logos/logoK.jpg';
-import NavbarLink from 'components/atoms/NavbarLink/NavbarLink';
 import { ShopNavLInk } from 'components/atoms/ShopNavLink';
+import NavigationLink from 'components/organisms/Navigationbar/components/NavigationLink/NavigationLink';
 import styled from 'styled-components';
 import { media } from 'utils';
 
-import BlogLink from '../../atoms/BlogLink/BlogLink';
+import BlogLogo from '../../atoms/BlogLogo/BlogLogo';
 import HamburgerButton from './components/HamburgerButton/HamburgerButton';
 import HamburgerDropdown from './components/HamburgerDropdown/HamburgerDropdown';
 
@@ -54,7 +54,7 @@ const NavlinksWrapper = styled.div`
   margin: 0;
   display: none;
 
-  ${media.desktop`
+  ${media.tablet`
     display: flex;
     flex-direction: row;
     background-color: white;
@@ -86,12 +86,12 @@ class Navigationbar extends Component {
         />
         <HamburgerDropdown isVisible={isDropdownVisible} />
         <NavlinksWrapper>
-          <NavbarLink to="/aboutme">O mnie</NavbarLink>
-          <NavbarLink to="/lifeqm">Life QM</NavbarLink>
-          <BlogLink to="/blog" />
-          <NavbarLink to="/consultation">Konsultacje i Szkolenia</NavbarLink>
+          <NavigationLink to="/aboutme">O mnie</NavigationLink>
+          <NavigationLink to="/lifeqm">Life QM</NavigationLink>
+          <BlogLogo to="/blog" />
+          <NavigationLink to="/consultation">Konsultacje i Szkolenia</NavigationLink>
           <ShopNavLInk />
-          <NavbarLink to="/contact">Kontakt</NavbarLink>
+          <NavigationLink to="/contact">Kontakt</NavigationLink>
         </NavlinksWrapper>
       </NavbarWrapper>
     );

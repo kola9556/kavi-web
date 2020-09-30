@@ -1,5 +1,5 @@
 import React from 'react';
-import NavbarLink from 'components/atoms/NavbarLink/NavbarLink';
+import NavigationLink from 'components/organisms/Navigationbar/components/NavigationLink/NavigationLink';
 
 export const ShopNavLInk = () => {
   const handleShopLink = (e) => {
@@ -8,8 +8,8 @@ export const ShopNavLInk = () => {
   };
 
   return (
-    <NavbarLink onClick={handleShopLink} to="/shop">
+    <NavigationLink onClick={handleShopLink} to="/shop">
       Sklep
-    </NavbarLink>
+    </NavigationLink>
   );
 };

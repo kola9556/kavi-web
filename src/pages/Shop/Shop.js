@@ -33,7 +33,7 @@ const StyledPostscriptHeading = styled(PostscriptHeading)`
 
 const AboutMeBlockWrapper = styled.div`
   position: absolute;
-  top: 270rem;
+  top: 280rem;
   right: 6rem;
 
   @media (min-width: 1300px) {
