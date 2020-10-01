@@ -36,9 +36,13 @@ const AboutMeBlockWrapper = styled.div`
   top: 280rem;
   right: 6rem;
 
+  @media (min-width: 600px) {
+    right: 0;
+    top: 123rem;
+  }
   @media (min-width: 1300px) {
     right: 0;
-    top: 97rem;
+    top: 80rem;
   }
 
   @media (min-width: 1600px) {

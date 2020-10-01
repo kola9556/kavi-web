@@ -87,7 +87,7 @@ const Footer = ({ pageType }) => {
           </LeftWrapper>
           <BeadIcon />
         </ContentWrapper>
-        <Copyrights>&copy; 2020 Aleksandra Kurdej. All rights reserved.</Copyrights>
+        <Copyrights>&copy; 2020 Aleksandra Stasiuk. All rights reserved.</Copyrights>
       </FooterWrapper>
     </>
   );
