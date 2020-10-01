@@ -15,7 +15,7 @@ import styled from 'styled-components';
 import ScrollTemplate from 'templates/ScrollTemplate';
 import { media } from 'utils';
 import { MEDIA_TYPE, PAGE_TYPE, SCREEN_SIZES } from 'utils/constans';
-import { BoldSpanS, MainText, SParagraph } from 'utils/Headers';
+import { BoldSpanS, MainText } from 'utils/Headers';
 
 const pageContent = {
   mainText: {

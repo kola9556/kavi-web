@@ -12,7 +12,7 @@ const HamburgerWrapper = styled.button`
   outline: none;
   cursor: pointer;
 
-  ${media.desktop`display: none;`}
+  ${media.tablet`display: none;`}
 `;
 
 const HamburgerBar = styled.div`
