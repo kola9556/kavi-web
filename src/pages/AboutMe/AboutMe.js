@@ -84,10 +84,10 @@ const Medias = styled.div`
 
   @keyframes drop {
     from {
-      bottom: 3rem;
+      transform: translate(0, -10rem);
     }
     to {
-      bottom: -3.8rem;
+      transform: translate(0, 0rem);
     }
   }
 `;

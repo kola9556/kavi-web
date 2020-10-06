@@ -15,6 +15,54 @@ import ScrollTemplate from 'templates/ScrollTemplate';
 import { media } from 'utils';
 import { MainHeading, MainText, PostscriptHeading } from 'utils/Headers';
 
+const pageContent = {
+  mainHeading: <>Life Quality Management</>,
+  postsrciptHeading: <>Twoje życiowe IQ na XXI wiek.</>,
+  textFirst: (
+    <>
+      Systemy zarezerwowane dla gigantów przedsiębiorczości są dziś osiągalne dla osób, które pragną
+      żyć świadomym, szczęśliwym życiem.
+      <br />
+      <br />
+      Life QM to system pozytywnej zmiany, wewnętrznej przebudowy przekonań i nawyków dla
+      podniesienia jakości życia. Celem jest efektywność w osiąganiu osobistego sukcesu i
+      zadowolenie w każdym aspekcie życia.
+    </>
+  ),
+  textSecond: (
+    <>
+      Pragniesz szczęścia, pełnej realizacji własnego potencjału oraz satysfakcjonującego poczucia,
+      że twoje życie jest dobre i wartościowe?
+      <br />
+      <br />
+      Jakość twojego życia jest wypadkową jakości twoich MYŚLI, SŁÓW, EMOCJI, RELACJI i DZIAŁAŃ.
+      Skupiamy się właśnie na tych obszarach. Life QM INSPIRUJE I WSPIERA Twoją ZMIANĘ, skutecznie
+      prowadząc Cię od negatywizmu do ŚWIADOMEGO OPTYMIZMU. Cel: osiągnięcie efektywnego szczęścia i
+      osobistego sukcesu.
+    </>
+  ),
+  textThird: (
+    <>
+      Czy to brzmi dla Ciebie zbyt pięknie?
+      <br /> Rzeczywiście, istnieje dodatkowy warunek determinujący efektywność tego systemu. <br />
+      Life QM nie jest rozwiązaniem dla każdego. Naszą współpracę rozpoczniemy tylko wtedy, jeżeli
+      naprawdę czujesz SILNĄ POTRZEBĘ ZMIANY i masz odwagę, by podjąć wyzwanie przebudowy twoich
+      codziennych nawyków prowadzące do Szczęśliwego Stylu Życia.
+      <br /> <br />
+      Jeśli tak zacznij od Life Energy Activator!
+    </>
+  ),
+  textFourth: (
+    <>
+      Żyjemy w dynamicznie zmiennym świecie. <br />
+      <br />
+      Dziś nie sztuką jest WIEDZIEĆ. <br />
+      <br />
+      Warto WIEDZIEĆ JAK i konsekwentnie DZIAŁAĆ według tej wiedzy.
+    </>
+  ),
+};
+
 const StyledBackgroundTop = styled(FixedBackgroundTop)`
   ${media.desktop`
     height: 60vh;
@@ -36,35 +84,6 @@ const ColoredTextBackground = styled.div`
       width: 88vw;
       padding: 0;
     `}
-`;
-
-const MainWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-`;
-
-const ContentWraper = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin: 20rem 0 8rem;
-  justify-content: center;
-`;
-
-const GridWrapper = styled.div`
-  margin: 0 1rem;
-  display: grid;
-  grid-template-columns: auto auto;
-  align-items: center;
-  align-content: center;
-  justify-items: center;
-  grid-gap: 2rem 3rem;
-
-  ${media.desktop`
-    margin: 0;
-    grid-template-columns: 62rem 62rem;
-    grid-gap: 6rem 3rem;
-  `}
 `;
 
 const StyledImage = styled.img`
@@ -100,29 +119,19 @@ const Text = styled(MainText)`
       text-align: center;
       padding: 5rem 0;
 
-      ${media.tablet`padding:2rem 0 10rem;`}
+      ${media.tablet`margin: 2rem 0 10rem ;`}
     `}
 
   ${media.tablet`
     padding: 2rem 0;
+    width:60vw;
+
       ${({ deskport }) =>
         deskport &&
         css`
           width: 30vw;
         `}
     `}
-`;
-
-const MiddleText = styled(MainText)`
-  max-width: 80rem;
-  margin: 12rem 0 20rem;
-  text-align: center;
-`;
-const BottomText = styled(MainText)`
-  margin-bottom: 10rem;
-  text-align: center;
-  font-size: 2rem;
-  font-weight: 700;
 `;
 
 const DecoratedText = styled.span`
@@ -204,14 +213,23 @@ const LifeContentRowWrapper = styled.div`
 `;
 
 const LifeQm = () => {
+  const {
+    mainHeading,
+    postsrciptHeading,
+    textFirst,
+    textSecond,
+    textThird,
+    textFourth,
+  } = pageContent;
+
   return (
     <>
       <ScrollTemplate>
         <Navigationbar />
         <StyledBackgroundTop img={topLife}>
           <ColoredTextBackground>
-            <MainHeading>Life Quality Management</MainHeading>
-            <PostscriptHeading>Twoje życiowe IQ na XXI wiek.</PostscriptHeading>
+            <MainHeading>{mainHeading}</MainHeading>
+            <PostscriptHeading>{postsrciptHeading}</PostscriptHeading>
           </ColoredTextBackground>
         </StyledBackgroundTop>
         <AlignContentWrapper>
@@ -221,39 +239,11 @@ const LifeQm = () => {
               <StyledImage src={lifeMeditation} />
             </RowImagesBox>
             <StyledImage mobile src={lifeBuilding} />
-            <Text>
-              Systemy zarezerwowane dla gigantów przedsiębiorczości są dziś osiągalne dla osób,
-              które pragną żyć świadomym, szczęśliwym życiem.
-              <br />
-              <br />
-              Life QM to system pozytywnej zmiany, wewnętrznej przebudowy przekonań i nawyków dla
-              podniesienia jakości życia. Celem jest efektywność w osiąganiu osobistego sukcesu i
-              zadowolenie w każdym aspekcie życia.
-            </Text>
+            <Text>{textFirst}</Text>
             <StyledImage mobile src={lifeMeditation} />
-            <Text>
-              Pragniesz szczęścia, pełnej realizacji własnego potencjału oraz satysfakcjonującego
-              poczucia, że twoje życie jest dobre i wartościowe?
-              <br />
-              <br />
-              Jakość twojego życia jest wypadkową jakości twoich MYŚLI, SŁÓW, EMOCJI, RELACJI i
-              DZIAŁAŃ. Skupiamy się właśnie na tych obszarach. Life QM INSPIRUJE I WSPIERA Twoją
-              ZMIANĘ, skutecznie prowadząc Cię od negatywizmu do ŚWIADOMEGO OPTYMIZMU. Cel:
-              osiągnięcie efektywnego szczęścia i osobistego sukcesu.
-            </Text>
-
+            <Text>{textSecond}</Text>
             <LifeContentRowWrapper>
-              <Text deskport>
-                Czy to brzmi dla Ciebie zbyt pięknie?
-                <br /> Rzeczywiście, istnieje dodatkowy warunek determinujący efektywność tego
-                systemu. <br />
-                Life QM nie jest rozwiązaniem dla każdego. Naszą współpracę rozpoczniemy tylko
-                wtedy, jeżeli naprawdę czujesz SILNĄ POTRZEBĘ ZMIANY i masz odwagę, by podjąć
-                wyzwanie przebudowy twoich codziennych nawyków prowadzące do Szczęśliwego Stylu
-                Życia.
-                <br /> <br />
-                Jeśli tak zacznij od Life Energy Activator!
-              </Text>
+              <Text deskport>{textThird}</Text>
               <StyledImage deskport src={lifeRise} />
             </LifeContentRowWrapper>
             <ActiveImage img={lifeActivator}>
@@ -273,13 +263,7 @@ const LifeQm = () => {
               <br /> Może to właśnie twoja SZANSA!
             </Text>
             <Icons />
-            <Text centered>
-              Żyjemy w dynamicznie zmiennym świecie. <br />
-              <br />
-              Dziś nie sztuką jest WIEDZIEĆ. <br />
-              <br />
-              Warto WIEDZIEĆ JAK i konsekwentnie DZIAŁAĆ według tej wiedzy.
-            </Text>
+            <Text centered>{textFourth}</Text>
           </LifeContentWrapper>
         </AlignContentWrapper>
         <StyledBackgroundBottom img={lifeBottom} />
@@ -290,64 +274,3 @@ const LifeQm = () => {
 };
 
 export default LifeQm;
-
-/*  <MainWrapper>
-          <ContentWraper>
-            <GridWrapper>
-              <StyledImage src={lifeGrid1} />
-              <Text>
-                Systemy zarezerwowane dla gigantów przedsiębiorczości są dziś osiągalne dla osób,
-                które pragną żyć świadomym, szczęśliwym życiem.
-              </Text>
-              <Text>
-                Life QM to system pozytywnej zmiany, wewnętrznej przebudowy przekonań i nawyków dla
-                podniesienia jakości życia. Celem jest efektywność w osiąganiu osobistego sukcesu i
-                zadowolenie w każdym aspekcie życia.
-                <br />
-                <br /> Pragniesz szczęścia, pełnej realizacji własnego potencjału oraz
-                satysfakcjonującego poczucia, że twoje życie jest dobre i wartościowe?
-              </Text>
-              <StyledImage src={lifeGrid2} />
-              <StyledImage src={lifeGrid3} />
-              <Text>
-                Jakość twojego życia jest wypadkową jakości twoich MYŚLI, SŁÓW, EMOCJI, RELACJI i
-                DZIAŁAŃ. Skupiamy się właśnie na tych obszarach. Life QM INSPIRUJE I WSPIERA Twoją
-                ZMIANĘ, skutecznie prowadząc Cię od negatywizmu do ŚWIADOMEGO OPTYMIZMU. Cel:
-                osiągnięcie efektywnego szczęścia i osobistego sukcesu.
-              </Text>
-            </GridWrapper>
-          </ContentWraper>
-          <MiddleText>
-            Czy to brzmi dla Ciebie zbyt pięknie?
-            <br /> Rzeczywiście, istnieje dodatkowy warunek determinujący efektywność tego systemu.{' '}
-            <br />
-            Life QM nie jest rozwiązaniem dla każdego. Naszą współpracę rozpoczniemy tylko wtedy,
-            jeżeli naprawdę czujesz SILNĄ POTRZEBĘ ZMIANY i masz odwagę, by podjąć wyzwanie
-            przebudowy twoich codziennych nawyków prowadzące do Szczęśliwego Stylu Życia.
-            <br /> Jeśli tak zacznij od Life Energy Activator. <br />
-            <br />
-            <DecoratedText>Następna edycja LEA już 04.10.2020</DecoratedText> . Może to właśnie
-            twoja SZANSA.
-          </MiddleText>
-          <BottomText>
-            Żyjemy w dynamicznie zmiennym świecie. <br />
-            <br />
-            Dziś nie sztuką jest WIEDZIEĆ. <br />
-            <br />
-            Warto WIEDZIEĆ JAK i konsekwentnie DZIAŁAĆ według tej wiedzy.
-          </BottomText>
-          <Icons />
-
-          <ActiveImage img={lifeActivator}>
-            <ColoredTextBackground>
-              <ActivatorHeading>Life Energy Activator</ActivatorHeading>
-              <PostscriptActivator>Z nami dowiesz się JAK.</PostscriptActivator>
-              <PostscriptActivator>
-                Z nami wreszcie podejmiesz i utrzymasz DZIAŁANIE.
-              </PostscriptActivator>
-              <PostscriptActivator>
-                Z nami osiągniesz swój CEL: SZCZĘSLIWY STYL ŻYCIA
-              </PostscriptActivator>
-            </ColoredTextBackground>
-          </ActiveImage>
-        </MainWrapper> */

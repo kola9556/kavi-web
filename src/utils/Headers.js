@@ -143,8 +143,8 @@ const DescriptionParagraph = styled.p`
 
 const MainText = styled.p`
   margin: 0;
-  font-size: 1.6rem;
-  font-weight: 600;
+  font-size: 1.8rem;
+  font-weight: 500;
   color: ${({ theme }) => theme.navyblueText};
 `;
 

@@ -1,7 +1,7 @@
 export const theme = {
   navbarGrey: 'rgba(67, 96, 118, 1)',
   redText: 'rgba(234, 26, 26, 0.8)', // mainly for main header from first view
-  navyblueText: 'rgba(67, 96, 118, 1)', // main for text
+  navyblueText: 'rgb(57, 59, 94)', // main for text
   blueGreyText: 'rgba(67, 89, 159, 0.42)', // icon numbers
   lightBlueText: 'rgba(83, 163, 224, 0.28)', // SectionBreak right text
   expressiveBlue: 'rgba(53, 153, 211, 1)',
