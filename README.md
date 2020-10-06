@@ -5,6 +5,7 @@
 Further features/refactors: 
 - Blog page (DONE ✔️ ) - only skeleton for now, more during CMS implementation
 - Inject external shop from ecwid.com (DONE ✔️)
+- Add SSL certificate
 - Blog CMS with Gatsby 
 - Change images to gatsby-image
 - First load welcome animation
