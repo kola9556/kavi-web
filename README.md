@@ -2,12 +2,14 @@
 
 #### Hosted on: http://kavikozlowska.pl/
 
-Further features: 
-- Blog page (DONE ✔️ )
+Further features/refactors: 
+- Blog page (DONE ✔️ ) - only skeleton for now, more during CMS implementation
 - Inject external shop from ecwid.com (DONE ✔️)
-- Blog CMS 
+- Blog CMS with Gatsby 
+- Change images to gatsby-image
 - First load welcome animation
 - Improve animations and all page displaying (first load, loading order)
+
 
 
 
