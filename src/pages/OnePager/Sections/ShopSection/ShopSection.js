@@ -1,12 +1,12 @@
 import React from 'react';
 import cover from 'assets/images/book.jpg';
-import MainButton from 'components/atoms/MainButton/MainButton';
-import SectionBreak from 'components/molecules/SectionBreak/SectionBreak';
+import MainButton from 'components/atoms/MainButton';
+import SectionBreak from 'components/molecules/SectionBreak';
 import styled from 'styled-components';
 import { media } from 'utils';
 import { paths } from 'utils/paths';
 
-import ShopBox from '../../../../components/organisms/ShopBox/ShopBox';
+import ShopBox from '../../../../components/organisms/ShopBox';
 
 const ShopWrapper = styled.div`
   width: 100%;

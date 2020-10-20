@@ -4,13 +4,13 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import logoKavi from 'assets/logos/logoK.jpg';
 import { ShopNavLInk } from 'components/atoms/ShopNavLink';
-import NavigationLink from 'components/organisms/Navigationbar/components/NavigationLink/NavigationLink';
+import NavigationLink from 'components/organisms/Navigationbar/components/NavigationLink';
 import styled from 'styled-components';
 import { media } from 'utils';
 
-import BlogLogo from '../../atoms/BlogLogo/BlogLogo';
-import HamburgerButton from './components/HamburgerButton/HamburgerButton';
-import HamburgerDropdown from './components/HamburgerDropdown/HamburgerDropdown';
+import BlogLogo from '../../atoms/BlogLogo';
+import HamburgerButton from './components/HamburgerButton';
+import HamburgerDropdown from './components/HamburgerDropdown';
 
 const NavbarWrapper = styled.div`
   position: fixed;

@@ -1,9 +1,9 @@
 import React from 'react';
-import ConsultBox from 'components/molecules/ConsultBox/ConsultBox';
+import ConsultBox from 'components/molecules/ConsultBox';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import SectionBreak from '../../../../components/molecules/SectionBreak/SectionBreak';
+import SectionBreak from '../../../../components/molecules/SectionBreak';
 
 const ConsultWrapper = styled.div`
   width: 100%;

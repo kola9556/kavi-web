@@ -4,11 +4,11 @@ import AboutMe from 'pages/AboutMe/AboutMe';
 import Blog from 'pages/Blog/Blog';
 import Collaboration from 'pages/Collaboration';
 import Consultation from 'pages/Consultation';
-import Contact from 'pages/Contact/Contact';
-import LifeQm from 'pages/LifeQm/LifeQm';
+import Contact from 'pages/Contact';
+import LifeQm from 'pages/LifeQm';
 import OnePager from 'pages/OnePager/OnePager';
 import Post from 'pages/Post';
-import Shop from 'pages/Shop/Shop';
+import Shop from 'pages/Shop';
 import { paths } from 'utils/paths';
 
 import MainTemplate from '../templates/MainTemplate';

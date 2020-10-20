@@ -1,7 +1,7 @@
 import React from 'react';
 import kaviOrange from 'assets/images/KaviOrange.jpg';
-import MainButton from 'components/atoms/MainButton/MainButton';
-import SectionBreak from 'components/molecules/SectionBreak/SectionBreak';
+import MainButton from 'components/atoms/MainButton';
+import SectionBreak from 'components/molecules/SectionBreak';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import { media } from 'utils';

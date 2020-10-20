@@ -7,7 +7,7 @@ import ScrollTemplate from 'templates/ScrollTemplate';
 import { PAGE_TYPE } from 'utils/constans';
 import { BlueSpan, BoldSpan, MParagraph } from 'utils/Headers';
 
-import Footer from '../../components/organisms/Footer/Footer';
+import Footer from '../../components/organisms/Footer';
 import Navigationbar from '../../components/organisms/Navigationbar/Navigationbar';
 import BlogSection from './Sections/BlogSection/BlogSection';
 import ConsultSection from './Sections/ConsultSection/ConsultSection';

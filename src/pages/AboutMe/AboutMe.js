@@ -3,12 +3,12 @@ import aboutImg from 'assets/images/about.jpg';
 import aboutBottom from 'assets/images/aboutBottom.jpg';
 import kaviCanion from 'assets/images/kaviCanion.jpg';
 import kaviHats from 'assets/images/kaviHats.jpg';
-import FixedBackgroundBottom from 'components/atoms/FixedBackgroundBottom/FixedBackgroundBottom';
-import FixedBackgroundTop from 'components/atoms/FixedBackgroundTop/FixedBackgroundTop';
-import MainButton from 'components/atoms/MainButton/MainButton';
-import MediaIcon from 'components/atoms/MediaIcon/MediaIcon';
-import Carousel from 'components/organisms/Carousel/Carousel';
-import Footer from 'components/organisms/Footer/Footer';
+import FixedBackgroundBottom from 'components/atoms/FixedBackgroundBottom';
+import FixedBackgroundTop from 'components/atoms/FixedBackgroundTop';
+import MainButton from 'components/atoms/MainButton';
+import MediaIcon from 'components/atoms/MediaIcon';
+import Carousel from 'components/organisms/Carousel';
+import Footer from 'components/organisms/Footer';
 import Navigationbar from 'components/organisms/Navigationbar/Navigationbar';
 import Greet from 'pages/AboutMe/components/Greet';
 import styled from 'styled-components';
@@ -81,7 +81,6 @@ const Medias = styled.div`
   position: absolute;
   bottom: -3.8rem;
   animation: drop 2.5s;
-
   @keyframes drop {
     from {
       transform: translate(0, -10rem);
@@ -100,7 +99,6 @@ const AbMainContent = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-
   ${media.desktop`
     margin: 15rem 0 15rem 0;
     padding:0;
@@ -114,7 +112,6 @@ const AbContentHeading = styled.h1`
   font-weight: 700;
   color: ${({ theme }) => theme.navyblueText};
   padding-bottom: 2rem;
-
   ${media.desktop`
     margin: 2rem 0;
     position: relative;
@@ -130,7 +127,6 @@ const AbGridItems = styled.div`
   align-items: center;
   justify-items: center;
   grid-gap: 2rem 3rem;
-
   ${media.desktop`
     margin: 0;
     grid-template-columns: 42rem 42rem;
@@ -160,7 +156,6 @@ const LastPostsWrapper = styled.div`
 
 const LastPostsHeading = styled(AbContentHeading)`
   margin: 1rem 0;
-
   ${media.desktop`
   position: static;
   margin: 0rem 0;
@@ -174,7 +169,6 @@ const LastPostsParagraph = styled.p`
   font-size: 1.6rem;
   font-weight: 600;
   color: ${({ theme }) => theme.navyblueText};
-
   ${media.desktop`
   width: 40%;
   margin-bottom: 5rem;

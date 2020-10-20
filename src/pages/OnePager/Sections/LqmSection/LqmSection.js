@@ -1,13 +1,13 @@
 /* eslint-disable react/no-array-index-key */
 import React from 'react';
-import MainButton from 'components/atoms/MainButton/MainButton';
-import Icons from 'components/molecules/Icons/Icons';
+import MainButton from 'components/atoms/MainButton';
+import Icons from 'components/molecules/Icons';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { media } from 'utils';
 import { paths } from 'utils/paths';
 
-import SectionBreak from '../../../../components/molecules/SectionBreak/SectionBreak';
+import SectionBreak from '../../../../components/molecules/SectionBreak';
 
 const LqmWrapper = styled.div`
   width: 100%;

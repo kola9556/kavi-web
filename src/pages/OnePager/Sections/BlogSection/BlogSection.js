@@ -2,8 +2,8 @@
 import React from 'react';
 import arrowsDesktop from 'assets/images/smallerArrows.jpg';
 import arrows from 'assets/images/xxsArrows.jpg';
-import LogoButton from 'components/atoms/LogoButton/LogoButton';
-import SectionBreak from 'components/molecules/SectionBreak/SectionBreak';
+import LogoButton from 'components/atoms/LogoButton';
+import SectionBreak from 'components/molecules/SectionBreak';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { media } from 'utils';

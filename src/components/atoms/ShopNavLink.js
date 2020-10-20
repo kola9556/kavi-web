@@ -1,5 +1,5 @@
 import React from 'react';
-import NavigationLink from 'components/organisms/Navigationbar/components/NavigationLink/NavigationLink';
+import NavigationLink from 'components/organisms/Navigationbar/components/NavigationLink';
 
 export const ShopNavLInk = () => {
   const handleShopLink = (e) => {
