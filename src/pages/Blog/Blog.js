@@ -6,9 +6,11 @@ import blogTopMobile from 'assets/images/blogTopMobile.jpg';
 import FixedBackgroundBottom from 'components/atoms/FixedBackgroundBottom';
 import FixedBackgroundTop from 'components/atoms/FixedBackgroundTop';
 import AboutMeBlock from 'components/molecules/AboutMeBlock';
+import ArticlePreview from 'components/molecules/ArticlePrewiew';
 import Footer from 'components/organisms/Footer';
 import Navigationbar from 'components/organisms/Navigationbar/Navigationbar';
 import { blogPosts as posts } from 'content/blogContent';
+import { useQuery } from 'graphql-hooks';
 import styled from 'styled-components';
 import ScrollTemplate from 'templates/ScrollTemplate';
 import { media } from 'utils';
@@ -16,6 +18,8 @@ import { SecondHeading } from 'utils/Headers';
 
 import NavArrow from './components/NavArrow';
 import PostLabel from './components/PostLabel';
+
+const slugify = require('slugify');
 
 const StyledFixedBackground = styled(FixedBackgroundTop)`
   :after {
@@ -61,11 +65,13 @@ const StyledSecondHeading = styled(SecondHeading)`
 
 const BlogContentWrapper = styled.div`
   display: flex;
-  align-content: center;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
+  width: 100%;
+  margin: 12rem 0;
 
   ${media.desktop`
-  margin: 23rem 0 0;
   align-content: center;
   justify-content: center;
   flex-direction: row;
@@ -73,18 +79,10 @@ const BlogContentWrapper = styled.div`
 `;
 
 const PostLabelsWrapper = styled.div`
-  margin: 20rem 0 4rem;
   display: flex;
   flex-direction: column;
-  align-content: center;
+  align-items: center;
   justify-content: center;
-
-  ${media.desktop`
-    margin: 0rem 10rem;
-    display: grid;
-    grid-template-columns: 38rem 38rem;
-    grid-gap: 0.5rem 2rem;
-  `}
 `;
 
 const AboutMeBlockWrapper = styled.div`
@@ -95,59 +93,76 @@ const AboutMeBlockWrapper = styled.div`
 `}
 `;
 
-const NavArrowsWrapper = styled.div`
-  /* There are only few blog posts and for now no logic for how much blog post 
-should display and how Next/Previous buttons should handle this - so display: none */
-  display: none;
-  justify-content: space-around;
+const StyledFixedBackgroundBottom = styled(FixedBackgroundBottom)`
+  height: 50vh;
+  opacity: 0.9;
+`;
+const ArticlesWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 10rem;
 
   ${media.desktop`
-    width: 120rem;
+  margin: 0 2rem;
+  align-content: flex-start;
+  flex-direction: row;
+  justify-content: space-around;
   `}
 `;
 
-const StyledFixedBackgroundBottom = styled(FixedBackgroundBottom)`
-  height: 50vh;
-  margin-top: 25rem;
-  opacity: 0.9;
-`;
-
-class Blog extends Component {
-  state = {};
-
-  render() {
-    return (
-      <>
-        <ScrollTemplate>
-          <>
-            <Navigationbar />
-            <StyledFixedBackground img={blogTopMobile}>
-              <TopBackgroundTextWrapper>
-                <StyledSecondHeading>Blog o szczęśliwym stylu życiu...</StyledSecondHeading>
-                <StyledSecondHeading>Blog dla życia świadomie zarządzanego...</StyledSecondHeading>
-                <StyledSecondHeading>Blog o życiu z sensem...</StyledSecondHeading>
-              </TopBackgroundTextWrapper>
-            </StyledFixedBackground>
-            <BlogContentWrapper>
-              <PostLabelsWrapper>
-                {posts.map((post, index) => (
-                  <PostLabel key={index} image={post.mainImage} title={post.title} id={post.id} />
-                ))}
-              </PostLabelsWrapper>
-              <AboutMeBlockWrapper>
-                <AboutMeBlock />
-              </AboutMeBlockWrapper>
-            </BlogContentWrapper>
-            <NavArrowsWrapper>
-              <NavArrow previous>Poprzedni</NavArrow>
-              <NavArrow>Następny</NavArrow>
-            </NavArrowsWrapper>
-            <StyledFixedBackgroundBottom img={blogBottom} />
-            <Footer />
-          </>
-        </ScrollTemplate>
-      </>
-    );
+const HOMEPAGE_QUERY = `query HomePage {
+  allArticles {
+    author
+    title
+    mainImage {
+      url
+    }
   }
-}
+}`;
+
+const Blog = () => {
+  const { loading, error, data } = useQuery(HOMEPAGE_QUERY, {
+    variables: {
+      limit: 10,
+    },
+  });
+  if (loading) return 'Loading...';
+  if (error) return 'Something Bad Happened';
+
+  return (
+    <>
+      <ScrollTemplate>
+        <>
+          <Navigationbar />
+          <StyledFixedBackground img={blogTopMobile}>
+            <TopBackgroundTextWrapper>
+              <StyledSecondHeading>Blog o szczęśliwym stylu życiu...</StyledSecondHeading>
+              <StyledSecondHeading>Blog dla życia świadomie zarządzanego...</StyledSecondHeading>
+              <StyledSecondHeading>Blog o życiu z sensem...</StyledSecondHeading>
+            </TopBackgroundTextWrapper>
+          </StyledFixedBackground>
+          <BlogContentWrapper>
+            <ArticlesWrapper>
+              {data.allArticles.reverse().map(({ title, mainImage, author }) => (
+                <ArticlePreview
+                  key={slugify(title, { lower: true })}
+                  title={title}
+                  author={author}
+                  image={mainImage.url}
+                  path={slugify(title, { lower: true })}
+                />
+              ))}
+            </ArticlesWrapper>
+            <AboutMeBlock />
+          </BlogContentWrapper>
+          <StyledFixedBackgroundBottom img={blogBottom} />
+          <Footer />
+        </>
+      </ScrollTemplate>
+    </>
+  );
+};
 export default Blog;
