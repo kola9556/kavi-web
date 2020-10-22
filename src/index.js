@@ -3,10 +3,14 @@ import ReactDOM from 'react-dom';
 import { ClientContext, GraphQLClient } from 'graphql-hooks';
 
 import Root from './pages/Root';
+
+require('dotenv').config();
+
 const client = new GraphQLClient({
   url: 'https://graphql.datocms.com/',
   headers: {
-    Authorization: 'Bearer c14bcb450451e82bab63bcbcc3d4dc',
+    // eslint-disable-next-line no-undef
+    Authorization: `Bearer ${process.env.REACT_APP_API_DATO_CMS}`,
   },
 });
 

@@ -13,8 +13,8 @@ const PreviewWrapper = styled(Link)`
 
   ${media.tablet`
     margin: 2rem 0; 
-    height:32rem;
-    width: 50rem;
+    height:28rem;
+    width: 42rem;
   `}
 `;
 
@@ -24,7 +24,7 @@ const PreviewInfoLabel = styled.div`
   bottom: 35px;
   width: 80%;
   min-height: 40px;
-  background-color: rgb(38, 48, 97);
+  background-color: rgb(102, 103, 112);
   color: white;
   padding: 5px 15px;
 
@@ -55,8 +55,8 @@ const StyledImage = styled.img`
   object-fit: cover;
 `;
 
-const ArticlePreview = ({ title, author, image, path }) => (
-  <PreviewWrapper to={`/blog/${path}`}>
+const ArticlePreview = ({ title, author, image, id }) => (
+  <PreviewWrapper to={`/blog/post/${id}`}>
     <StyledImage src={image} />
     <PreviewInfoLabel>
       <Title>{title}</Title>
@@ -69,7 +69,7 @@ ArticlePreview.propTypes = {
   title: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
-  path: PropTypes.string.isRequired,
+  id: PropTypes.string.isRequired,
 };
 
 export default ArticlePreview;

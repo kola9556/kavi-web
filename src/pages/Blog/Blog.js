@@ -72,25 +72,10 @@ const BlogContentWrapper = styled.div`
   margin: 12rem 0;
 
   ${media.desktop`
-  align-content: center;
+  align-items: flex-start;
   justify-content: center;
   flex-direction: row;
   `}
-`;
-
-const PostLabelsWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-`;
-
-const AboutMeBlockWrapper = styled.div`
-  display: none;
-
-  ${media.desktop`
-  display: flex;
-`}
 `;
 
 const StyledFixedBackgroundBottom = styled(FixedBackgroundBottom)`
@@ -105,11 +90,10 @@ const ArticlesWrapper = styled.div`
   align-items: center;
   margin-bottom: 10rem;
 
-  ${media.desktop`
-  margin: 0 2rem;
-  align-content: flex-start;
-  flex-direction: row;
-  justify-content: space-around;
+  ${media.tablet`
+  display: grid;
+  grid-template-columns: auto auto;
+  grid-gap:2rem; 
   `}
 `;
 
@@ -117,6 +101,7 @@ const HOMEPAGE_QUERY = `query HomePage {
   allArticles {
     author
     title
+    id
     mainImage {
       url
     }
@@ -146,9 +131,10 @@ const Blog = () => {
           </StyledFixedBackground>
           <BlogContentWrapper>
             <ArticlesWrapper>
-              {data.allArticles.reverse().map(({ title, mainImage, author }) => (
+              {data.allArticles.reverse().map(({ title, mainImage, author, id }) => (
                 <ArticlePreview
                   key={slugify(title, { lower: true })}
+                  id={id}
                   title={title}
                   author={author}
                   image={mainImage.url}
