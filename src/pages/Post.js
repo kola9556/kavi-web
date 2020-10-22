@@ -108,7 +108,7 @@ const Post = () => {
       slicedId,
     },
   });
-  if (loading) return 'Loading...';
+  if (loading) return '';
   if (error) return `Something Bad Happened ${slicedId} ${data}`;
 
   const {

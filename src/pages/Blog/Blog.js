@@ -114,7 +114,7 @@ const Blog = () => {
       limit: 10,
     },
   });
-  if (loading) return 'Loading...';
+  if (loading) return '';
   if (error) return 'Something Bad Happened';
 
   return (

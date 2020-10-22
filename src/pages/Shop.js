@@ -18,8 +18,8 @@ import { MainHeading, PostscriptHeading } from 'utils/Headers';
 const StyledTopBackground = styled(FixedBackgroundTop)`
   margin-bottom: 18rem;
 
-  ${media.desktop`
-    height: 60vh;
+  ${media.tablet`
+    height: 50vh;
   `}
 
   :after {
@@ -38,11 +38,11 @@ const AboutMeBlockWrapper = styled.div`
 
   @media (min-width: 600px) {
     right: 0;
-    top: 123rem;
+    top: 47rem;
   }
   @media (min-width: 1300px) {
     right: 0;
-    top: 80rem;
+    top: 47rem;
   }
 
   @media (min-width: 1600px) {
