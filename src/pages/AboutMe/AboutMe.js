@@ -197,11 +197,7 @@ class AboutMe extends Component {
           <FixedBackgroundTop img={aboutImg}>
             <Greet />
             <Medias>
-              <MediaIcon
-                face
-                href="https://www.facebook.com/profile.php?id=1798136115"
-                target="_blank"
-              />
+              <MediaIcon face href="https://www.facebook.com/KaViKozlowska/" target="_blank" />
               <MediaIcon insta href="https://www.instagram.com/kavi_foodies/" target="_blank" />
             </Medias>
           </FixedBackgroundTop>

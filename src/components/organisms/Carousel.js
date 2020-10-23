@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import KaviHats from 'assets/images/kaviHats.jpg';
 import Lentils from 'assets/images/lentils.jpg';
 import Provisions from 'assets/images/provisions.jpg';
+import { useQuery } from 'graphql-hooks';
 import styled from 'styled-components';
 import { media } from 'utils';
 import { SHeader, SParagraph, XsParagraph } from 'utils/Headers';
@@ -61,13 +62,10 @@ const Card = styled(NavLink)`
   `}
 `;
 
-const CaImage = styled.div`
+const CaImage = styled.img`
   width: 100%;
   height: 25%;
-  background-image: url(${({ image }) => image});
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  background-size: 100%;
+  object-fit: cover;
 `;
 
 const CaHeading = styled(SHeader)`
@@ -94,47 +92,51 @@ const Text = styled(SParagraph)`
   width: 28rem;`}
 `;
 
-const posts = [
-  {
-    id: 1,
-    image: Provisions,
-    title: 'Postanowienia noworoczne – czy warto się nimi dzielić?',
-    category: 'lqm',
-    text:
-      'Postanowienia noworoczne – jedni trzymają je dla siebie, inni dzielą z bliskimi lub publikują w mediach społecznościowych w tym wpisie podpowiadam jakie podejście wybrać chcąc zwiększyć szanse realizacji swoich noworocznych postanowień.',
-  },
-  {
-    id: 2,
-    image: KaviHats,
-    title: 'Jak polubić zmiany zamiast się ich bać?',
-    category: 'lqm',
-    text:
-      'Nie ma znaczenia czy chodzi o życie prywatne czy zawodowe – zmiany są nieuniknione Nawet jeśli na same zmiany, często nie mamy wpływu, tylko od nas zależy to jak na nie zareagujemy. Czy będziemy postrzegać zmianę przez pryzmat lęku i obaw, czy też jako okazję do rozwoju...',
-  },
-  {
-    id: 3,
-    image: Lentils,
-    title: 'Czarna soczewica w roli głównej',
-    category: 'food',
-    text:
-      'Ostatnio coraz więcej w naszej diecie warzyw strączkowych. Jakoś w sposób naturalny, powoli przeszliśmy na dietę semiwegetariańską (dieta bezmięsna, ale od czasu do czasu są ryby). Brak białka mięsnego trzeba czymś zastąpić, a warzywa strączkowe idealnie się do tego nadają.',
-  },
-];
+const CAROUSEL_QUERY = `query Carousel {
+  allArticles(orderBy: _firstPublishedAt_ASC) {
+    author
+    title
+    id
+    date
+    mainImage {
+      url
+    }
+    postContent {
+      ... on ParagraphRecord {
+        id
+        paragraphContent
+      }
+    }
+  }
+}`;
 
 const Carousel = () => {
+  const { loading, error, data } = useQuery(CAROUSEL_QUERY, {
+    variables: {
+      limit: 10,
+    },
+  });
+  if (loading) return '';
+  if (error) return 'Something Bad Happened';
+
   return (
     <>
       <CaWrapper>
-        {posts.map((post) => (
-          <div key={post.id}>
-            <Card to="/blog">
-              <CaImage image={post.image} />
-              <CaHeading>{post.title}</CaHeading>
-              <Category>{post.category}</Category>
-              <Text>{post.text}</Text>
-            </Card>
-          </div>
-        ))}
+        {data.allArticles
+          .slice(0, 3)
+          .reverse()
+          .map(({ title, mainImage, id, date, postContent }) => (
+            <div key={id}>
+              <Card to={`/blog/post/${id}`}>
+                <CaImage src={mainImage.url} />
+                <CaHeading>{title}</CaHeading>
+                <Category>{date}</Category>
+                <Text>
+                  {`${postContent[0].paragraphContent.trim().split(' ').slice(0, 30).join(' ')}...`}
+                </Text>
+              </Card>
+            </div>
+          ))}
       </CaWrapper>
     </>
   );

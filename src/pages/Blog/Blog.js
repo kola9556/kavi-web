@@ -28,8 +28,8 @@ const StyledFixedBackground = styled(FixedBackgroundTop)`
     background-attachment: scroll;
   }
 
-  ${media.desktop`
-    height: 60vh;
+  ${media.tablet`
+    height: 50vh;
     
     :after {
     opacity: 1;
@@ -69,9 +69,10 @@ const BlogContentWrapper = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
-  margin: 12rem 0;
+  margin: 12rem 0 12rem;
 
   ${media.desktop`
+  margin: 6rem 0 12rem;
   align-items: flex-start;
   justify-content: center;
   flex-direction: row;
@@ -98,7 +99,7 @@ const ArticlesWrapper = styled.div`
 `;
 
 const HOMEPAGE_QUERY = `query HomePage {
-  allArticles {
+  allArticles(orderBy: _firstPublishedAt_ASC) {
     author
     title
     id
@@ -138,7 +139,6 @@ const Blog = () => {
                   title={title}
                   author={author}
                   image={mainImage.url}
-                  path={slugify(title, { lower: true })}
                 />
               ))}
             </ArticlesWrapper>

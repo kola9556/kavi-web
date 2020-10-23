@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import LogoK from 'assets/logos/logoKSmall.jpg';
+import logoKaviTransparent from 'assets/logos/logoKaviTransparent.svg';
+import { ShopNavLInk } from 'components/atoms/ShopNavLink';
 import styled from 'styled-components';
 import { media } from 'utils';
 import { MParagraph } from 'utils/Headers';
@@ -29,7 +30,7 @@ const OnlyDesktop = styled.div`
 const Logo = styled.div`
   width: 13rem;
   height: 5.3rem;
-  background-image: url(${LogoK});
+  background-image: url(${logoKaviTransparent});
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: 100%;
@@ -88,7 +89,7 @@ const InfoBox = () => {
             <Label>Produkty</Label>
             <List>
               <Point>
-                <Link to={paths.shop}>Sklep</Link>
+                <ShopNavLInk color={'grey'}>Sklep</ShopNavLInk>
               </Point>
               <Point>
                 <Link to={paths.consultation}>Szkolenia</Link>

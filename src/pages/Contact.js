@@ -1,6 +1,7 @@
 import React from 'react';
 import contactBottom from 'assets/images/contactBottom.jpg';
 import contactTop from 'assets/images/contactTop.jpg';
+import logoKaviTransparent from 'assets/logos/logoKaviTransparent.svg';
 import FixedBackgroundBottom from 'components/atoms/FixedBackgroundBottom';
 import FixedBackgroundTop from 'components/atoms/FixedBackgroundTop';
 import Footer from 'components/organisms/Footer';
@@ -34,7 +35,7 @@ const StyledFixedBackground = styled(FixedBackgroundTop)`
 `;
 
 const ContactContent = styled.div`
-  margin: 6rem 0;
+  margin: 0rem 0 6rem;
   display: flex;
   align-content: center;
   justify-content: center;
@@ -42,6 +43,7 @@ const ContactContent = styled.div`
 
   ${media.desktop`
     flex-direction: row;
+   
   `}
 `;
 
@@ -55,7 +57,17 @@ const ContactTextWrapper = styled.div`
 
   ${media.desktop`
     flex-grow:1;
+    justify-content: flex-start;
   `}
+`;
+
+const ContactLogo = styled.div`
+  width: 33rem;
+  height: 25.3rem;
+  background-image: url(${logoKaviTransparent});
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 100%;
 `;
 
 const ContactLabel = styled(MParagraph)`
@@ -88,6 +100,7 @@ const Contact = () => {
         </StyledFixedBackground>
         <ContactContent>
           <ContactTextWrapper>
+            <ContactLogo />
             <ContactLabel>{pageContent.mailHeader}</ContactLabel>
             <ContactParagraph>{pageContent.mail}</ContactParagraph>
             <ContactLabel>{pageContent.phoneHeader}</ContactLabel>

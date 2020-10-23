@@ -35,8 +35,8 @@ class Consultation extends Component {
         <ScrollTemplate>
           <Navigationbar />
           <ConsultWrapper>
-            <Heading>Sorry!</Heading>
-            <Paragraph>This side is in the process of building</Paragraph>
+            <Heading>Szkolenia i Konsultacje</Heading>
+            <Paragraph>Oferta w trakcie przygotowań</Paragraph>
           </ConsultWrapper>
         </ScrollTemplate>
       </>

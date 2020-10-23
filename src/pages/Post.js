@@ -11,7 +11,7 @@ import media from 'utils/media';
 
 const PostLabel = styled.div`
   width: 100%;
-  height: 100vh;
+  height: 80vh;
   margin: 0;
   padding: 0;
   display: flex;
@@ -34,29 +34,46 @@ const PostWrapper = styled.div`
 `;
 
 const Title = styled.h1`
-  font-size: 45px;
+  font-size: 2.8rem;
   text-align: center;
   padding: 2rem;
   background-color: rgb(102, 103, 112);
   color: white;
+
+  ${media.desktop`
+  font-size: 45px;
+  `}
 `;
 
 const ContentWrapper = styled.div`
   display: flex;
   margin: 100px 0;
-  width: 55%;
+  width: 80%;
   align-items: center;
   flex-direction: column;
+
+  ${media.tablet`
+  width: 55%;
+  `}
 `;
 
 const StyledParagraph = styled(MainText)`
+  font-size: 1.6rem;
+  margin: 1rem 0;
+
+  ${media.tablet`
   font-size: 2rem;
-  margin: 4rem 0;
+
+  `}
 `;
 
 const Heading = styled(SecondHeading)`
-  font-size: 2.8rem;
+  font-size: 2rem;
   text-align: center;
+
+  ${media.tablet`
+  font-size: 2.8rem;
+  `}
 `;
 
 const Date = styled(MainText)`
@@ -68,7 +85,11 @@ const StyledImage = styled.img`
   width: 85%;
   height: auto;
   object-fit: cover;
-  margin: 4rem 0;
+  margin: 2rem 0;
+
+  ${media.tablet`
+  margin: 2em 0;
+  `}
 `;
 
 const SINGLE_POST_QUERY = `query SinglePost($slicedId: ItemId!) {

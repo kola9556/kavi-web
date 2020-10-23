@@ -2,7 +2,7 @@
 /* eslint-disable react/prop-types */
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-import logoKavi from 'assets/logos/logoK.jpg';
+import logoKavi from 'assets/logos/logoKavi.png';
 import { ShopNavLInk } from 'components/atoms/ShopNavLink';
 import NavigationLink from 'components/organisms/Navigationbar/components/NavigationLink';
 import styled from 'styled-components';
@@ -46,7 +46,7 @@ const Logo = styled(NavLink)`
   ${media.desktop`
   width: 18rem;
   height: 5rem;
-  background-size: 80%;
+  background-size: 100%;
   `}
 `;
 
@@ -90,7 +90,7 @@ class Navigationbar extends Component {
           <NavigationLink to="/lifeqm">Life QM</NavigationLink>
           <BlogLogo to="/blog" />
           <NavigationLink to="/consultation">Konsultacje i Szkolenia</NavigationLink>
-          <ShopNavLInk />
+          <ShopNavLInk>Sklep</ShopNavLInk>
           <NavigationLink to="/contact">Kontakt</NavigationLink>
         </NavlinksWrapper>
       </NavbarWrapper>

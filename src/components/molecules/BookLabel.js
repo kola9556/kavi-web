@@ -1,5 +1,6 @@
 import React from 'react';
 import MainButton from 'components/atoms/MainButton';
+import { ShopNavLInk } from 'components/atoms/ShopNavLink';
 import styled from 'styled-components';
 import { media } from 'utils';
 import { BoldSpan } from 'utils/Headers';
@@ -76,16 +77,16 @@ const labels = {
   secondTitle: 'Świadomy optymizm w świecie zmian',
   description:
     '„Szczęśliwy człowiek wnosi światło tam, gdzie panują ciemności.” (Phil Bosmans). Zażyj antidotum – włącz Autopilot Szczęścia i zostań Świadomym Optymistą. Trwałe poczucie szczęścia w świecie dynamicznych zmian? To możliwe!',
-  price: '59,99zł',
+  price: '59,90zł',
 };
 
 const ButtonWrapper = styled.div`
   position: absolute;
-  left: 1rem;
-  top: 11.5rem;
+  left: -1rem;
+  top: 15rem;
 
   ${media.desktop`
-    top: 1rem;
+    top: 6rem;
     left: 28rem;
   `}
 `;
@@ -98,9 +99,9 @@ const BookLabel = () => {
         <SecondTitle>{labels.secondTitle}</SecondTitle>
         <Description>{labels.description}</Description>
         <ButtonWrapper>
-          <MainButton color="red" path="/shop">
+          <ShopNavLInk color="red" to="/shop">
             Kup teraz
-          </MainButton>
+          </ShopNavLInk>
         </ButtonWrapper>
         <Price>
           <BoldSpan>Cena:</BoldSpan> &nbsp;&nbsp;{labels.price}

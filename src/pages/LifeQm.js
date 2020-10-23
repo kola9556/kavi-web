@@ -259,7 +259,7 @@ const LifeQm = () => {
               </ColoredTextBackground>
             </ActiveImage>
             <Text centered>
-              <DecoratedText>Następna edycja LEA już 04.10.2020</DecoratedText>
+              <DecoratedText>Następna edycja LEA już wkrótce</DecoratedText>
               <br /> Może to właśnie twoja SZANSA!
             </Text>
             <Icons />

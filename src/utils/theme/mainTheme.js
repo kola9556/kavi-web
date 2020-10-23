@@ -3,7 +3,7 @@ export const theme = {
   redText: 'rgba(234, 26, 26, 0.8)', // mainly for main header from first view
   navyblueText: 'rgb(57, 59, 94)', // main for text
   blueGreyText: 'rgba(67, 89, 159, 0.42)', // icon numbers
-  lightBlueText: 'rgba(83, 163, 224, 0.28)', // SectionBreak right text
+  lightBlueText: 'rgb(136,189,231)', // SectionBreak right text
   expressiveBlue: 'rgba(53, 153, 211, 1)',
   elemBlue: 'rgba(168, 220, 236, 1)',
   elemRed: 'rgba(223, 33, 33, 0.75)',

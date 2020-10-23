@@ -35,8 +35,11 @@ class Blog extends Component {
         <ScrollTemplate>
           <Navigationbar />
           <CollaboWrapper>
-            <Heading>Sorry!</Heading>
-            <Paragraph>This side is in the process of building</Paragraph>
+            <Heading>Warunki współpracy</Heading>
+            <Paragraph>
+              Regulami współpracy jest w trakcie przygotowywania. Jeśli masz jakieś pytania,
+              skontaktuj się ze mną!
+            </Paragraph>
           </CollaboWrapper>
         </ScrollTemplate>
       </>

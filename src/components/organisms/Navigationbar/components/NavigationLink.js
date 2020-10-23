@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const NavigationLink = styled(NavLink)`
   @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap');
@@ -12,6 +12,29 @@ const NavigationLink = styled(NavLink)`
   margin: 0px;
   text-align: center;
   white-space: nowrap;
+
+  ${({ color }) =>
+    color === 'red' &&
+    css`
+      color: ${({ theme }) => theme.buttonTextRed};
+      padding: 1rem;
+      font-weight: 700;
+      background-color: rgb(255, 87, 86);
+      border-radius: 1rem;
+    `}
+
+  ${({ color }) =>
+    color === 'grey' &&
+    css`text-decoration: none;
+  color: ${({ theme }) => theme.footerText};
+
+  :visited {
+    color: ${({ theme }) => theme.footerText};
+  }
+
+  :hover {
+    font-weight: 700;
+  `}
 
   &.active {
     font-weight: 700;

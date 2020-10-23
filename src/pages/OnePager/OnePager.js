@@ -145,7 +145,7 @@ const pageContent = {
     {
       type: 'firm',
       label: 'Life QM dla firm',
-      texts: [{ text: 'Audty Happy Management' }, { text: 'Szkolenia dedykowane' }],
+      texts: [{ text: 'Audyt Happy Management' }, { text: 'Szkolenia dedykowane' }],
     },
   ],
   blog: {

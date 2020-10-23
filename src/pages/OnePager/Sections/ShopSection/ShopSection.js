@@ -1,10 +1,8 @@
 import React from 'react';
-import cover from 'assets/images/book.jpg';
-import MainButton from 'components/atoms/MainButton';
+import bookCover from 'assets/images/bookCover.jpg';
 import SectionBreak from 'components/molecules/SectionBreak';
 import styled from 'styled-components';
 import { media } from 'utils';
-import { paths } from 'utils/paths';
 
 import ShopBox from '../../../../components/organisms/ShopBox';
 
@@ -37,7 +35,7 @@ const ContentWrapper = styled.div`
 `;
 
 const Book = styled.div`
-  background-image: url(${cover});
+  background-image: url(${bookCover});
   background-repeat: no-repeat;
   background-position: 50% 50%;
   background-size: cover;
@@ -55,15 +53,6 @@ const Book = styled.div`
   `}
 `;
 
-const ButtonWrapper = styled.div`
-  margin: 2rem 0;
-
-  ${media.desktop`
-    position: relative;
-    left: 12rem;
-  `}
-`;
-
 const ShopSection = () => {
   return (
     <>
@@ -73,9 +62,6 @@ const ShopSection = () => {
           <Book />
           <ShopBox />
         </ContentWrapper>
-        <ButtonWrapper>
-          <MainButton to={paths.shop}>Więcej</MainButton>
-        </ButtonWrapper>
       </ShopWrapper>
     </>
   );
