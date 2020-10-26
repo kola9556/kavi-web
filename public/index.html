@@ -8,11 +8,58 @@
     <link rel="icon" href="./favicon.jpg" />
     <style>
       @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@300;400;500;600;700;800;900&display=swap');
+
+      .loader-container {
+        width: 100%;
+        height: 90vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .logo {
+  width: 300px;
+  height: 80px;
+  background: url('logoKaviTransparent.png');
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  background-size: 100%;
+  border: none;
+  margin-bottom: 40px;
+   
+      }
+
+   @media only screen and (min-width: 750px) {
+     .logo {
+  width: 500px;
+  height: 200px;
+  margin-bottom:0;
+      }
+   }   
+
+      .loader {
+  border: 10px solid #ffffff;
+  border-top: 10px solid rgb(63,102,170);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0%  { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
     </style>
     <title>Kavi Website</title>
   </head>
   <body>
     <div id="root"></div>
+    <div class="loader-container">
+      <div class="logo"></div>
+      <div class="loader"></div>
+   </div>
     <script
       data-cfasync="false"
       type="text/javascript"
