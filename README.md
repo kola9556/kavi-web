@@ -1,14 +1,13 @@
 ## Website develop for Kavi Kozłowska - freelance project
 
-#### Hosted on: http://kavikozlowska.pl/
+#### Hosted on: https://kavikozlowska.pl/
 
 Further features/refactors: 
-- Blog page (DONE ✔️ ) - only skeleton for now, more during CMS implementation
+- Blog page (DONE ✔️ ) 
 - Inject external shop from ecwid.com (DONE ✔️)
-- Add SSL certificate
-- Blog CMS with Gatsby 
-- Change images to gatsby-image
-- First load welcome animation
+- Add SSL certificate (DONE ✔️)
+- Blog CMS with DatoCms and GraphQl (DONE ✔️)
+- Loader (DONE ✔️)
 - Improve animations and all page displaying (first load, loading order)
 
 
