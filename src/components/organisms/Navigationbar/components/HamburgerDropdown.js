@@ -29,7 +29,7 @@ const HamburgerDropdown = ({ isVisible }) => {
       <NavbarLink to={paths.lifeqm}>Life QM</NavbarLink>
       <NavbarLink to={paths.blog}>Blog</NavbarLink>
       <NavbarLink to={paths.consultation}>Konsultacje i Szkolenia</NavbarLink>
-      <ShopNavLInk />
+      <ShopNavLInk>Sklep </ShopNavLInk>
       <NavbarLink to={paths.contact}>Kontakt</NavbarLink>
     </DropdownWrapper>
   );

@@ -1,8 +1,5 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import KaviHats from 'assets/images/kaviHats.jpg';
-import Lentils from 'assets/images/lentils.jpg';
-import Provisions from 'assets/images/provisions.jpg';
 import { useQuery } from 'graphql-hooks';
 import styled from 'styled-components';
 import { media } from 'utils';
@@ -123,8 +120,8 @@ const Carousel = () => {
     <>
       <CaWrapper>
         {data.allArticles
-          .slice(0, 3)
           .reverse()
+          .slice(0, 3)
           .map(({ title, mainImage, id, date, postContent }) => (
             <div key={id}>
               <Card to={`/blog/post/${id}`}>

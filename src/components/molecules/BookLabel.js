@@ -1,5 +1,4 @@
 import React from 'react';
-import MainButton from 'components/atoms/MainButton';
 import { ShopNavLInk } from 'components/atoms/ShopNavLink';
 import styled from 'styled-components';
 import { media } from 'utils';

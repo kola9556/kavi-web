@@ -1,5 +1,6 @@
 import React from 'react';
 import book from 'assets/images/book.jpg';
+import { ShopNavLInk } from 'components/atoms/ShopNavLink';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import { media } from 'utils';
@@ -159,10 +160,23 @@ ${({ third }) =>
     `}
 `;
 
+const ButtonWrapper = styled.div`
+  position: relative;
+  ${media.desktop`
+   top: 16rem;
+   left: 20rem;
+  `}
+`;
+
 const HomeSection = ({ firstPara, secondPara, thirdPara }) => {
   return (
     <>
       <HomeWrapper>
+        <ButtonWrapper>
+          <ShopNavLInk color="red" to="/shop">
+            Kup teraz
+          </ShopNavLInk>
+        </ButtonWrapper>
         <BookWrapper desktop>
           <RedBackground />
           <HomeRectaImgBox />

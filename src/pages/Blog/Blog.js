@@ -1,5 +1,5 @@
 /* eslint-disable react/no-array-index-key */
-import React, { Component } from 'react';
+import React from 'react';
 import blogBottom from 'assets/images/blogBottom.jpg';
 import blogTop from 'assets/images/blogTop.jpg';
 import blogTopMobile from 'assets/images/blogTopMobile.jpg';
@@ -9,15 +9,11 @@ import AboutMeBlock from 'components/molecules/AboutMeBlock';
 import ArticlePreview from 'components/molecules/ArticlePrewiew';
 import Footer from 'components/organisms/Footer';
 import Navigationbar from 'components/organisms/Navigationbar/Navigationbar';
-import { blogPosts as posts } from 'content/blogContent';
 import { useQuery } from 'graphql-hooks';
 import styled from 'styled-components';
 import ScrollTemplate from 'templates/ScrollTemplate';
 import { media } from 'utils';
 import { SecondHeading } from 'utils/Headers';
-
-import NavArrow from './components/NavArrow';
-import PostLabel from './components/PostLabel';
 
 const slugify = require('slugify');
 
@@ -125,9 +121,9 @@ const Blog = () => {
           <Navigationbar />
           <StyledFixedBackground img={blogTopMobile}>
             <TopBackgroundTextWrapper>
-              <StyledSecondHeading>Blog o szczęśliwym stylu życiu...</StyledSecondHeading>
-              <StyledSecondHeading>Blog dla życia świadomie zarządzanego...</StyledSecondHeading>
-              <StyledSecondHeading>Blog o życiu z sensem...</StyledSecondHeading>
+              <StyledSecondHeading>Blog o szczęśliwym stylu życia.</StyledSecondHeading>
+              <StyledSecondHeading>Blog dla życia świadomie zarządzanego.</StyledSecondHeading>
+              <StyledSecondHeading>Blog o życiu z sensem.</StyledSecondHeading>
             </TopBackgroundTextWrapper>
           </StyledFixedBackground>
           <BlogContentWrapper>

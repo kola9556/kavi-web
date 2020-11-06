@@ -17,7 +17,7 @@ import { MainHeading, MainText, PostscriptHeading } from 'utils/Headers';
 
 const pageContent = {
   mainHeading: <>Life Quality Management</>,
-  postsrciptHeading: <>Twoje życiowe IQ na XXI wiek.</>,
+  postsrciptHeading: <>Twoje życiowe IQ na XXI wiek</>,
   textFirst: (
     <>
       Systemy zarezerwowane dla gigantów przedsiębiorczości są dziś osiągalne dla osób, które pragną
