@@ -1,5 +1,6 @@
 /* eslint-disable react/no-array-index-key */
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 import change from 'assets/images/change.jpg';
 import health from 'assets/images/health.jpg';
 import logoW from 'assets/images/logoW.jpg';
@@ -32,6 +33,7 @@ const IconWrapper = styled.div`
   align-items: flex-start;
   width: 13rem;
   margin-bottom: 2rem;
+  text-decoration: none;
 
   ${media.desktop`
   width: 20rem;
@@ -89,12 +91,20 @@ const Icon = styled.div`
           height: 5rem;
           background-image: url(${logoW});
 
+          :hover {
+            width: 19rem;
+            height: 5.3rem;
+          }
+
           ${media.desktop`
             position: relative;
             bottom: 1.5rem;
             width: 21.9rem;
             height: 6.6rem;
-          `}
+            :hover {
+            width: 22.9rem;
+            height: 7.3rem;
+          }`}
         `;
       default:
         return css`
@@ -119,15 +129,25 @@ const Icons = () => {
   return (
     <>
       <GraphicsWrapper>
-        {icons.map((icon, index) => (
-          <IconWrapper key={index}>
-            <TopWrapper>
-              <Number>{icon.number}</Number>
-              <Icon icon={icon.name} />
-            </TopWrapper>
-            <Label>{icon.label}</Label>
-          </IconWrapper>
-        ))}
+        {icons.map((icon, index) =>
+          icon.name === 'logoW' ? (
+            <IconWrapper key={index} as={NavLink} to="/blog">
+              <TopWrapper>
+                <Number>{icon.number}</Number>
+                <Icon icon={icon.name} />
+              </TopWrapper>
+              <Label>{icon.label}</Label>
+            </IconWrapper>
+          ) : (
+            <IconWrapper key={index}>
+              <TopWrapper>
+                <Number>{icon.number}</Number>
+                <Icon icon={icon.name} />
+              </TopWrapper>
+              <Label>{icon.label}</Label>
+            </IconWrapper>
+          ),
+        )}
       </GraphicsWrapper>
     </>
   );
