@@ -114,8 +114,16 @@ const Icon = styled.div`
   }}
 `;
 
-const Label = styled(MParagraph)`
+const Label = styled.h2`
   font-weight: 800;
+  margin: 0;
+  font-size: 1.4rem;
+
+  color: ${({ theme }) => theme.navyblueText};
+
+  ${media.desktop`
+    font-size: 1.8rem;
+  `}
 `;
 
 const icons = [

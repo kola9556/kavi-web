@@ -92,10 +92,22 @@ const StyledImage = styled.img`
   `}
 `;
 
+const StyledLink = styled.a`
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: rgb(121, 173, 166);
+  text-decoration: none;
+
+  :hover {
+    text-decoration: underline;
+  }
+`;
+
 const SINGLE_POST_QUERY = `query SinglePost($slicedId: ItemId!) {
   article(filter: {id: {eq: $slicedId}}) {
     mainImage {
       url
+      alt
     }
     title
     author
@@ -113,7 +125,13 @@ const SINGLE_POST_QUERY = `query SinglePost($slicedId: ItemId!) {
         id
         postImageData {
           url
+          alt
         }
+      }
+      ... on LinkRecord {
+        id
+        link
+        opisLinku
       }
     }
   }
@@ -140,7 +158,7 @@ const Post = () => {
     <>
       <ScrollTemplate>
         <Navigationbar />
-        <PostLabel img={mainImage.url}>
+        <PostLabel alt={mainImage.alt} img={mainImage.url}>
           <Title>{title}</Title>
         </PostLabel>
         <PostWrapper>
@@ -148,14 +166,25 @@ const Post = () => {
             <Date>{date}</Date>
             {postContent.map((item) => {
               const itemKey = Object.keys(item)[1];
-
               switch (itemKey) {
                 case 'paragraphContent':
                   return <StyledParagraph key={item.id}>{item.paragraphContent}</StyledParagraph>;
                 case 'headingContent':
                   return <Heading key={item.id}>{item.headingContent}</Heading>;
                 case 'postImageData':
-                  return <StyledImage key={item.id} src={item.postImageData.url} />;
+                  return (
+                    <StyledImage
+                      key={item.id}
+                      src={item.postImageData.url}
+                      alt={item.postImageData.alt}
+                    />
+                  );
+                case 'link':
+                  return (
+                    <StyledLink key={item.id} href={item.link} rel="noreferrer" target="_blank">
+                      {item.opisLinku}
+                    </StyledLink>
+                  );
                 default:
                   return <p>...</p>;
               }
