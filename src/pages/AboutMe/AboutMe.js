@@ -22,7 +22,7 @@ const pageContent = {
     button: 'Konsultacje i Szkolenia',
     first: (
       <>
-        Kiedyś żyłam w rzeczywistości czarnych scenariuszy, negatywnych myśłi i ciągłego narzekania.
+        Kiedyś żyłam w rzeczywistości czarnych scenariuszy, negatywnych myśli i ciągłego narzekania.
         Nie radziłam sobie dobrze z wyzwaniami tego świata. Każda porażka urastała do rangi życiowej
         katastrofy. Widziałam świat jako wrogie miejsce, bez potencjału, bez możliwości rozwoju dla
         mnie. Nie wierzyłam w swoje siły. Zagubiłam gdzieś poczucie własnej wartości.
@@ -40,28 +40,29 @@ const pageContent = {
       <>
         Weszłam na drogę poszukiwań, jak dokonać <BoldSpanS>SKUTECZNEJ ZMIANY</BoldSpanS>.
         Odszukałam sposoby i tricki, by to zrobić. Długoletnie poszukiwania i badania zaowocowały
-        osobistą zmianą oraz książką Autopilot Szczęścia. W końcu stalam się ekspertem ds.
+        osobistą zmianą oraz książką Autopilot Szczęścia. W końcu stałam się ekspertem ds.
         Świadomego Optymizmu. <br />
         Mam udział w <BoldSpanS> PODNOSZENIU JAKOŚCI ŻYCIA</BoldSpanS> moich klientów. Przeprowadzam
         ich skutecznie przez <BoldSpanS>PROCES ZMIANY</BoldSpanS> do
-        <BoldSpanS> ZDROWEGO I AKTYWNEGO</BoldSpanS> trybu życia a przede wszystkim do
+        <BoldSpanS> ZDROWEGO</BoldSpanS> i <BoldSpanS> AKTYWNEGO</BoldSpanS> trybu życia a przede
+        wszystkim do
         <BoldSpanS> POZYTYWNEGO WYSYCENIA EMOCJONALNEGO UMYSŁU</BoldSpanS>. <br />W tym procesie
         dbamy o umiejętność skutecznego radzenia sobie w świecie ciągłych zmian, pozytywne i
-        PROAKTYWNE podejście do życia, rozumienie emocji oraz silne i zdrowe ciało. Celem jest
-        spełnienie i trwałe poczucie szczęścia. Dlatego mówimy tu o dążeniu do{' '}
-        <BoldSpanS>SZCZĘŚLIWEGO TRYBU ŻYCIA</BoldSpanS>.
+        <BoldSpanS>PROAKTYWNE</BoldSpanS> podejście do życia, rozumienie emocji oraz silne i zdrowe
+        ciało. Celem jest spełnienie i trwałe poczucie szczęścia. Dlatego mówimy tu o dążeniu do{' '}
+        <BoldSpanS>SZCZĘŚLIWEGO STYLU ŻYCIA</BoldSpanS>.
       </>
     ),
     third: (
       <>
         Pracuję w przekonaniu, że <BoldSpanS>ŚWIADOMY OPTYMIZM</BoldSpanS> to skuteczne narzędzie
         dla każdego, w konfrontacji z wyzwaniami dynamicznie zmieniającego się świata. Towarzyszę
-        osobiście lub wirtualnie moim klientom: <BoldSpanS> INSPIRUJĘ, MODERUJĘ</BoldSpanS>i{' '}
+        osobiście lub wirtualnie moim klientom: <BoldSpanS> INSPIRUJĘ, MODERUJĘ</BoldSpanS> i{' '}
         <BoldSpanS>PODTRZYMUJĘ</BoldSpanS> ich <BoldSpanS>PROCES ZMIAN</BoldSpanS>, aż{' '}
         <BoldSpanS>DO OSIĄGNIĘCIA</BoldSpanS> zamierzonych CELÓW. <br />
         <br />
         Zapraszam do kontaktu,
-        <br /> <BoldSpanS>Kavi Kozłowska.</BoldSpanS>
+        <br /> <BoldSpanS>Kavi Kozłowska</BoldSpanS>
       </>
     ),
   },
